@@ -66,17 +66,17 @@ public class MHAPI{
         self.session = session
     }
 
-    public func call<T: MH_APIInfo_P>(api: T) -> AnyPublisher<T.Response.Model, APICallError_E>{
+    public func call<T: MH_APIInfo_P>(apiInfo: T) -> AnyPublisher<T.Response.Model, APICallError_E>{
         
         let sessionConfig = URLSessionConfiguration.default
         
-        guard let url = URL(string: api.address) else{
+        guard let url = URL(string: apiInfo.address) else{
             return AnyPublisher(Fail<T.Response.Model, APICallError_E>(error: .urlErr(message: "Invalid URL")))
         }
 
-        print("🦊 request ======================= \nurl ::: \(api.urlRequest)\nmethod ::: \(api.urlRequest.httpMethod)\nheader ::: \(String(describing: api.urlRequest.allHTTPHeaderFields))\nparameter ::: \(String(describing: api.parameters))\n==================================")
+        print("🦊 request ======================= \nurl ::: \(apiInfo.urlRequest)\nmethod ::: \(apiInfo.urlRequest.httpMethod)\nheader ::: \(String(describing: apiInfo.urlRequest.allHTTPHeaderFields))\nparameter ::: \(String(describing: apiInfo.parameters))\n==================================")
         
-        return URLSession.shared.dataTaskPublisher(for: api.urlRequest).tryMap { data, res in
+        return URLSession.shared.dataTaskPublisher(for: apiInfo.urlRequest).tryMap { data, res in
             
             guard res is HTTPURLResponse else{
                 throw APICallError_E.etcErr(message: "Server error")
