@@ -35,4 +35,11 @@ public struct AlertInfo: Identifiable{
     public var type: AlertType
     public var title: String
     public var message: String
+    
+    public init(id: UUID = UUID(), type: AlertType, title: String, message: String) {
+        self.id = id
+        self.type = type
+        self.title = title
+        self.message = message
+    }
 }
