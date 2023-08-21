@@ -13,7 +13,7 @@ import SwiftUI
 
 public typealias Model_T = Decodable
 
-public protocol PhcDataType_P: Model_T{
+public protocol MHDataType_P: Model_T{
 }
 
 public enum APICallError_E: Error{
@@ -59,7 +59,7 @@ public enum APICallError_E: Error{
     }
 }
 
-public class PhnAPI{
+public class MHAPI{
 
     private var session: URLSession
     init(session: URLSession = URLSession(configuration: .default)) {

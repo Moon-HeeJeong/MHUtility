@@ -51,7 +51,7 @@ public enum Response_E{
     }
 }
 
-public struct PhcResponse<Model: PhcDataType_P>: Response_P{
+public struct PhcResponse<Model: MHDataType_P>: Response_P{
     
     public var responseType: Response_E
     public var data: Model?
