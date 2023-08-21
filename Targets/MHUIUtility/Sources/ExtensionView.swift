@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 extension View{
-    func makeUIUtility(kind: Binding<UIUtility_E?>) -> some View{
+    public func makeUIUtility(kind: Binding<UIUtility_E?>) -> some View{
         return self.modifier(UIUtilityModifier(kind: kind))
     }
 }
