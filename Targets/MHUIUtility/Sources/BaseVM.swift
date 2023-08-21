@@ -9,11 +9,11 @@
 import Foundation
 import SwiftUI
 
-public class BaseVM: ObservableObject{
+open class BaseVM: ObservableObject{
     
-    @Published public var uiUtilitykind: UIUtility_E?
+    @Published open var uiUtilitykind: UIUtility_E?
     
-    public func setUIUtility(kind: UIUtility_E?){
+    open func setUIUtility(kind: UIUtility_E?){
         self.uiUtilitykind = kind
     }
 }
