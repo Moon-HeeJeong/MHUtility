@@ -16,4 +16,8 @@ open class BaseVM: ObservableObject{
     open func setUIUtility(kind: UIUtility_E?){
         self.uiUtilitykind = kind
     }
+    
+    public init(uiUtilitykind: UIUtility_E? = nil) {
+        self.uiUtilitykind = uiUtilitykind
+    }
 }
