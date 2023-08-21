@@ -11,9 +11,9 @@ import SwiftUI
 
 public class BaseVM: ObservableObject{
     
-    @Published var uiUtilitykind: UIUtility_E?
+    @Published public var uiUtilitykind: UIUtility_E?
     
-    func setUIUtility(kind: UIUtility_E?){
+    public func setUIUtility(kind: UIUtility_E?){
         self.uiUtilitykind = kind
     }
 }
