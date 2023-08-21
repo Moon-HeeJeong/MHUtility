@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum UIUtility_E: Identifiable, Equatable{
     
     case alert(info: AlertInfo?)
-    case loading
+    case loading(color: Color = .blue)
     case stop
     
     public var id: String{

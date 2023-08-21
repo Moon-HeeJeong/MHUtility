@@ -19,9 +19,9 @@ final class MHImageCacheTests: XCTestCase {
          Bundle.module.resourcePath
          Bundle.main.resourcePath
          **/
-        
         let exception = self.expectation(description: "test get img from file path")
-        let directory: String = "\(Bundle.module.resourcePath!)"
+//        let directory: String = "\(Bundle.module.resourcePath!)"
+        let directory: String = "\(Bundle.main.resourcePath!)"
     
         let dataSource: ImageFrom = .folder(fileDirectory: directory, imgName: "icons_1")
         

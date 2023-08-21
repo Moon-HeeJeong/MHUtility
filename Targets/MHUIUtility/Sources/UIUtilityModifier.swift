@@ -43,12 +43,12 @@ struct UIUtilityModifier: ViewModifier{
                 }
             }
             
-        case .loading:
+        case .loading(let color):
             ZStack {
                 content
                 ProgressView()
                     .scaleEffect(2, anchor: .center)
-                    .progressViewStyle(CircularProgressViewStyle(tint: .mainBtn))
+                    .progressViewStyle(CircularProgressViewStyle(tint: color))
             }
         default:
              content
