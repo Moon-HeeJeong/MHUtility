@@ -12,7 +12,7 @@ public struct BrightAnimationStyle: ButtonStyle{
     
     let scaledAmount: CGFloat
     
-    init(scaledAmount: CGFloat = 1.1) {
+    public init(scaledAmount: CGFloat = 1.1) {
         self.scaledAmount = scaledAmount
     }
     

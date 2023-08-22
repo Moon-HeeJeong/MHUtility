@@ -12,7 +12,7 @@ public struct ScaleAnimationStyle: ButtonStyle{
     
     let scaledAmount: CGFloat
     
-    init(scaledAmount: CGFloat = 1.05) {
+    public init(scaledAmount: CGFloat = 1.05) {
         self.scaledAmount = scaledAmount
     }
     public func makeBody(configuration: Configuration) -> some View {
