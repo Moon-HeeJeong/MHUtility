@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MHUserDefaults_P{
+public protocol MHUserDefaults_P{
     associatedtype T
     
     var rawStrValue: String{get}
