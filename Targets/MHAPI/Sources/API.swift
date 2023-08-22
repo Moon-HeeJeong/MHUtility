@@ -62,7 +62,8 @@ public enum APICallError_E: Error{
 public class MHAPI{
 
     private var session: URLSession
-    init(session: URLSession = URLSession(configuration: .default)) {
+    
+    public init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
     }
 
