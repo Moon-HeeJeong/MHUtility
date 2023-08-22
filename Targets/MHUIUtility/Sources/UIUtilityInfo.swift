@@ -30,7 +30,7 @@ public enum AlertType{
 }
 
 public struct AlertInfo: Identifiable{
-    public var id = UUID()
+    public var id: UUID
     
     public var type: AlertType
     public var title: String
@@ -43,3 +43,4 @@ public struct AlertInfo: Identifiable{
         self.message = message
     }
 }
+
