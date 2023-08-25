@@ -24,7 +24,7 @@ public enum APICallError_E: Error{
     case urlErr(message: String?)
     case inServerError(code: Int, message: String?)
                        
-    var desc: String?{
+    public var desc: String?{
         switch self {
         case .decodingErr(let message):
             return message
@@ -41,7 +41,7 @@ public enum APICallError_E: Error{
         }
     }
     
-    var code: Int{
+    public var code: Int{
         switch self {
         case .decodingErr(_):
             return 1200
