@@ -23,7 +23,7 @@ public enum Response_E{
     case ok(message: String?)
     case error(code: Int, message: String?)
     
-    var message: String?{
+    public var message: String?{
         switch self {
         case .ok(let message):
             return message
@@ -32,7 +32,7 @@ public enum Response_E{
         }
     }
     
-    var isOK: Bool{
+    public var isOK: Bool{
         switch self {
         case .ok(_):
             return true
@@ -41,7 +41,7 @@ public enum Response_E{
         }
     }
     
-    var code: Int{
+    public var code: Int{
         switch self {
         case .ok( _):
             return 200

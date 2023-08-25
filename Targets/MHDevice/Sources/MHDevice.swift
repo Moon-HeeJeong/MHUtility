@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 public struct MHDeviceInfo{
-    var modelName: String
-    var devideKind: MHDeviceKind
-    var systemName: String
-    var version: String
-    var uuId: String
+    public let modelName: String
+    public let devideKind: MHDeviceKind
+    public let systemName: String
+    public let version: String
+    public let uuId: String
 }
 
 public enum MHDeviceKind: String{

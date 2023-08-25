@@ -14,7 +14,7 @@ public enum MHLogKind{
     case network(message: String)
     case error(message: String)
     
-    var title: String{
+    public var title: String{
         switch self {
         case .debug:
             return "🟡 DEBUG"
@@ -27,7 +27,7 @@ public enum MHLogKind{
         }
     }
     
-    var message: String{
+    public var message: String{
         switch self {
         case .debug(let message):
             return message
@@ -40,7 +40,7 @@ public enum MHLogKind{
         }
     }
     
-    var desc: String{
+    public var desc: String{
         "\(self.title) \(self.message)"
     }
 }

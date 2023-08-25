@@ -5,7 +5,7 @@ public enum ImageType {
     case png
     case jpg
 
-    var extentionName: String{
+    public var extentionName: String{
         switch self {
         case .png:
             return "png"
@@ -135,7 +135,7 @@ public enum ImageLoadError: Error{
     case pathError
     case loadError
     
-    var desc: String{
+    public var desc: String{
         switch self {
         case .pathError:
             return "path error"
