@@ -28,10 +28,22 @@ struct UIUtilityModifier: ViewModifier{
         
         switch kind {
         case .alert(let info):
+            
             content.alert(isPresented: isShow) {
                 switch info?.type{
-                case .oneBtn_confirm:
-                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: Alert.Button.default(Text("확인")))
+                case .oneBtn_confirm(let actionTitle, let action):
+                    let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
+                    
+                    return Alert(title:  Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: actionBtn)
+                    
+                    
+//                    if let action = action{
+//                        let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
+//
+//                        return Alert(title:  Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: actionBtn)
+//                    }else{
+//                        return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: Alert.Button.default(Text(actionTitle ?? "확인")))
+//                    }
 
                 case .twoBtn(let actionTitle, let action):
                     let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
@@ -39,7 +51,7 @@ struct UIUtilityModifier: ViewModifier{
                     return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
 
                 default:
-                    return Alert(title: Text("aaaa"))
+                    return Alert(title: Text(""))
                 }
             }
             
