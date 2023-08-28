@@ -25,48 +25,47 @@ struct UIUtilityModifier: ViewModifier{
                 }
             }
         }
-        ZStack {
-            
-            switch kind {
-            case .alert(let info):
+        
+        switch kind {
+        case .alert(let info):
+           
+            content.alert(isPresented: isShow) {
+                switch info?.type{
+                case .oneBtn_confirm(let actionTitle, let action):
+                    let title = actionTitle ?? "확인"
                     
-                ZStack {
-                    content
-                }.alert(isPresented: isShow) {
-                    
-                    //            content.alert(isPresented: isShow) {
-                    switch info?.type{
-                    case .oneBtn_confirm(let actionTitle, let action):
-                        let title = actionTitle ?? "확인"
-                        
-                        if let action = action{
-                            let actionBtn = Alert.Button.default(Text(title), action: action)
-                            return Alert(title:  Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: actionBtn)
-                        }else{
-                            return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: Alert.Button.default(Text(title)))
-                        }
-                        
-                    case .twoBtn(let actionTitle, let action):
-                        let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
-                        
-                        return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
-                        
-                    default:
-                        return Alert(title: Text(""))
+                    if let action = action{
+                        let actionBtn = Alert.Button.default(Text(title), action: action)
+                        return Alert(title:  Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: actionBtn)
+                    }else{
+                        return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: Alert.Button.default(Text(title)))
                     }
+                    
+                case .twoBtn(let actionTitle, let action):
+                    let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
+                    
+                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
+                    
+                default:
+                    return Alert(title: Text(""))
                 }
-                
-            case .loading(let color):
-//                ZStack {
-                    content
-                    ProgressView()
-                        .scaleEffect(2, anchor: .center)
-                        .progressViewStyle(CircularProgressViewStyle(tint: color))
-//                }
-            default:
-                content
-                
             }
+            
+        case .loading(let color):
+//            ZStack {
+            content.overlay(
+                ProgressView()
+                    .scaleEffect(2, anchor: .center)
+                    .progressViewStyle(CircularProgressViewStyle(tint: color))
+            )
+//                    ProgressView()
+//                        .scaleEffect(2, anchor: .center)
+//                        .progressViewStyle(CircularProgressViewStyle(tint: color))
+                
+//            }
+        default:
+            content
+            
         }
     }
 }
