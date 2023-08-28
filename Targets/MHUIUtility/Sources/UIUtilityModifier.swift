@@ -29,7 +29,10 @@ struct UIUtilityModifier: ViewModifier{
         switch kind {
         case .alert(let info):
            
-            content.alert(isPresented: isShow) {
+            content
+                .disabled(isShow.wrappedValue)
+                
+                .alert(isPresented: isShow) {
                 switch info?.type{
                 case .oneBtn_confirm(let actionTitle, let action):
                     let title = actionTitle ?? "확인"
@@ -53,14 +56,14 @@ struct UIUtilityModifier: ViewModifier{
             
         case .loading(let color):
 //            ZStack {
-            content.overlay(
-                ProgressView()
-                    .scaleEffect(2, anchor: .center)
-                    .progressViewStyle(CircularProgressViewStyle(tint: color))
-            )
-//                    ProgressView()
-//                        .scaleEffect(2, anchor: .center)
-//                        .progressViewStyle(CircularProgressViewStyle(tint: color))
+//            content.overlay(
+//                ProgressView()
+//                    .scaleEffect(2, anchor: .center)
+//                    .progressViewStyle(CircularProgressViewStyle(tint: color))
+//            )
+                    ProgressView()
+                        .scaleEffect(2, anchor: .center)
+                        .progressViewStyle(CircularProgressViewStyle(tint: color))
                 
 //            }
         default:
