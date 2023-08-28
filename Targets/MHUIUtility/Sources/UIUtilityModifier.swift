@@ -26,8 +26,10 @@ struct UIUtilityModifier: ViewModifier{
             }
         }
         ZStack {
+            
             switch kind {
             case .alert(let info):
+                    
                 ZStack {
                     content
                 }.alert(isPresented: isShow) {
@@ -55,14 +57,15 @@ struct UIUtilityModifier: ViewModifier{
                 }
                 
             case .loading(let color):
-                ZStack {
+//                ZStack {
                     content
                     ProgressView()
                         .scaleEffect(2, anchor: .center)
                         .progressViewStyle(CircularProgressViewStyle(tint: color))
-                }
+//                }
             default:
                 content
+                
             }
         }
     }
