@@ -10,10 +10,12 @@ import Foundation
 import SwiftUI
 
 struct UIUtilityModifier: ViewModifier{
+    
 
     @Binding var kind: UIUtility_E?
     
-    @ViewBuilder
+//    @ViewBuilder
+    
     func body(content: Content) -> some View {
         
         var isShow: Binding<Bool> {
@@ -52,11 +54,16 @@ struct UIUtilityModifier: ViewModifier{
             }
             
         case .loading(let color):
-            content.overlay(
-                ProgressView()
-                    .scaleEffect(2, anchor: .center)
-                    .progressViewStyle(CircularProgressViewStyle(tint: color))
-            )
+//            content.overlay(
+//
+//            let progressView = ProgressView()
+//                .scaleEffect(2, anchor: .center)
+//                .progressViewStyle(CircularProgressViewStyle(tint: color))
+            
+            
+            content.progressViewStyle(.circular)
+                
+//            )
 //            ZStack {
 //
 ////                content.overlay {
@@ -66,8 +73,12 @@ struct UIUtilityModifier: ViewModifier{
 ////                }
 //            }
         default:
-            content
+            content.background(Color.clear)
             
+        
+        
         }
     }
+    
+    
 }
