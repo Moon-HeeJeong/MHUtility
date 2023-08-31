@@ -81,7 +81,7 @@ struct UIUtilityModifier: ViewModifier{
         default:
             content.overlay(
                 ZStack(content: {
-                    Color.black
+                    Color.clear
                 })
             )
             
