@@ -18,6 +18,8 @@ open class BaseVM: ObservableObject{
     }
     
     public init(uiUtilitykind: UIUtility_E? = nil) {
-        self.uiUtilitykind = uiUtilitykind
+        if let kind = uiUtilitykind{
+            self.uiUtilitykind = kind
+        }
     }
 }

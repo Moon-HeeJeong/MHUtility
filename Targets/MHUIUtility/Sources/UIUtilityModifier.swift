@@ -52,14 +52,19 @@ struct UIUtilityModifier: ViewModifier{
             }
             
         case .loading(let color):
-            ZStack {
-                content
-//                content.overlay(
-                    ProgressView()
-                        .scaleEffect(2, anchor: .center)
-                        .progressViewStyle(CircularProgressViewStyle(tint: color))
-//                )
-            }
+            content.overlay(
+                ProgressView()
+                    .scaleEffect(2, anchor: .center)
+                    .progressViewStyle(CircularProgressViewStyle(tint: color))
+            )
+//            ZStack {
+//
+////                content.overlay {
+//                    ProgressView()
+//                        .scaleEffect(2, anchor: .center)
+//                        .progressViewStyle(CircularProgressViewStyle(tint: color))
+////                }
+//            }
         default:
             content
             
