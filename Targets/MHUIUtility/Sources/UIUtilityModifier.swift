@@ -61,7 +61,7 @@ struct UIUtilityModifier: ViewModifier{
 //                .progressViewStyle(CircularProgressViewStyle(tint: color))
             
             
-            content.progressViewStyle(.circular)
+            content.progressViewStyle(CircularProgressViewStyle(tint: color))
                 
 //            )
 //            ZStack {
@@ -73,7 +73,7 @@ struct UIUtilityModifier: ViewModifier{
 ////                }
 //            }
         default:
-            content.background(Color.clear)
+            content.background(Color.black)
             
         
         
