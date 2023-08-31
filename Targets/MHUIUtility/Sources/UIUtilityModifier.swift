@@ -60,7 +60,7 @@ struct UIUtilityModifier: ViewModifier{
 //                .scaleEffect(2, anchor: .center)
 //                .progressViewStyle(CircularProgressViewStyle(tint: color))
             
-            content.background(
+            content.overlay(
                 ZStack(content: {
                     ProgressView()
                         .scaleEffect(2, anchor: .center)
@@ -79,7 +79,7 @@ struct UIUtilityModifier: ViewModifier{
 ////                }
 //            }
         default:
-            content.background(
+            content.overlay(
                 ZStack(content: {
                     Color.black
                 })
