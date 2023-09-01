@@ -12,13 +12,60 @@ import SwiftUI
 public enum UIUtility_E: Identifiable, Equatable{
     
     case alert(info: AlertInfo?)
-    case loading(color: Color = .blue)
+    case loading(isEnabled: Bool, color: Color = .blue)
     case stop
     
+    var isLoading: Bool{
+        switch self {
+        case .loading(_,_):
+            return true
+        default:
+            return false
+        }
+    }
+    var isAlert: Bool{
+        switch self {
+        case .alert(_):
+            return true
+        default:
+            return false
+        }
+    }
+    var loadingColor: Color{
+        switch self {
+        case .loading(_, let color):
+            return color
+        default:
+            return .blue
+        }
+    }
+    
+    var isLoadingEnabled: Bool{
+        switch self {
+        case .loading(let isEnabled, _):
+            return isEnabled
+        default:
+            return false
+        }
+    }
+    
+    var alertInfo: Binding<AlertInfo?>{
+        Binding {
+            switch self {
+            case .alert(let info):
+                return info!
+            default:
+                return nil
+            }
+        } set: { _ in
+            
+        }
+    }
+
     public var id: String{
         "\(self)"
     }
-    
+
     public static func == (lhs: UIUtility_E, rhs: UIUtility_E) -> Bool {
         lhs.id == rhs.id
     }
