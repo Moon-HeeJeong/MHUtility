@@ -20,7 +20,7 @@ import SwiftUI
 extension View{
     
     @ViewBuilder
-    public func makeUIUtility(kind: Binding<UIUtility_E>) -> some View{
+    public func initSetUIUtility(kind: Binding<UIUtility_E>) -> some View{
         
         var isAlertShow: Binding<Bool> {
             Binding {

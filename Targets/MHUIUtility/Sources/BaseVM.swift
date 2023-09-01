@@ -13,7 +13,7 @@ open class BaseVM: ObservableObject{
     
     @Published open var uiUtilitykind: UIUtility_E
     
-    open func setUIUtility(kind: UIUtility_E){
+    open func makeUIUtility(kind: UIUtility_E){
         self.uiUtilitykind = kind
     }
     
