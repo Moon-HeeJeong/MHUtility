@@ -11,13 +11,13 @@ import SwiftUI
 
 open class BaseVM: ObservableObject{
     
-    @Published open var uiUtilitykind: UIUtility_E = .stop
+    @Published open var uiUtilitykind: UIUtility_E
     
     open func setUIUtility(kind: UIUtility_E){
         self.uiUtilitykind = kind
     }
     
-    public init(uiUtilitykind: UIUtility_E) {
+    public init(uiUtilitykind: UIUtility_E = .stop) {
         self.uiUtilitykind = uiUtilitykind
     }
 }
