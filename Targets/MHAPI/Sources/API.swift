@@ -97,14 +97,15 @@ public class MHAPI{
                     throw APICallError_E.noDataErr(message: "No data received")
                 }
             }else{
-                throw APICallError_E.inServerError(code: res.responseType.code, message: res.responseType.message)
+                throw APICallError_E.decodingErr(message: "Invalid JSON")
             }
         })
         .mapError { err in
             if let apiCallError = err as? APICallError_E {
                     return apiCallError
             } else {
-                return APICallError_E.decodingErr(message: "Invalid JSON")
+//                return APICallError_E.inServerError(code: res.responseType.code, message: res.responseType.message)
+                return APICallError_E.inServerError(code: -1, message: err.localizedDescription)
             }
         }
         .eraseToAnyPublisher()
