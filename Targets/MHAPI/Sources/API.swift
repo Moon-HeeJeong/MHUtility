@@ -104,8 +104,7 @@ public class MHAPI{
             if let apiCallError = err as? APICallError_E {
                     return apiCallError
             } else {
-//                return APICallError_E.inServerError(code: res.responseType.code, message: res.responseType.message)
-                return APICallError_E.inServerError(code: -1, message: err.localizedDescription)
+                return APICallError_E.inServerError(code: (err as NSError).code, message: err.localizedDescription)
             }
         }
         .eraseToAnyPublisher()
