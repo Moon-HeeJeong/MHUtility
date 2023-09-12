@@ -97,7 +97,8 @@ public class MHAPI{
                     throw APICallError_E.noDataErr(message: "No data received")
                 }
             }else{
-                throw APICallError_E.decodingErr(message: "Invalid JSON")
+                print("Invalid JSON")
+                throw APICallError_E.decodingErr(message: res.responseType.message)
             }
         })
         .mapError { err in
