@@ -14,9 +14,9 @@ public protocol MHUserDefaults_P: RawRepresentable where RawValue == String{
 extension MHUserDefaults_P{
     
     public func setValue(_ value: T?){
-        //        guard let value = value else{
-        //            return
-        //        }
+        guard let value = value else{
+            return
+        }
         print("UserDefaultsKey Save \(self.rawValue): \(value)")
         UserDefaults.standard.set(value, forKey: self.rawValue)
         UserDefaults.standard.synchronize()
