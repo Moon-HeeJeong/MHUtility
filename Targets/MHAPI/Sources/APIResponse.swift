@@ -61,9 +61,7 @@ public struct PhcResponse<Model: MHDataType_P>: Response_P{
             UserDefaults.standard.value(forKey: "loginToken") as? String
         }
         set{
-            if let newValue = newValue{
-                UserDefaults.standard.set(newValue, forKey: "loginToken")
-            }
+            UserDefaults.standard.set(newValue, forKey: "loginToken")
         }
     }
     
