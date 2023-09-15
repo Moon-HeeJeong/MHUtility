@@ -36,9 +36,9 @@ struct MHAlertView: View {
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
                 
-            case .twoBtn_confirm(let actionTitle, let cancelTitle, let action):
+            case .twoBtn_custom(let actionTitle, let cancelTitle, let action, let cancelAction):
                 let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
-                let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"))
+                let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"), action: cancelAction)
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: cancelBtn, secondaryButton: actionBtn)
                 
