@@ -36,7 +36,7 @@ struct MHAlertView: View {
 //                let noneActionBtn = Alert.Button.cancel(Text(noneActionTitle ?? "취소"))
                 
 //                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: noneActionBtn, secondaryButton: actionBtn)
-                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text(noneActionTitle ?? "취소")), secondaryButton: actionBtn)
+                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
                 
             default:
                 return Alert(title: Text(""))
