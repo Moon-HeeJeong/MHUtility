@@ -73,7 +73,7 @@ public enum UIUtility_E: Identifiable, Equatable{
 
 public enum AlertType{
     case oneBtn_confirm(actionTitle: String? = nil, action: (()->())? = nil)
-    case twoBtn(actionTitle:String? = nil, cancelTitle:String? = nil, action: ()->())
+    case twoBtn(actionTitle:String? = nil, action: ()->(), cancelTitle:String? = nil)
 }
 
 public struct AlertInfo: Identifiable{
