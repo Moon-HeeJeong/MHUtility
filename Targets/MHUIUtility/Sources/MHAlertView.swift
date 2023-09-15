@@ -31,7 +31,7 @@ struct MHAlertView: View {
                     return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: Alert.Button.default(Text(title)))
                 }
                 
-            case .twoBtn(let actionTitle, let action, let cancelTitle):
+            case .twoBtn(let actionTitle, let action, _):
                 let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
