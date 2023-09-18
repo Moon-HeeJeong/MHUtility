@@ -24,43 +24,25 @@ struct MHAlertView: View {
             switch info?.type{
             
             case .oneBtn_confirm(let actionTitle, let action):
-                let title = actionTitle ?? "확인"
+                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
                 
-                if let action = action{
-                    let actionBtn = Alert.Button.default(Text(title), action: action)
-                    return Alert(title:  Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: actionBtn)
-                }else{
-                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: Alert.Button.default(Text(title)))
-                }
+                return Alert(title:  Text(info?.title ?? ""), message: Text(info?.message ?? ""), dismissButton: actionBtn)
                 
             case .twoBtn(let actionTitle, let action):
-//                let title = actionTitle ?? "확인"
                 let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
                     
-                
-                
             case .twoBtn_custom(let actionTitle, let cancelTitle, let action, let cancelAction):
                 let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
                 let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"), action: cancelAction)
-                
-//                let actionTitle = actionTitle ?? "확인"
-//                let cancelTitle = cancelTitle ?? "취소"
-                
-                
-//                if let cancelAction = cancelAction{
-//                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle), action: cancelAction), secondaryButton: .default(Text(actionTitle), action: action))
-//                }else{
-//                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle)), secondaryButton: .default(Text(actionTitle), action: action))
-//                }
-//
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: cancelBtn, secondaryButton: actionBtn)
                 
             default:
                 return Alert(title: Text(""))
             }
+            
         }.onChange(of: self.info) { newValue in
             isShow = self.info != nil
          }
