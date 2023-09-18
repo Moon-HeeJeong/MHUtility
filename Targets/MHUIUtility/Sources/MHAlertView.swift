@@ -27,6 +27,12 @@ struct MHAlertView: View {
     }
     var body: some View{
         
+//        Button {
+//
+//        } label: {
+//
+//        }.aler
+        
         
         Button {
             
@@ -47,9 +53,8 @@ struct MHAlertView: View {
                 }
                 
             case .twoBtn(let actionTitle, let action):
-                
-                
-                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
+                let title = actionTitle ?? "확인"
+                let actionBtn = Alert.Button.default(Text(title), action: action)
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
                     
@@ -59,7 +64,16 @@ struct MHAlertView: View {
 //                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
 //                let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"))
                 
-                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle ?? "취소"), action: action), secondaryButton: .default(Text(actionTitle ?? "확인"), action: action))
+                let actionTitle = actionTitle ?? "확인"
+                let cancelTitle = cancelTitle ?? "취소"
+                
+                
+                if let cancelAction = cancelAction{
+                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle), action: cancelAction), secondaryButton: .default(Text(actionTitle), action: action))
+                }else{
+                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle)), secondaryButton: .default(Text(actionTitle), action: action))
+                }
+                
                 
 //                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: cancelBtn, secondaryButton: actionBtn)
                 
