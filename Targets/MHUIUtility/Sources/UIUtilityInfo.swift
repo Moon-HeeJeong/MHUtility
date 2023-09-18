@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public enum UIUtility_E: Identifiable, Equatable{
+public enum UIUtility_E: Identifiable{
     
     case alert(info: AlertInfo?)
     case loading(isEnabled: Bool, color: Color = .blue)
@@ -61,22 +61,9 @@ public enum UIUtility_E: Identifiable, Equatable{
             
         }
     }
-    
-    var alertInfo: AlertInfo?{
-        switch self {
-        case .alert(let info):
-            return info!
-        default:
-            return nil
-        }
-    }
 
     public var id: String{
         "\(self)"
-    }
-
-    public static func == (lhs: UIUtility_E, rhs: UIUtility_E) -> Bool {
-        lhs.id == rhs.id
     }
 }
 

@@ -21,17 +21,7 @@ extension View{
     
     @ViewBuilder
     public func initSetUIUtility(kind: Binding<UIUtility_E>) -> some View{
-//
-//        var isAlertShow: Binding<Bool> {
-//            Binding {
-//                kind.wrappedValue.isAlert
-//            } set: {
-//                if $0 == false{
-//                    kind.wrappedValue = .stop
-//                }
-//            }
-//        }
-        
+
         self.overlay(
             ZStack(content: {
                 MHAlertView(info: kind.wrappedValue.alertInfoBinding)
