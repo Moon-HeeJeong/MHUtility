@@ -34,29 +34,29 @@ struct MHAlertView: View {
                 }
                 
             case .twoBtn(let actionTitle, let action):
-                let title = actionTitle ?? "확인"
-                let actionBtn = Alert.Button.default(Text(title), action: action)
+//                let title = actionTitle ?? "확인"
+                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
                     
                 
                 
             case .twoBtn_custom(let actionTitle, let cancelTitle, let action, let cancelAction):
-//                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
-//                let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"))
+                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
+                let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"), action: cancelAction)
                 
-                let actionTitle = actionTitle ?? "확인"
-                let cancelTitle = cancelTitle ?? "취소"
-                
-                
-                if let cancelAction = cancelAction{
-                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle), action: cancelAction), secondaryButton: .default(Text(actionTitle), action: action))
-                }else{
-                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle)), secondaryButton: .default(Text(actionTitle), action: action))
-                }
+//                let actionTitle = actionTitle ?? "확인"
+//                let cancelTitle = cancelTitle ?? "취소"
                 
                 
-//                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: cancelBtn, secondaryButton: actionBtn)
+//                if let cancelAction = cancelAction{
+//                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle), action: cancelAction), secondaryButton: .default(Text(actionTitle), action: action))
+//                }else{
+//                    return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""), primaryButton: .cancel(Text(cancelTitle)), secondaryButton: .default(Text(actionTitle), action: action))
+//                }
+//
+                
+                return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: cancelBtn, secondaryButton: actionBtn)
                 
             default:
                 return Alert(title: Text(""))
