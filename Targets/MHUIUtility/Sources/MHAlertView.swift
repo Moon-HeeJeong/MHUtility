@@ -10,17 +10,32 @@ import SwiftUI
 
 struct MHAlertView: View {
     
-    @Binding var info: AlertInfo?
-    @Binding var isShow: Bool
+    struct AlertInfoWithStatus{
+        var info: AlertInfo?
+        var isPresented: Bool
+        
+    }
     
+    @Binding var infoWithStatus: AlertInfoWithStatus?
+    var isShow: Binding<Bool>{
+        Binding {
+            infoWithStatus?.isPresented ?? false
+        } set: { _ in
+            
+        }
+
+    }
     var body: some View{
+        
         
         Button {
             
         } label: {
             
-        }.alert(isPresented: $isShow) {
+        }.alert(isPresented: isShow) {
+            let info = infoWithStatus?.info
             switch info?.type{
+                
             case .oneBtn_confirm(let actionTitle, let action):
                 let title = actionTitle ?? "확인"
                 
@@ -32,11 +47,15 @@ struct MHAlertView: View {
                 }
                 
             case .twoBtn(let actionTitle, let action):
+                
+                
                 let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
                 
                 return Alert(title: Text(info?.title ?? ""), message: Text(info?.message ?? ""),  primaryButton: Alert.Button.cancel(Text("취소")), secondaryButton: actionBtn)
+                    
                 
-            case .twoBtn_custom(let actionTitle, let cancelTitle, let action):
+                
+            case .twoBtn_custom(let actionTitle, let cancelTitle, let action, let cancelAction):
 //                let actionBtn = Alert.Button.default(Text(actionTitle ?? "확인"), action: action)
 //                let cancelBtn = Alert.Button.cancel(Text(cancelTitle ?? "취소"))
                 

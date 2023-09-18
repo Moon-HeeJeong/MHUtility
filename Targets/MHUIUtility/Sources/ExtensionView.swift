@@ -34,7 +34,12 @@ extension View{
         
         self.overlay(
             ZStack(content: {
-                MHAlertView(info: kind.wrappedValue.alertInfo, isShow: isAlertShow)
+                MHAlertView(infoWithStatus: Binding(get: {
+                    MHAlertView.AlertInfoWithStatus(info: kind.wrappedValue.alertInfo, isPresented: kind.wrappedValue.isAlert)
+                }, set: { _ in
+                    
+                }))
+//                MHAlertView(info: kind.wrappedValue.alertInfo)
                     .opacity(kind.wrappedValue.isAlert ? 1:0)
                 
                 MHCircleProgressView(isEnabled: kind.wrappedValue.isLoadingEnabled, color: kind.wrappedValue.loadingColor)
