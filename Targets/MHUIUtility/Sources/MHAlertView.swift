@@ -17,11 +17,14 @@ struct MHAlertView: View {
     }
     
     @Binding var infoWithStatus: AlertInfoWithStatus?
+  
     var isShow: Binding<Bool>{
         Binding {
             infoWithStatus?.isPresented ?? false
-        } set: { _ in
-            
+        } set: { isShow in
+            if !isShow{
+                infoWithStatus = nil
+            }
         }
 
     }
