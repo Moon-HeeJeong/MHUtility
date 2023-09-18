@@ -49,7 +49,7 @@ struct MHAlertView: View {
             }
             
         }.onChange(of: self.info) { newValue in
-            isShow = self.info != nil
+            isShow = newValue != nil
          }
     }
 }
