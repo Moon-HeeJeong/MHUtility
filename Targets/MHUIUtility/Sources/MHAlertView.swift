@@ -91,7 +91,8 @@ struct MHAlertView: View {
                 return Alert(title: Text(""))
             }
         }.onChange(of: infoWithStatus) { newValue in
-            isShow = newValue.isPresented ?? false
+            
+            isShow = self.infoWithStatus != newValue //newValue.isPresented ?? false
                     }
     }
 }
