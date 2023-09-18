@@ -10,24 +10,29 @@ import SwiftUI
 
 struct MHAlertView: View {
     
-    struct AlertInfoWithStatus{
+    struct AlertInfoWithStatus: Equatable{
+        static func == (lhs: MHAlertView.AlertInfoWithStatus, rhs: MHAlertView.AlertInfoWithStatus) -> Bool {
+            lhs.info == rhs.info && lhs.isPresented == rhs.isPresented
+        }
+        
         var info: AlertInfo?
         var isPresented: Bool
         
     }
     
-    @Binding var infoWithStatus: AlertInfoWithStatus?
+    @Binding var infoWithStatus: AlertInfoWithStatus
   
-    var isShow: Binding<Bool>{
-        Binding {
-            infoWithStatus?.isPresented ?? false
-        } set: { isShow in
-            if !isShow{
-                infoWithStatus = nil
-            }
-        }
-
-    }
+//    var isShow: Binding<Bool>{
+//        Binding {
+//            infoWithStatus?.isPresented ?? false
+//        } set: { isShow in
+//            if !isShow{
+//                infoWithStatus = nil
+//            }
+//        }
+//
+//    }
+    @State var isShow: Bool = false
     var body: some View{
         
 //        Button {
@@ -41,9 +46,11 @@ struct MHAlertView: View {
             
         } label: {
             
-        }.alert(isPresented: isShow) {
-            let info = infoWithStatus?.info
+        }.alert(isPresented: $isShow) {
+            let info = infoWithStatus.info
+            
             switch info?.type{
+            
                 
             case .oneBtn_confirm(let actionTitle, let action):
                 let title = actionTitle ?? "확인"
@@ -83,7 +90,9 @@ struct MHAlertView: View {
             default:
                 return Alert(title: Text(""))
             }
-        }
+        }.onChange(of: infoWithStatus) { newValue in
+            isShow = newValue.isPresented ?? false
+                    }
     }
 }
 
