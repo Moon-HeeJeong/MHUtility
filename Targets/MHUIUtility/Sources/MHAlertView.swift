@@ -92,7 +92,7 @@ struct MHAlertView: View {
             }
         }.onChange(of: infoWithStatus) { newValue in
             
-            isShow = self.infoWithStatus != newValue //newValue.isPresented ?? false
+            isShow = self.infoWithStatus != nil //newValue.isPresented ?? false
                     }
     }
 }
