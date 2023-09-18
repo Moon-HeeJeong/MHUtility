@@ -73,7 +73,7 @@ public enum AlertType{
     case twoBtn_custom(actionTitle:String? = nil, cancelTitle:String? = nil, action: ()->(), cancelAction: (()->())? = nil)
 }
 
-public struct AlertInfo: Identifiable{
+public struct AlertInfo: Identifiable, Equatable{
     
     public var id: UUID
     
@@ -86,6 +86,10 @@ public struct AlertInfo: Identifiable{
         self.type = type
         self.title = title
         self.message = message
+    }
+    
+    public static func == (lhs: AlertInfo, rhs: AlertInfo) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
