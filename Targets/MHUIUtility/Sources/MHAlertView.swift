@@ -10,48 +10,19 @@ import SwiftUI
 
 struct MHAlertView: View {
     
-    struct AlertInfoWithStatus: Equatable{
-        static func == (lhs: MHAlertView.AlertInfoWithStatus, rhs: MHAlertView.AlertInfoWithStatus) -> Bool {
-            lhs.info == rhs.info && lhs.isPresented == rhs.isPresented
-        }
-        
-        var info: AlertInfo?
-        var isPresented: Bool
-        
-    }
+    @Binding var info: AlertInfo?
+    @State private var isShow: Bool = false
     
-    @Binding var infoWithStatus: AlertInfoWithStatus
-  
-//    var isShow: Binding<Bool>{
-//        Binding {
-//            infoWithStatus?.isPresented ?? false
-//        } set: { isShow in
-//            if !isShow{
-//                infoWithStatus = nil
-//            }
-//        }
-//
-//    }
-    @State var isShow: Bool = false
     var body: some View{
-        
-//        Button {
-//
-//        } label: {
-//
-//        }.aler
-        
         
         Button {
             
         } label: {
             
         }.alert(isPresented: $isShow) {
-            let info = infoWithStatus.info
             
             switch info?.type{
             
-                
             case .oneBtn_confirm(let actionTitle, let action):
                 let title = actionTitle ?? "확인"
                 
@@ -90,10 +61,9 @@ struct MHAlertView: View {
             default:
                 return Alert(title: Text(""))
             }
-        }.onChange(of: infoWithStatus) { newValue in
-            
-            isShow = self.infoWithStatus != nil //newValue.isPresented ?? false
-                    }
+        }.onChange(of: self.info) { newValue in
+            isShow = self.info != nil
+         }
     }
 }
 

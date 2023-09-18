@@ -21,25 +21,20 @@ extension View{
     
     @ViewBuilder
     public func initSetUIUtility(kind: Binding<UIUtility_E>) -> some View{
-        
-        var isAlertShow: Binding<Bool> {
-            Binding {
-                kind.wrappedValue.isAlert
-            } set: {
-                if $0 == false{
-                    kind.wrappedValue = .stop
-                }
-            }
-        }
+//
+//        var isAlertShow: Binding<Bool> {
+//            Binding {
+//                kind.wrappedValue.isAlert
+//            } set: {
+//                if $0 == false{
+//                    kind.wrappedValue = .stop
+//                }
+//            }
+//        }
         
         self.overlay(
             ZStack(content: {
-                MHAlertView(infoWithStatus: Binding(get: {
-                    MHAlertView.AlertInfoWithStatus(info: kind.wrappedValue.alertInfo, isPresented: kind.wrappedValue.isAlert)
-                }, set: { _ in
-                    
-                }))
-//                MHAlertView(info: kind.wrappedValue.alertInfo)
+                MHAlertView(info: kind.wrappedValue.alertInfoBinding)
                     .opacity(kind.wrappedValue.isAlert ? 1:0)
                 
                 MHCircleProgressView(isEnabled: kind.wrappedValue.isLoadingEnabled, color: kind.wrappedValue.loadingColor)
