@@ -25,7 +25,7 @@ public class MHOrientation: NSObject{
 
     weak var vc: UIViewController?
 
-    override init(){}
+    override public init(){}
     public init(vc: UIViewController?) {
         self.vc = vc
     }
