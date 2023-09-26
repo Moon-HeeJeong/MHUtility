@@ -8,10 +8,17 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 open class BaseVM: ObservableObject{
     
+    deinit{
+        self.makeUIUtility(kind: .stop)
+        print("\(self) deinit")
+    }
+    
     @Published open var uiUtilitykind: UIUtility_E
+    public var cancellables = Set<AnyCancellable>()
     
     open func makeUIUtility(kind: UIUtility_E){
         self.uiUtilitykind = kind
