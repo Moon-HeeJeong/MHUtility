@@ -86,10 +86,11 @@ public class MHAPI{
             
         }
         .decode(type: T.Response.self, decoder: JSONDecoder())
-
+        
         .receive(on: DispatchQueue.main)
         .tryMap({ res -> T.Response.Model in
             print("🦊 response ::: \(res)")
+            print("🦊 data ::: \(try? JSONSerialization.data(withJSONObject: res.data, options: .prettyPrinted))")
             if res.responseType.isOK{
                 if let d = res.data{
                     return d
@@ -109,6 +110,7 @@ public class MHAPI{
             }
         }
         .eraseToAnyPublisher()
+        
     }
 }
 
