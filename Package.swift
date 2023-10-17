@@ -129,13 +129,17 @@ let package = Package(
             name: "MHUserDefaults",
             dependencies: [],
             path: "Targets/MHUserDefaults/Sources"),
+        .testTarget(
+            name: "MHUserDefaultsTests",
+            dependencies: ["MHUserDefaults"],
+            path: "Targets/MHUserDefaults/Tests"),
         .target(
             name: "MHNavigation",
             dependencies: [],
             path: "Targets/MHNavigation/Sources"),
         .testTarget(
-            name: "MHUserDefaultsTests",
-            dependencies: ["MHUserDefaults"],
-            path: "Targets/MHUserDefaults/Tests"),
+            name: "MHNavigationTests",
+            dependencies: ["MHNavigation"],
+            path: "Targets/MHNavigation/Tests"),
     ]
 )
