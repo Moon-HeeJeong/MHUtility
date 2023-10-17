@@ -14,30 +14,88 @@ public class MHNavigationController: UINavigationController{
         .landscape
     }
     
+    public typealias Event = ()->Void
+    
     public enum CloseAction{
         case pop
         case dismiss
-//        case root
+        case root
     }
     
-    public enum BackgroundType{
+    public enum BackgroundType: Equatable{
         case paint(color: UIColor)
         case image(image: UIImage)
     }
     
-    public enum TitleType{
+    public enum TitleType: Equatable{
+       
         case text(title: TextInfo, subTitle: TextInfo?)
         case image(image: UIImage)
+        
+        var title: String?{
+            switch self {
+            case .text(let title, _):
+                return title.text
+            case .image(_):
+                return nil
+            }
+        }
+        var subTitle: String?{
+            switch self {
+            case .text(_, let subTitle):
+                return subTitle?.text
+            case .image(_):
+                return nil
+            }
+        }
+        
+        var titleFontInfo: FontInfo?{
+            switch self {
+            case .text(let title, _):
+                return title.fontInfo
+            case .image(_):
+                return nil
+            }
+        }
+        var subTitleFontInfo: FontInfo?{
+            switch self {
+            case .text(_, let subTitle):
+                return subTitle?.fontInfo
+            case .image(_):
+                return nil
+            }
+        }
     }
     
-    public struct TextInfo{
-        var text: String
+    public struct TextInfo: Equatable{
+        var text: String?
+        var fontInfo: FontInfo?
+        
+        public init(text: String? = nil, fontInfo: FontInfo? = nil) {
+            self.text = text
+            self.fontInfo = fontInfo
+        }
+    }
+    
+    public struct FontInfo: Equatable{
         var color: UIColor?
         var fontName: String?
         var fontSize: CGFloat?
+        
+        public init(color: UIColor? = nil, fontName: String? = nil, fontSize: CGFloat? = nil) {
+            self.color = color
+            self.fontName = fontName
+            self.fontSize = fontSize
+        }
     }
     
-    private var backgroundType: BackgroundType = .paint(color: .clear){
+    var statusBarColor: UIColor = .clear{
+        didSet{
+            self.statusBarView.backgroundColor = self.statusBarColor
+        }
+    }
+    
+    var backgroundType: BackgroundType = .paint(color: .clear){
         didSet{
             switch self.backgroundType {
             case .paint(let color):
@@ -48,7 +106,7 @@ public class MHNavigationController: UINavigationController{
         }
     }
     
-    private var titleType: TitleType?{
+    var titleType: TitleType?{
         didSet{
             switch self.titleType {
             case .text(let titleInfo, let subTitleInfo):
@@ -57,12 +115,12 @@ public class MHNavigationController: UINavigationController{
                 self.titleLabel?.isHidden = false
                 self.titleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
                 self.titleLabel?.text = titleInfo.text
-                self.titleLabel?.textColor = titleInfo.color
+                self.titleLabel?.textColor = titleInfo.fontInfo?.color
                 
-                if let customFontName = titleInfo.fontName{
-                    self.titleLabel?.font = UIFont(name: customFontName, size: titleInfo.fontSize ?? 0)
+                if let customFontName =  titleInfo.fontInfo?.fontName{
+                    self.titleLabel?.font = UIFont(name: customFontName, size: titleInfo.fontInfo?.fontSize ?? 0)
                 }else{
-                    self.titleLabel?.font = UIFont.systemFont(ofSize: titleInfo.fontSize ?? 0)
+                    self.titleLabel?.font = UIFont.systemFont(ofSize: titleInfo.fontInfo?.fontSize ?? 0)
                 }
                 
                 self.titleLabel?.sizeToFit()
@@ -74,12 +132,12 @@ public class MHNavigationController: UINavigationController{
                     self.subTitleLabel?.isHidden = false
                     self.subTitleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
                     self.subTitleLabel?.text = info.text
-                    self.subTitleLabel?.textColor = info.color
+                    self.subTitleLabel?.textColor = info.fontInfo?.color
                     
-                    if let customFontName = info.fontName{
-                        self.subTitleLabel?.font = UIFont(name: customFontName, size: info.fontSize ?? 0)
+                    if let customFontName = info.fontInfo?.fontName{
+                        self.subTitleLabel?.font = UIFont(name: customFontName, size: info.fontInfo?.fontSize ?? 0)
                     }else{
-                        self.subTitleLabel?.font = UIFont.systemFont(ofSize: info.fontSize ?? 0)
+                        self.subTitleLabel?.font = UIFont.systemFont(ofSize: info.fontInfo?.fontSize ?? 0)
                     }
                     
                     self.subTitleLabel?.sizeToFit()
@@ -112,7 +170,7 @@ public class MHNavigationController: UINavigationController{
     }
     
     //중간에 바뀌는 거 반영해야함
-    private var backBtnImage: UIImage?{
+    var backBtnImage: UIImage?{
         didSet{
             let btnHeight = self.navigationHeight*(118.0/183.0)
             let btnWidth = btnHeight*(135.0/118.0)
@@ -122,10 +180,11 @@ public class MHNavigationController: UINavigationController{
             self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
             self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
             self.backBtn?.setImage(self.backBtnImage, for: .normal)
+            self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         }
     }
     
-    private var closeBtnImage: UIImage?{
+    var closeBtnImage: UIImage?{
         didSet{
             let btnHeight = self.navigationHeight*(118.0/183.0)
             let btnWidth = btnHeight*(135.0/118.0)
@@ -135,6 +194,25 @@ public class MHNavigationController: UINavigationController{
             self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
             self.closeBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
+            self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
+        }
+    }
+    
+    var isNaviBarHidden: Bool = false{
+        didSet{
+            self.naviBar?.isHidden = self.isNaviBarHidden
+        }
+    }
+    
+    var isBackBtnHidden: Bool = false{
+        didSet{
+            self.backBtn?.isHidden = self.isBackBtnHidden
+        }
+    }
+    
+    var isCloseBtnHidden: Bool = false{
+        didSet{
+            self.closeBtn?.isHidden = self.isCloseBtnHidden
         }
     }
     
@@ -145,6 +223,26 @@ public class MHNavigationController: UINavigationController{
         }
     }
     
+    var action: CloseAction?{
+        didSet{
+            switch action {
+            case .pop:
+                self.popViewController(animated: true)
+                break
+            case .dismiss:
+                self.dismiss(animated: true)
+                break
+            case .root:
+                self.popToRootViewController(animated: true)
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    
+    
     private var statusBarView: UIView!
     private var naviBar: UIImageView?
     private var titleLabel: UILabel?
@@ -153,9 +251,14 @@ public class MHNavigationController: UINavigationController{
     private var backBtn: UIButton?
     private var closeBtn: UIButton?
     
-    init(navigationHeight: CGFloat, statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType? = nil, backImage: UIImage?, closeImage: UIImage?, rootViewController: UIViewController) {
+    private var backEvent: Event?
+    private var closeEvent: Event?
+    
+    public init(navigationHeight: CGFloat, statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType? = nil, backImage: UIImage?, closeImage: UIImage?, backEvent: Event?, closeEvent: Event?, rootViewController: UIViewController) {
         
         self.navigationHeight = navigationHeight
+        self.backEvent = backEvent
+        self.closeEvent = closeEvent
         super.init(rootViewController: rootViewController)
         
         
@@ -176,6 +279,29 @@ public class MHNavigationController: UINavigationController{
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    @objc private func backCallback(_ sender: UIButton){
+        if let backEvent = self.backEvent{
+            backEvent()
+        }else{
+            self.popViewController(animated: true)
+        }
+    }
+    
+    @objc private func closeCallback(_ sender: UIButton){
+        if let closeEvent = self.closeEvent{
+            closeEvent()
+        }else{
+            self.dismiss(animated: true)
+        }
+    }
+    
+    func setBackEvent(event: Event?){
+        self.backEvent = event
+    }
+    func setCloseEvent(event: Event?){
+        self.closeEvent = event
+    }
 }
 
 

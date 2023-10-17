@@ -40,7 +40,10 @@ let package = Package(
             targets: ["MHUIUtility"]),
         .library(
             name: "MHUserDefaults",
-            targets: ["MHUserDefaults"])
+            targets: ["MHUserDefaults"]),
+        .library(
+            name: "MHNavigation",
+            targets: ["MHNavigation"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -126,6 +129,10 @@ let package = Package(
             name: "MHUserDefaults",
             dependencies: [],
             path: "Targets/MHUserDefaults/Sources"),
+        .target(
+            name: "MHNavigation",
+            dependencies: [],
+            path: "Targets/MHNavigation/Sources"),
         .testTarget(
             name: "MHUserDefaultsTests",
             dependencies: ["MHUserDefaults"],
