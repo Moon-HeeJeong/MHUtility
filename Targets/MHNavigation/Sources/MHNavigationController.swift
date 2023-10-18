@@ -177,13 +177,21 @@ public class MHNavigationController: UINavigationController{
     //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
+            self.backBtn?.backgroundColor = .yellow
+            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
+            
             self.backBtn?.setImage(self.backBtnImage, for: .normal)
+            self.backBtn?.frame.origin.x = leftMargin
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
+            self.backBtn?.backgroundColor = .red
+            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
+            
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
+            self.closeBtn?.frame.origin.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - (self.closeBtn?.frame.size.width ?? 0)
         }
     }
     
