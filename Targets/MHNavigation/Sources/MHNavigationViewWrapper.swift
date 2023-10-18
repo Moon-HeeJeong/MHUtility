@@ -29,8 +29,10 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
     var closeEvent: MHNavigationController.Event?
     var content: () -> Content
     
+    var callback: (UINavigationController, UIViewController) -> Void //????????
     
-    public init(navigationBarHeight: Binding<CGFloat>, statusBarColor: Binding<Color>, backgroundType: Binding<MHNavigationController.BackgroundType>, titleType: Binding<MHNavigationController.TitleType>, backImage: Binding<UIImage?>, closeImage: Binding<UIImage?>, isNavigationBarHidden: Binding<Bool>, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, action: Binding<MHNavigationController.CloseAction?>, backEvent: MHNavigationController.Event?, closeEvent: MHNavigationController.Event?, content: @escaping () -> Content) {
+    
+    public init(navigationBarHeight: Binding<CGFloat>, statusBarColor: Binding<Color>, backgroundType: Binding<MHNavigationController.BackgroundType>, titleType: Binding<MHNavigationController.TitleType>, backImage: Binding<UIImage?>, closeImage: Binding<UIImage?>, isNavigationBarHidden: Binding<Bool>, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, action: Binding<MHNavigationController.CloseAction?>, backEvent: MHNavigationController.Event?, closeEvent: MHNavigationController.Event?, content: @escaping () -> Content, callback: @escaping (UINavigationController, UIViewController)->Void) {
         _statusBarColor = statusBarColor
         _backgroundType = backgroundType
         _titleType = titleType
@@ -45,6 +47,7 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         self.backEvent = backEvent
         self.closeEvent = closeEvent
         self.content = content
+        self.callback = callback
     }
     
     public func makeUIViewController(context: Context) -> MHNavigationController {
@@ -84,9 +87,9 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         uiViewController.isBackBtnHidden = self.isBackBtnHidden
         uiViewController.isCloseBtnHidden = self.isCloseBtnHidden
         
-        uiViewController.action = self.action
         uiViewController.setBackEvent(event: self.backEvent)
         uiViewController.setCloseEvent(event: self.closeEvent)
+        uiViewController.closeAction = self.action
     }
     
     public func makeCoordinator() -> NavigationSlave {
@@ -104,6 +107,7 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         }
         
         public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+            self.owner.callback(navigationController, viewController)
             //콜백
         }
         

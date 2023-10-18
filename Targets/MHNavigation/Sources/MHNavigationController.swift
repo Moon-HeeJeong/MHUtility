@@ -203,12 +203,9 @@ public class MHNavigationController: UINavigationController{
         }
     }
     
-    private var navigationHeight: CGFloat{
-        didSet{
-        }
-    }
+    private let navigationHeight: CGFloat
     
-    var action: CloseAction?{
+    public var closeAction: CloseAction?{
         didSet{
             switch action {
             case .pop:
@@ -242,11 +239,10 @@ public class MHNavigationController: UINavigationController{
     public init(navigationHeight: CGFloat, statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType? = nil, backImage: UIImage?, closeImage: UIImage?, backEvent: Event?, closeEvent: Event?, rootViewController: UIViewController) {
         
         self.navigationHeight = navigationHeight
-        self.backEvent = backEvent
-        self.closeEvent = closeEvent
-        
         super.init(rootViewController: rootViewController)
         
+        self.backEvent = backEvent
+        self.closeEvent = closeEvent
         self.initView(statusBarColor: statusBarColor, backgroundType: backgroundType, titleType: titleType, backImage: backImage, closeImage: closeImage)
     }
     
