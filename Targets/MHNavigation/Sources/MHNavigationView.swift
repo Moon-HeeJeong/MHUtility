@@ -25,7 +25,7 @@ public struct MHNavigationView<Content: View>: View {
     var closeEvent: MHNavigationController.Event?
     var content: ()->Content
     
-    public init(navigationBarHeight: CGFloat, statusBarColor: Color, backgroundType: MHNavigationController.BackgroundType, titleType: MHNavigationController.TitleType, backImage: UIImage? = nil, closeImage: UIImage? = nil, isNavigationBarHidden: Bool, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, isUsePreference: Binding<Bool> = .constant(true), action: Binding<MHNavigationController.CloseAction?> = .constant(nil), backEvent: MHNavigationController.Event?, closeEvent: MHNavigationController.Event?, content: @escaping () -> Content) {
+    public init(navigationBarHeight: CGFloat, statusBarColor: Color, backgroundType: MHNavigationController.BackgroundType, titleType: MHNavigationController.TitleType, backImage: UIImage? = nil, closeImage: UIImage? = nil, isNavigationBarHidden: Bool, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, isUsePreference: Binding<Bool> = .constant(true), action: Binding<MHNavigationController.CloseAction?> = .constant(nil), backEvent: MHNavigationController.Event? = nil, closeEvent: MHNavigationController.Event? = nil, content: @escaping () -> Content) {
         self.navigationBarHeight = navigationBarHeight
         self.statusBarColor = statusBarColor
         self.backgroundType = backgroundType
