@@ -55,7 +55,9 @@ public struct MHNavigationView<Content: View>: View {
                                 action: $action,
                                 backEvent: backEvent,
                                 closeEvent: closeEvent,
-                                content: content)
+                                content: content, callback: { navi, controller in
+            
+        })
         
         .onPreferenceChange(StatusBarColorPreferenceKey.self, perform: { color in
             guard self.isUsePreference else{
