@@ -182,6 +182,7 @@ public class MHNavigationController: UINavigationController{
     var closeBtnImage: UIImage?{
         didSet{
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
+            self.closeBtn?.backgroundColor = .red
         }
     }
     
@@ -240,6 +241,8 @@ public class MHNavigationController: UINavigationController{
         
         self.navigationHeight = navigationHeight
         super.init(rootViewController: rootViewController)
+        
+        self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
         
         self.backEvent = backEvent
         self.closeEvent = closeEvent
