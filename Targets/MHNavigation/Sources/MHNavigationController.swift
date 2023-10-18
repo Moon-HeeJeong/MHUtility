@@ -145,7 +145,7 @@ public class MHNavigationController: UINavigationController{
                     self.subTitleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
                     
                     
-                    self.subTitleLabel?.frame.origin.y = self.navigationHeight*(19.0/183.0) + self.statusBarHeight
+                    self.subTitleLabel?.frame.origin.y = self.navigationHeight*(19.0/183.0)
                     self.titleLabel?.frame.origin.y = (self.subTitleLabel?.frame.origin.y ?? 0) + (self.subTitleLabel?.frame.height ?? 0)
                     
                 }else{
@@ -287,6 +287,7 @@ public class MHNavigationController: UINavigationController{
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
         self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2
+        self.backBtn?.backgroundColor = .red
         self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
