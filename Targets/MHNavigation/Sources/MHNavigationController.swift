@@ -145,12 +145,12 @@ public class MHNavigationController: UINavigationController{
                     self.subTitleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
                     
                     
-                    self.subTitleLabel?.frame.origin.y = self.navigationHeight*(19.0/183.0)
+                    self.subTitleLabel?.frame.origin.y = (self.naviBar?.frame.size.height ?? 0)*(19.0/183.0)
                     self.titleLabel?.frame.origin.y = (self.subTitleLabel?.frame.origin.y ?? 0) + (self.subTitleLabel?.frame.height ?? 0)
                     
                 }else{
                     self.subTitleLabel?.isHidden = true
-                    self.titleLabel?.frame.origin.y = (self.navigationHeight - (self.titleLabel?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                    self.titleLabel?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
                 }
                 break
                 
@@ -165,7 +165,7 @@ public class MHNavigationController: UINavigationController{
                 self.titleImageView?.image = image
                 self.titleImageView?.frame.size = CGSize(width: width, height: height)
                 self.titleImageView?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
-                self.titleImageView?.frame.origin.y = (self.navigationHeight - height)/2 + self.statusBarHeight
+                self.titleImageView?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
             default:
                 break
             }
@@ -175,13 +175,13 @@ public class MHNavigationController: UINavigationController{
     //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
-            self.backBtn?.setImage(self.backBtnImage, for: .normal)
+//            self.backBtn?.setImage(self.backBtnImage, for: .normal)
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
-            self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
+//            self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
         }
     }
     
@@ -286,12 +286,12 @@ public class MHNavigationController: UINavigationController{
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2
+        self.backBtn?.center.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.backBtn?.backgroundColor = .red
         self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.closeBtn?.center.y = (self.navigationHeight - btnHeight)/2
+        self.closeBtn?.center.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
