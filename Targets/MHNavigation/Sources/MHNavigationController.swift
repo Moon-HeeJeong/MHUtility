@@ -161,6 +161,7 @@ public class MHNavigationController: UINavigationController{
                 
                 self.titleLabel?.isHidden = true
                 self.subTitleLabel?.isHidden = true
+                self.titleImageView?.isHidden = false
                 self.titleImageView?.image = image
                 self.titleImageView?.frame.size = CGSize(width: width, height: height)
                 self.titleImageView?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
@@ -174,19 +175,13 @@ public class MHNavigationController: UINavigationController{
     //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
-            let btnHeight = self.navigationHeight*(118.0/183.0)
-            self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
             self.backBtn?.setImage(self.backBtnImage, for: .normal)
-            self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
-            let btnHeight = self.navigationHeight*(118.0/183.0)
-            self.closeBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
-            self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
         }
     }
     
@@ -252,24 +247,29 @@ public class MHNavigationController: UINavigationController{
         
         super.init(rootViewController: rootViewController)
         
-        self.backgroundType = backgroundType
-//        self.titleType = titleType
-        self.backBtnImage = backImage
-        
-        self.initView(titleType: titleType)
-        
-        self.view.addSubview(self.naviBar!)
-        self.naviBar?.addSubview(self.titleLabel!)
-        self.naviBar?.addSubview(self.subTitleLabel!)
-        self.naviBar?.addSubview(self.backBtn!)
-        self.naviBar?.addSubview(self.closeBtn!)
+        self.initView(statusBarColor: statusBarColor, backgroundType: backgroundType, titleType: titleType, backImage: backImage, closeImage: closeImage)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initView(titleType: TitleType?){
+    func initView(statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType?, backImage: UIImage?, closeImage: UIImage?){
+        
+        self.statusBarView = UIView()
+        self.statusBarColor = statusBarColor
+        self.view.addSubview(self.statusBarView)
+        //좀더보기
+        self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
+        self.statusBarView.heightAnchor
+            .constraint(equalToConstant: statusBarHeight).isActive = true
+        self.statusBarView.widthAnchor
+            .constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
+        self.statusBarView.topAnchor
+            .constraint(equalTo: self.view.topAnchor).isActive = true
+        self.statusBarView.centerXAnchor
+            .constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
         
         self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
                                                  size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
@@ -280,16 +280,28 @@ public class MHNavigationController: UINavigationController{
         self.subTitleLabel = UILabel()
         self.titleImageView = UIImageView()
         
-        self.titleType = titleType
-        
-        
         let btnHeight = self.navigationHeight*(118.0/183.0)
         let btnWidth = btnHeight*(135.0/118.0)
-        
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
+        self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
+        self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
+        
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
+        self.closeBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
+        self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
+        
+        self.backgroundType = backgroundType
+        self.titleType = titleType
+        self.backBtnImage = backImage
+        self.closeBtnImage = closeImage
+        
+        self.view.addSubview(self.naviBar!)
+        self.naviBar?.addSubview(self.titleLabel!)
+        self.naviBar?.addSubview(self.subTitleLabel!)
+        self.naviBar?.addSubview(self.backBtn!)
+        self.naviBar?.addSubview(self.closeBtn!)
     }
     
     
