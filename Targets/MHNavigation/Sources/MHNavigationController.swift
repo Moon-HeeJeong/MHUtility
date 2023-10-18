@@ -129,16 +129,18 @@ public class MHNavigationController: UINavigationController{
 
                 
                 //subtitle label
-                if let info = subTitleInfo{
+                if let subTitle = subTitleInfo?.text{
+                    
+                    let info = subTitleInfo?.fontInfo
                     self.subTitleLabel?.isHidden = false
                     self.subTitleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
-                    self.subTitleLabel?.text = info.text
-                    self.subTitleLabel?.textColor = info.fontInfo?.color
+                    self.subTitleLabel?.text = subTitle
+                    self.subTitleLabel?.textColor = info?.color
                     
-                    if let customFontName = info.fontInfo?.fontName{
-                        self.subTitleLabel?.font = UIFont(name: customFontName, size: info.fontInfo?.fontSize ?? 0)
+                    if let customFontName = info?.fontName{
+                        self.subTitleLabel?.font = UIFont(name: customFontName, size: info?.fontSize ?? 0)
                     }else{
-                        self.subTitleLabel?.font = UIFont.systemFont(ofSize: info.fontInfo?.fontSize ?? 0)
+                        self.subTitleLabel?.font = UIFont.systemFont(ofSize: info?.fontSize ?? 0)
                     }
                     
                     self.subTitleLabel?.sizeToFit()
