@@ -176,12 +176,14 @@ public class MHNavigationController: UINavigationController{
     var backBtnImage: UIImage?{
         didSet{
             self.backBtn?.setImage(self.backBtnImage, for: .normal)
+            self.backBtn?.center.y = self.naviBar?.center.y ?? 0//((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
+            self.backBtn?.center.y = self.naviBar?.center.y ?? 0//((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         }
     }
     
