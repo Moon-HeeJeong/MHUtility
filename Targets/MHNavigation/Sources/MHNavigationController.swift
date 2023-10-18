@@ -285,11 +285,11 @@ public class MHNavigationController: UINavigationController{
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+        self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2 + self.statusBarHeight
         self.backBtn?.addTarget(self, action: #selector(backCallback(sender:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - btnWidth, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+        self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2 + self.statusBarHeight
 //        self.closeBtn?.addTarget(self, action: #selector(closeCallback(sender:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
@@ -300,8 +300,10 @@ public class MHNavigationController: UINavigationController{
         self.view.addSubview(self.naviBar!)
         self.naviBar?.addSubview(self.titleLabel!)
         self.naviBar?.addSubview(self.subTitleLabel!)
-        self.naviBar?.addSubview(self.backBtn!)
-        self.naviBar?.addSubview(self.closeBtn!)
+//        self.naviBar?.addSubview(self.backBtn!)
+//        self.naviBar?.addSubview(self.closeBtn!)
+        self.view.addSubview(self.backBtn!)
+        self.view.addSubview(self.closeBtn!)
     }
     
     
