@@ -174,7 +174,6 @@ public class MHNavigationController: UINavigationController{
         }
     }
     
-    //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
             guard oldValue != self.backBtnImage else{
@@ -183,36 +182,26 @@ public class MHNavigationController: UINavigationController{
             guard let image = self.backBtnImage else{
                 return
             }
-            
-            self.backBtn?.backgroundColor = .yellow
-//            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
-            
             self.backBtn?.setImage(image, for: .normal)
-//            self.backBtn?.frame.origin.x = leftMargin
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
-            
             guard oldValue != self.closeBtnImage else{
                 return
             }
             guard let image = self.closeBtnImage else{
                 return
             }
-            
-            self.backBtn?.backgroundColor = .red
-//            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
-            
             self.closeBtn?.setImage(image, for: .normal)
-//            self.closeBtn?.frame.origin.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - (self.closeBtn?.frame.size.width ?? 0)
         }
     }
     
     var isNaviBarHidden: Bool = false{
         didSet{
-            self.naviBar?.isHidden = self.isNaviBarHidden
+//            self.naviBar?.isHidden = self.isNaviBarHidden
+            self.navigationBar.isHidden = self.isNaviBarHidden
         }
     }
     
@@ -324,8 +313,6 @@ public class MHNavigationController: UINavigationController{
         self.view.addSubview(self.naviBar!)
         self.naviBar?.addSubview(self.titleLabel!)
         self.naviBar?.addSubview(self.subTitleLabel!)
-//        self.naviBar?.addSubview(self.backBtn!)
-//        self.naviBar?.addSubview(self.closeBtn!)
         self.view.addSubview(self.backBtn!)
         self.view.addSubview(self.closeBtn!)
     }
@@ -354,13 +341,6 @@ public class MHNavigationController: UINavigationController{
         self.closeEvent = event
     }
 }
-
-
-
-
-
-
-
 
 public extension UIViewController{
     var statusBarHeight: CGFloat{
