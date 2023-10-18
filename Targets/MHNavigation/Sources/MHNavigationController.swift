@@ -281,8 +281,8 @@ public class MHNavigationController: UINavigationController{
         self.subTitleLabel = UILabel()
         self.titleImageView = UIImageView()
         
-        let btnHeight = self.naviBar?.frame.size.height //(self.naviBar?.frame.size.height ?? 0)*(118.0/183.0)
-        let btnWidth = self.naviBar?.frame.size.width/2 //btnHeight*(135.0/118.0)
+        let btnHeight = (self.naviBar?.frame.size.height ?? 0) //(self.naviBar?.frame.size.height ?? 0)*(118.0/183.0)
+        let btnWidth = (self.naviBar?.frame.size.width ?? 0)/2 //btnHeight*(135.0/118.0)
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
