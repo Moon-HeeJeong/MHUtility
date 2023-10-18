@@ -144,8 +144,9 @@ public class MHNavigationController: UINavigationController{
                     self.subTitleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
                     
                     
-                    self.titleLabel?.frame.origin.y = self.navigationHeight*(19.0/183.0) + self.statusBarHeight
-                    self.subTitleLabel?.frame.origin.y = (self.titleLabel?.frame.origin.y ?? 0) + (self.titleLabel?.frame.height ?? 0)
+                    self.subTitleLabel?.frame.origin.y = self.navigationHeight*(19.0/183.0) + self.statusBarHeight
+                    self.titleLabel?.frame.origin.y = (self.subTitleLabel?.frame.origin.y ?? 0) + (self.subTitleLabel?.frame.height ?? 0)
+                    
                 }else{
                     self.subTitleLabel?.isHidden = true
                     self.titleLabel?.frame.origin.y = (self.navigationHeight - (self.titleLabel?.frame.size.height ?? 0))/2 + self.statusBarHeight
