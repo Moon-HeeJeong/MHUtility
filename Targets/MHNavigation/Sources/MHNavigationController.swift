@@ -219,8 +219,8 @@ public class MHNavigationController: UINavigationController{
     
     private var navigationHeight: CGFloat{
         didSet{
-            self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
-                                                     size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
+//            self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
+//                                                     size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
         }
     }
     
@@ -260,8 +260,11 @@ public class MHNavigationController: UINavigationController{
         self.navigationHeight = navigationHeight
         self.backEvent = backEvent
         self.closeEvent = closeEvent
+        
         super.init(rootViewController: rootViewController)
         
+        self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
+                                                 size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
         
         self.backgroundType = backgroundType
         self.titleType = titleType
