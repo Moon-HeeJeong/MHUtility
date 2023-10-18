@@ -175,13 +175,13 @@ public class MHNavigationController: UINavigationController{
     //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
-//            self.backBtn?.setImage(self.backBtnImage, for: .normal)
+            self.backBtn?.setImage(self.backBtnImage, for: .normal)
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
-//            self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
+            self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
         }
     }
     
