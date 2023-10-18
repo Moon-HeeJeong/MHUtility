@@ -177,21 +177,36 @@ public class MHNavigationController: UINavigationController{
     //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
-            self.backBtn?.backgroundColor = .yellow
-            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
+            guard let oldValue != self.backBtnImage else{
+                return
+            }
+            guard let image = self.backBtnImage else{
+                return
+            }
             
-            self.backBtn?.setImage(self.backBtnImage, for: .normal)
-            self.backBtn?.frame.origin.x = leftMargin
+            self.backBtn?.backgroundColor = .yellow
+//            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
+            
+            self.backBtn?.setImage(image, for: .normal)
+//            self.backBtn?.frame.origin.x = leftMargin
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
-            self.backBtn?.backgroundColor = .red
-            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
             
-            self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
-            self.closeBtn?.frame.origin.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - (self.closeBtn?.frame.size.width ?? 0)
+            guard let oldValue != self.closeBtnImage else{
+                return
+            }
+            guard let image = self.closeBtnImage else{
+                return
+            }
+            
+            self.backBtn?.backgroundColor = .red
+//            let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
+            
+            self.closeBtn?.setImage(image, for: .normal)
+//            self.closeBtn?.frame.origin.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - (self.closeBtn?.frame.size.width ?? 0)
         }
     }
     
