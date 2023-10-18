@@ -270,6 +270,7 @@ public class MHNavigationController: UINavigationController{
         self.statusBarView.centerXAnchor
             .constraint(equalTo: self.view.centerXAnchor).isActive = true
         
+        self.navigationBar.backgroundColor = .clear
         
         self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
                                                  size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
@@ -285,11 +286,11 @@ public class MHNavigationController: UINavigationController{
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
+        self.backBtn?.center.y = (self.navigationHeight - btnHeight)/2
         self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.closeBtn?.center.y = (self.navigationHeight - btnHeight)/2 + self.statusBarHeight
+        self.closeBtn?.center.y = (self.navigationHeight - btnHeight)/2
         self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
