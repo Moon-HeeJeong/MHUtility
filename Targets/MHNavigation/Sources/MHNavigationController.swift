@@ -207,7 +207,7 @@ public class MHNavigationController: UINavigationController{
     
     public var closeAction: CloseAction?{
         didSet{
-            switch action {
+            switch self.closeAction {
             case .pop:
                 self.popViewController(animated: true)
                 break
