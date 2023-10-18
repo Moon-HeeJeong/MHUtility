@@ -281,17 +281,17 @@ public class MHNavigationController: UINavigationController{
         self.subTitleLabel = UILabel()
         self.titleImageView = UIImageView()
         
-        let btnHeight = self.navigationHeight*(118.0/183.0)
+        let btnHeight = (self.naviBar?.frame.size.height ?? 0)*(118.0/183.0)
         let btnWidth = btnHeight*(135.0/118.0)
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.backBtn?.center.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+        self.backBtn?.center.y = self.naviBar?.center.y ?? 0//((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.backBtn?.backgroundColor = .red
         self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.closeBtn?.center.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+        self.closeBtn?.center.y = self.naviBar?.center.y ?? 0// ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
