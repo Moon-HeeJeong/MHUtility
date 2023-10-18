@@ -177,7 +177,7 @@ public class MHNavigationController: UINavigationController{
     //중간에 바뀌는 거 반영해야함
     var backBtnImage: UIImage?{
         didSet{
-            guard let oldValue != self.backBtnImage else{
+            guard oldValue != self.backBtnImage else{
                 return
             }
             guard let image = self.backBtnImage else{
@@ -195,7 +195,7 @@ public class MHNavigationController: UINavigationController{
     var closeBtnImage: UIImage?{
         didSet{
             
-            guard let oldValue != self.closeBtnImage else{
+            guard oldValue != self.closeBtnImage else{
                 return
             }
             guard let image = self.closeBtnImage else{
