@@ -287,11 +287,11 @@ public class MHNavigationController: UINavigationController{
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
         self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
-        self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
+        self.backBtn?.addTarget(self, action: #selector(backCallback(sender:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - btnWidth, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
         self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
-        self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
+        self.closeBtn?.addTarget(self, action: #selector(closeCallback(sender:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
         self.titleType = titleType
@@ -306,7 +306,8 @@ public class MHNavigationController: UINavigationController{
     }
     
     
-    @objc private func backCallback(_ sender: UIButton){
+    @objc private func backCallback(sender: UIButton){
+        print("back call")
         if let backEvent = self.backEvent{
             backEvent()
         }else{
@@ -314,7 +315,8 @@ public class MHNavigationController: UINavigationController{
         }
     }
     
-    @objc private func closeCallback(_ sender: UIButton){
+    @objc private func closeCallback(sender: UIButton){
+        print("close call")
         if let closeEvent = self.closeEvent{
             closeEvent()
         }else{
