@@ -176,14 +176,14 @@ public class MHNavigationController: UINavigationController{
     var backBtnImage: UIImage?{
         didSet{
             self.backBtn?.setImage(self.backBtnImage, for: .normal)
-            self.backBtn?.center.y = self.naviBar?.center.y ?? 0//((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+//            self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         }
     }
     
     var closeBtnImage: UIImage?{
         didSet{
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
-            self.backBtn?.center.y = self.naviBar?.center.y ?? 0//((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+//            self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         }
     }
     
@@ -288,12 +288,12 @@ public class MHNavigationController: UINavigationController{
         let leftMargin = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)*(38.0/1125.0)
         
         self.backBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.backBtn?.center.y = self.naviBar?.center.y ?? 0//((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+        self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.backBtn?.backgroundColor = .red
         self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
-        self.closeBtn?.center.y = self.naviBar?.center.y ?? 0// ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
+        self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
