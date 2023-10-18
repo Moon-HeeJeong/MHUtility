@@ -114,5 +114,6 @@ public struct MHNavigationView<Content: View>: View {
             }
             self.isCloseBtnHidden = isHidden
         })
+        .ignoresSafeArea([.container])
     }
 }

@@ -262,7 +262,7 @@ public class MHNavigationController: UINavigationController{
         //좀더보기
         self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
         self.statusBarView.heightAnchor
-            .constraint(equalToConstant: statusBarHeight).isActive = true
+            .constraint(equalToConstant: self.statusBarHeight).isActive = true
         self.statusBarView.widthAnchor
             .constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
         self.statusBarView.topAnchor
