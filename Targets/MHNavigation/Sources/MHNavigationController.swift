@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  MHNavigationController.swift
+//
 //
 //  Created by LittleFoxiOSDeveloper on 2023/10/13.
 //
@@ -182,7 +182,6 @@ public class MHNavigationController: UINavigationController{
     var closeBtnImage: UIImage?{
         didSet{
             self.closeBtn?.setImage(self.closeBtnImage, for: .normal)
-            self.closeBtn?.addTarget(self, action: #selector(closeCallback(sender:)), for: .touchUpInside)
         }
     }
     
@@ -290,7 +289,7 @@ public class MHNavigationController: UINavigationController{
         
         self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - btnWidth, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
         self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2 + self.statusBarHeight
-//        self.closeBtn?.addTarget(self, action: #selector(closeCallback(sender:)), for: .touchUpInside)
+        self.closeBtn?.addTarget(self, action: #selector(closeCallback(sender:)), for: .touchUpInside)
         
         self.backgroundType = backgroundType
         self.titleType = titleType
@@ -308,7 +307,6 @@ public class MHNavigationController: UINavigationController{
     
     
     @objc private func backCallback(sender: UIButton){
-        print("back call")
         if let backEvent = self.backEvent{
             backEvent()
         }else{
@@ -317,7 +315,6 @@ public class MHNavigationController: UINavigationController{
     }
     
     @objc private func closeCallback(sender: UIButton){
-        print("close call")
         if let closeEvent = self.closeEvent{
             closeEvent()
         }else{
