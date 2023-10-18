@@ -289,7 +289,7 @@ public class MHNavigationController: UINavigationController{
         self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.backBtn?.addTarget(self, action: #selector(backCallback(_:)), for: .touchUpInside)
         
-        self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: leftMargin, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
+        self.closeBtn = UIButton(frame: CGRect(origin: CGPoint(x: (self.naviBar?.frame.size.width ?? self.view.frame.size.width) - leftMargin - btnWidth, y: 0), size: CGSize(width: btnWidth, height: btnHeight)))
         self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - btnHeight)/2
         self.closeBtn?.addTarget(self, action: #selector(closeCallback(_:)), for: .touchUpInside)
         
