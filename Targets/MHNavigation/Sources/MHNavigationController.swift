@@ -184,6 +184,9 @@ public class MHNavigationController: UINavigationController{
             guard let image = self.backBtnImage else{
                 return
             }
+            if !self.isInit && oldValue == nil{ //PUSH 화면으로 넘어갔다가(oldValue nil) 다시 이전 화면으로 돌아왔을 때 갱신되는 것 막음
+                return
+            }
             
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
                 self.backBtn?.alpha = 0.3
@@ -202,6 +205,9 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             guard let image = self.closeBtnImage else{
+                return
+            }
+            if !self.isInit && oldValue == nil{
                 return
             }
             
@@ -321,8 +327,9 @@ public class MHNavigationController: UINavigationController{
     private var backEvent: Event?
     private var closeEvent: Event?
     
+    private var isInit: Bool = true
+    
     public init(navigationHeight: CGFloat, statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType? = nil, backImage: UIImage?, closeImage: UIImage?, backEvent: Event?, closeEvent: Event?, rootViewController: UIViewController) {
-        
         self.navigationHeight = navigationHeight
         super.init(rootViewController: rootViewController)
         
@@ -331,6 +338,9 @@ public class MHNavigationController: UINavigationController{
         self.backEvent = backEvent
         self.closeEvent = closeEvent
         self.initView(statusBarColor: statusBarColor, backgroundType: backgroundType, titleType: titleType, backImage: backImage, closeImage: closeImage)
+        
+        self.isInit = false
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
