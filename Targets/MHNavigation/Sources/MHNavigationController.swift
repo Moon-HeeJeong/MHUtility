@@ -344,7 +344,7 @@ public class MHNavigationController: UINavigationController{
         
         self.statusBarView = UIView()
         self.statusBarColor = statusBarColor
-        
+        self.view.addSubview(self.statusBarView)
         //좀더보기
         self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
         self.statusBarView.heightAnchor
@@ -384,7 +384,6 @@ public class MHNavigationController: UINavigationController{
         self.backBtnImage = backImage
         self.closeBtnImage = closeImage
         
-        self.view.addSubview(self.statusBarView)
         self.view.addSubview(self.naviBar!)
         self.naviBar?.addSubview(self.titleLabel!)
         self.naviBar?.addSubview(self.subTitleLabel!)
