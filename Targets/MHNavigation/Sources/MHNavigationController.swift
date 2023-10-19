@@ -278,14 +278,14 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-            self.backBtn?.alpha = 0.3
+            self.backBtn?.alpha = 1//0.3
             
             if self.isBackBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
                     self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 } completion: { _ in
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
-                        self.backBtn?.alpha = 0
+//                        self.backBtn?.alpha = 0
                     }
                 }
             }else{
@@ -293,7 +293,7 @@ public class MHNavigationController: UINavigationController{
                     self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
                 } completion: { _ in
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-                        self.backBtn?.alpha = 1
+//                        self.backBtn?.alpha = 1
                     }
                 }
             }
@@ -307,14 +307,14 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-            self.closeBtn?.alpha = 0.3
+            self.closeBtn?.alpha = 1//0.3
             
             if self.isCloseBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
                     self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 } completion: { _ in
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
-                        self.closeBtn?.alpha = 0
+//                        self.closeBtn?.alpha = 0
                     }
                 }
             }else{
@@ -322,7 +322,7 @@ public class MHNavigationController: UINavigationController{
                     self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
                 } completion: { _ in
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-                        self.closeBtn?.alpha = 1
+//                        self.closeBtn?.alpha = 1
                     }
                 }
             }
