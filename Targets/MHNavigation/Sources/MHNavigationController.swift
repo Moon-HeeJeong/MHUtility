@@ -225,35 +225,32 @@ public class MHNavigationController: UINavigationController{
             
             self.navigationBar.isHidden = self.isNaviBarHidden
             
-            UIView.animate(withDuration: 0.2) {
-                
-                if self.isNaviBarHidden{
+            
+            if self.isNaviBarHidden{
+                UIView.animate(withDuration: 2) {
                     self.naviBar?.alpha = 0.5
                     self.backBtn?.alpha = 0
                     self.closeBtn?.alpha = 0
-                    
-                    UIView.animate(withDuration: 0.3) {
+                } completion: { _ in
+                    UIView.animate(withDuration: 2) {
                         self.naviBar?.frame.origin.y = -(self.statusBarHeight + UINavigationController().navigationBar.frame.size.height)
                         self.additionalSafeAreaInsets.top = 0
                     }
-                    
-                }else{
+                }
+            }else{
+                UIView.animate(withDuration: 2) {
                     self.naviBar?.alpha = 0.5
                     self.naviBar?.frame.origin.y = self.statusBarHeight
                     
                     self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
-                
-                }
-            } completion: { _ in
-                if !self.isNaviBarHidden{
-                    UIView.animate(withDuration: 0.3) {
+                } completion: { _ in
+                    UIView.animate(withDuration: 2) {
                         self.naviBar?.alpha = 1
                         self.backBtn?.alpha = 1
                         self.closeBtn?.alpha = 1
                     }
                 }
             }
-            
         }
     }
     
@@ -342,21 +339,6 @@ public class MHNavigationController: UINavigationController{
     
     func initView(statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType?, backImage: UIImage?, closeImage: UIImage?){
         
-        self.statusBarView = UIView()
-        self.statusBarColor = statusBarColor
-        self.view.addSubview(self.statusBarView)
-        //좀더보기
-        self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
-        self.statusBarView.heightAnchor
-            .constraint(equalToConstant: self.statusBarHeight).isActive = true
-        self.statusBarView.widthAnchor
-            .constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
-        self.statusBarView.topAnchor
-            .constraint(equalTo: self.view.topAnchor).isActive = true
-        self.statusBarView.centerXAnchor
-            .constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
-        self.navigationBar.backgroundColor = .clear
         
         self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
                                                  size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
@@ -389,6 +371,23 @@ public class MHNavigationController: UINavigationController{
         self.naviBar?.addSubview(self.subTitleLabel!)
         self.view.addSubview(self.backBtn!)
         self.view.addSubview(self.closeBtn!)
+        
+        
+        self.statusBarView = UIView()
+        self.statusBarColor = statusBarColor
+        self.view.addSubview(self.statusBarView)
+        //좀더보기
+        self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
+        self.statusBarView.heightAnchor
+            .constraint(equalToConstant: self.statusBarHeight).isActive = true
+        self.statusBarView.widthAnchor
+            .constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
+        self.statusBarView.topAnchor
+            .constraint(equalTo: self.view.topAnchor).isActive = true
+        self.statusBarView.centerXAnchor
+            .constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        self.navigationBar.backgroundColor = .clear
     }
     
     
