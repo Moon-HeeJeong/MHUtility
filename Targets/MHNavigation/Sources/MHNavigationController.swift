@@ -184,16 +184,22 @@ public class MHNavigationController: UINavigationController{
             guard let image = self.backBtnImage else{
                 return
             }
-            if !self.isInit && oldValue == nil{ //PUSH 화면으로 넘어갔다가(oldValue nil) 다시 이전 화면으로 돌아왔을 때 갱신되는 것 막음
-                return
-            }
+//            if !self.isInit && oldValue == nil{ 
+//                //PUSH 화면으로 넘어갔다가(oldValue nil) 다시 이전 화면으로 돌아왔을 때 갱신되는 것 막음
+//                //PUSH 화면으로 다음 화면으로 넘어갈 때 새로운 이미지를 넣으면 갱신이 안될듯
+//                return
+//            }
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
-                self.backBtn?.alpha = 0.3
+            if self.isInit{
                 self.backBtn?.setImage(image, for: .normal)
-            } completion: { _ in
-                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-                    self.backBtn?.alpha = 1
+            }else{
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
+                    self.backBtn?.alpha = 0.3
+                    self.backBtn?.setImage(image, for: .normal)
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                        self.backBtn?.alpha = 1
+                    }
                 }
             }
         }
@@ -207,16 +213,20 @@ public class MHNavigationController: UINavigationController{
             guard let image = self.closeBtnImage else{
                 return
             }
-            if !self.isInit && oldValue == nil{
-                return
-            }
+//            if !self.isInit && oldValue == nil{
+//                return
+//            }
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
-                self.closeBtn?.alpha = 0.3
+            if self.isInit{
                 self.closeBtn?.setImage(image, for: .normal)
-            } completion: { _ in
-                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-                    self.closeBtn?.alpha = 1
+            }else{
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
+                    self.closeBtn?.alpha = 0.3
+                    self.closeBtn?.setImage(image, for: .normal)
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                        self.closeBtn?.alpha = 1
+                    }
                 }
             }
         }
@@ -288,8 +298,18 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
-                self.closeBtn?.alpha = self.isCloseBtnHidden ? 0:1
+            self.closeBtn?.alpha = 0.3
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
+                if self.isCloseBtnHidden{
+                    self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
+                }else{
+                    self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                }
+                
+            } completion: { _ in
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                    self.closeBtn?.alpha = self.isCloseBtnHidden ? 0 : 1
+                }
             }
         }
     }
