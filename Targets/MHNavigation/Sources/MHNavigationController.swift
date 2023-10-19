@@ -245,17 +245,20 @@ public class MHNavigationController: UINavigationController{
                     self.naviBar?.frame.origin.y = self.statusBarHeight
                     
                     self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
-                    
+                
+                }
+            } completion: { _ in
+                self.naviBar?.isHidden = self.isNaviBarHidden
+                self.backBtn?.isHidden = self.isNaviBarHidden
+                self.closeBtn?.isHidden = self.isNaviBarHidden
+                
+                if !self.isNaviBarHidden{
                     UIView.animate(withDuration: 0.3) {
                         self.naviBar?.alpha = 1
                         self.backBtn?.alpha = 1
                         self.closeBtn?.alpha = 1
                     }
                 }
-            } completion: { _ in
-                self.naviBar?.isHidden = self.isNaviBarHidden
-                self.backBtn?.isHidden = self.isNaviBarHidden
-                self.closeBtn?.isHidden = self.isNaviBarHidden
             }
             
         }
@@ -267,23 +270,19 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-//            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
-//                self.backBtn?.alpha = self.isBackBtnHidden ? 0:1
-//            }
-            
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
                 self.backBtn?.alpha = 0.3
+                
+                if self.isBackBtnHidden{
+                    self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
+                }else{
+                    self.backBtn?.frame.origin.y = (self.naviBar?.frame.size.height ?? 0 - (self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                }
+                
             } completion: { _ in
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-//                    let toPosY = self.isBackBtnHidden ? 
-//                    -self.naviBar?.frame.size.height : (self.naviBar?.frame.size.height - self.backBtn?.frame.size.height)/2
+                    
                     self.backBtn?.alpha = self.isBackBtnHidden ? 0 : 1
-                    if self.isBackBtnHidden{
-                        self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
-                    }else{
-                        self.backBtn?.frame.origin.y = (self.naviBar?.frame.size.height ?? 0 - (self.backBtn?.frame.size.height ?? 0))/2
-                    }
-//                    self.backBtn?.frame.origin.y = toPosY
                 }
             }
         }
