@@ -186,7 +186,7 @@ public class MHNavigationController: UINavigationController{
             }
         }
     }
-    
+
     var backBtnImage: UIImage?{
         didSet{
             guard oldValue != self.backBtnImage else{
@@ -200,11 +200,15 @@ public class MHNavigationController: UINavigationController{
                 self.backBtn?.setImage(image, for: .normal)
             }else{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
-                    self.backBtn?.alpha = 0.3
-                    self.backBtn?.setImage(image, for: .normal)
+//                    self.backBtn?.alpha = 0.5
+                    self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 } completion: { _ in
+                    self.backBtn?.setImage(image, for: .normal)
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-                        self.backBtn?.alpha = 1
+                       
+                        self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                        
+//                        self.backBtn?.alpha = 1
                     }
                 }
             }
@@ -224,11 +228,13 @@ public class MHNavigationController: UINavigationController{
                 self.closeBtn?.setImage(image, for: .normal)
             }else{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
-                    self.closeBtn?.alpha = 0.3
-                    self.closeBtn?.setImage(image, for: .normal)
+//                    self.closeBtn?.alpha = 0.5
+                    self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 } completion: { _ in
+                    self.closeBtn?.setImage(image, for: .normal)
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-                        self.closeBtn?.alpha = 1
+//                        self.closeBtn?.alpha = 1
+                        self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
                     }
                 }
             }
