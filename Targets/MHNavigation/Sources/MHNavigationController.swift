@@ -114,11 +114,7 @@ public class MHNavigationController: UINavigationController{
             case .text(let titleInfo, let subTitleInfo):
                 
                 //title label
-                self.titleImageView?.isHidden = true
-                self.titleLabel?.isHidden = false
-                self.titleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
-                self.titleLabel?.text = titleInfo.text
-                self.titleLabel?.textColor = titleInfo.fontInfo?.color
+                self.titleImageView?.alpha = 0
                 
                 if let customFontName =  titleInfo.fontInfo?.fontName{
                     self.titleLabel?.font = UIFont(name: customFontName, size: titleInfo.fontInfo?.fontSize ?? 0)
@@ -126,35 +122,46 @@ public class MHNavigationController: UINavigationController{
                     self.titleLabel?.font = UIFont.systemFont(ofSize: titleInfo.fontInfo?.fontSize ?? 0)
                 }
                 
+                self.titleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
+                self.titleLabel?.text = titleInfo.text
+                self.titleLabel?.textColor = titleInfo.fontInfo?.color
                 self.titleLabel?.sizeToFit()
-                self.titleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
-
                 
+               
                 //subtitle label
+                self.subTitleLabel?.alpha = 0
                 if let subTitle = subTitleInfo?.text{
+                    self.subTitleLabel?.alpha = 0
                     
                     let info = subTitleInfo?.fontInfo
-                    self.subTitleLabel?.isHidden = false
-                    self.subTitleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
-                    self.subTitleLabel?.text = subTitle
-                    self.subTitleLabel?.textColor = info?.color
-                    
                     if let customFontName = info?.fontName{
                         self.subTitleLabel?.font = UIFont(name: customFontName, size: info?.fontSize ?? 0)
                     }else{
                         self.subTitleLabel?.font = UIFont.systemFont(ofSize: info?.fontSize ?? 0)
                     }
                     
+                    self.subTitleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
+                    self.subTitleLabel?.text = subTitle
+                    self.subTitleLabel?.textColor = info?.color
                     self.subTitleLabel?.sizeToFit()
-                    self.subTitleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
                     
-                    
-                    self.subTitleLabel?.frame.origin.y = (self.naviBar?.frame.size.height ?? 0)*(19.0/183.0)
-                    self.titleLabel?.frame.origin.y = (self.subTitleLabel?.frame.origin.y ?? 0) + (self.subTitleLabel?.frame.height ?? 0)
+                    UIView.animate(withDuration: 0.3) {
+                        self.titleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
+                        self.titleLabel?.frame.origin.y = (self.subTitleLabel?.frame.origin.y ?? 0) + (self.subTitleLabel?.frame.height ?? 0)
+                        self.subTitleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
+                        self.subTitleLabel?.frame.origin.y = (self.naviBar?.frame.size.height ?? 0)*(19.0/183.0)
+                        
+                        self.titleLabel?.alpha = 1
+                        self.subTitleLabel?.alpha = 1
+                    }
                     
                 }else{
-                    self.subTitleLabel?.isHidden = true
-                    self.titleLabel?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
+                    UIView.animate(withDuration: 0.3) {
+                        self.titleLabel?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
+                        self.titleLabel?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
+                        self.titleLabel?.alpha = 1
+                        self.subTitleLabel?.alpha = 0
+                    }
                 }
                 break
                 
@@ -163,13 +170,17 @@ public class MHNavigationController: UINavigationController{
                 let height = self.navigationHeight*(76.0/183.0)
                 let width = height*(image.size.width/image.size.height)
                 
-                self.titleLabel?.isHidden = true
-                self.subTitleLabel?.isHidden = true
-                self.titleImageView?.isHidden = false
                 self.titleImageView?.image = image
                 self.titleImageView?.frame.size = CGSize(width: width, height: height)
-                self.titleImageView?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
-                self.titleImageView?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
+                
+                UIView.animate(withDuration: 0.3) {
+                    self.titleLabel?.alpha = 0
+                    self.subTitleLabel?.alpha = 0
+                    self.titleImageView?.alpha = 1
+                    
+                    self.titleImageView?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
+                    self.titleImageView?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
+                }
             default:
                 break
             }
@@ -184,20 +195,15 @@ public class MHNavigationController: UINavigationController{
             guard let image = self.backBtnImage else{
                 return
             }
-//            if !self.isInit && oldValue == nil{ 
-//                //PUSH 화면으로 넘어갔다가(oldValue nil) 다시 이전 화면으로 돌아왔을 때 갱신되는 것 막음
-//                //PUSH 화면으로 다음 화면으로 넘어갈 때 새로운 이미지를 넣으면 갱신이 안될듯
-//                return
-//            }
             
             if self.isInit{
                 self.backBtn?.setImage(image, for: .normal)
             }else{
-                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
                     self.backBtn?.alpha = 0.3
                     self.backBtn?.setImage(image, for: .normal)
                 } completion: { _ in
-                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
                         self.backBtn?.alpha = 1
                     }
                 }
@@ -213,18 +219,15 @@ public class MHNavigationController: UINavigationController{
             guard let image = self.closeBtnImage else{
                 return
             }
-//            if !self.isInit && oldValue == nil{
-//                return
-//            }
             
             if self.isInit{
                 self.closeBtn?.setImage(image, for: .normal)
             }else{
-                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
                     self.closeBtn?.alpha = 0.3
                     self.closeBtn?.setImage(image, for: .normal)
                 } completion: { _ in
-                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
                         self.closeBtn?.alpha = 1
                     }
                 }
@@ -240,7 +243,6 @@ public class MHNavigationController: UINavigationController{
             }
             
             self.navigationBar.isHidden = self.isNaviBarHidden
-            
             
             if self.isNaviBarHidden{
                 self.naviBar?.alpha = 1
@@ -277,18 +279,25 @@ public class MHNavigationController: UINavigationController{
             }
             
             self.backBtn?.alpha = 0.3
-            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
-                if self.isBackBtnHidden{
-                    self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
-                }else{
-                    self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
-                }
-                
-            } completion: { _ in
+            
+            if self.isBackBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-                    self.backBtn?.alpha = self.isBackBtnHidden ? 0 : 1
+                    self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
+                        self.backBtn?.alpha = 0
+                    }
+                }
+            }else{
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+                    self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
+                        self.backBtn?.alpha = 1
+                    }
                 }
             }
+        
         }
     }
     
@@ -299,16 +308,22 @@ public class MHNavigationController: UINavigationController{
             }
             
             self.closeBtn?.alpha = 0.3
-            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
-                if self.isCloseBtnHidden{
-                    self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
-                }else{
-                    self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
-                }
-                
-            } completion: { _ in
+            
+            if self.isCloseBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-                    self.closeBtn?.alpha = self.isCloseBtnHidden ? 0 : 1
+                    self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
+                        self.closeBtn?.alpha = 0
+                    }
+                }
+            }else{
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+                    self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
+                        self.closeBtn?.alpha = 1
+                    }
                 }
             }
         }
