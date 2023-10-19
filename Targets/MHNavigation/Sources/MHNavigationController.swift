@@ -224,9 +224,9 @@ public class MHNavigationController: UINavigationController{
             }
             
             self.navigationBar.isHidden = self.isNaviBarHidden
-            self.naviBar?.isHidden = self.isNaviBarHidden
-            self.backBtn?.isHidden = self.isNaviBarHidden
-            self.closeBtn?.isHidden = self.isNaviBarHidden
+//            self.naviBar?.isHidden = self.isNaviBarHidden
+//            self.backBtn?.isHidden = self.isNaviBarHidden
+//            self.closeBtn?.isHidden = self.isNaviBarHidden
             
             UIView.animate(withDuration: 0.5) {
                 
@@ -248,9 +248,9 @@ public class MHNavigationController: UINavigationController{
                 
                 }
             } completion: { _ in
-                self.naviBar?.isHidden = self.isNaviBarHidden
-                self.backBtn?.isHidden = self.isNaviBarHidden
-                self.closeBtn?.isHidden = self.isNaviBarHidden
+//                self.naviBar?.isHidden = self.isNaviBarHidden
+//                self.backBtn?.isHidden = self.isNaviBarHidden
+//                self.closeBtn?.isHidden = self.isNaviBarHidden
                 
                 if !self.isNaviBarHidden{
                     UIView.animate(withDuration: 0.3) {
@@ -270,18 +270,16 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
-                self.backBtn?.alpha = 0.3
-                
+            self.backBtn?.alpha = 0.3
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
                 if self.isBackBtnHidden{
                     self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 }else{
-                    self.backBtn?.frame.origin.y = (self.naviBar?.frame.size.height ?? 0 - (self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
+                    self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
                 }
                 
             } completion: { _ in
-                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-                    
+                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
                     self.backBtn?.alpha = self.isBackBtnHidden ? 0 : 1
                 }
             }
