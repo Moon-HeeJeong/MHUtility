@@ -233,8 +233,8 @@ public class MHNavigationController: UINavigationController{
                     self.closeBtn?.alpha = 0
                 } completion: { _ in
                     UIView.animate(withDuration: 1) {
-                        self.naviBar?.frame.origin.y = -(self.statusBarHeight + UINavigationController().navigationBar.frame.size.height)
                         self.additionalSafeAreaInsets.top = 0
+                        self.naviBar?.frame.origin.y = -(self.statusBarHeight + UINavigationController().navigationBar.frame.size.height)
                         self.naviBar?.alpha = 0
                     }
                 }
