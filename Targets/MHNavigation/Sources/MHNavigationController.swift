@@ -228,24 +228,23 @@ public class MHNavigationController: UINavigationController{
             
             if self.isNaviBarHidden{
                 self.naviBar?.alpha = 1
-                UIView.animate(withDuration: 1) {
-                    
+                UIView.animate(withDuration: 0.3) {
                     self.backBtn?.alpha = 0
                     self.closeBtn?.alpha = 0
                 } completion: { _ in
-                    UIView.animate(withDuration: 1) {
+                    UIView.animate(withDuration: 0.2) {
                         self.additionalSafeAreaInsets.top = 0
                         self.naviBar?.frame.origin.y = -(self.statusBarHeight + UINavigationController().navigationBar.frame.size.height)
-//                        self.naviBar?.alpha = 0
                     }
                 }
             }else{
-                UIView.animate(withDuration: 1) {
+                self.naviBar?.alpha = 0
+                UIView.animate(withDuration: 0.3) {
                     self.naviBar?.alpha = 0.5
                     self.naviBar?.frame.origin.y = self.statusBarHeight
                     self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
                 } completion: { _ in
-                    UIView.animate(withDuration: 1) {
+                    UIView.animate(withDuration: 0.2) {
                         self.naviBar?.alpha = 1
                         self.backBtn?.alpha = 1
                         self.closeBtn?.alpha = 1
