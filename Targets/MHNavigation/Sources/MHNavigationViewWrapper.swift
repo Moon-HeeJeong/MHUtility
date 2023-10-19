@@ -80,8 +80,15 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         uiViewController.statusBarColor = UIColor(cgColor: self.statusBarColor.cgColor!)
         uiViewController.backgroundType = self.backgroundType
         uiViewController.titleType = self.titleType
-        uiViewController.backBtnImage = self.backImage
-        uiViewController.closeBtnImage = self.closeImage
+        
+        if let image = self.backImage{
+            uiViewController.backBtnImage = image
+        }
+        if let image = self.closeImage{
+            uiViewController.closeBtnImage = image
+        }
+//        uiViewController.backBtnImage = self.backImage
+//        uiViewController.closeBtnImage = self.closeImage
         
         uiViewController.isNaviBarHidden = self.isNavigationBarHidden
         uiViewController.isBackBtnHidden = self.isBackBtnHidden
