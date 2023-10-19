@@ -224,11 +224,8 @@ public class MHNavigationController: UINavigationController{
             }
             
             self.navigationBar.isHidden = self.isNaviBarHidden
-//            self.naviBar?.isHidden = self.isNaviBarHidden
-//            self.backBtn?.isHidden = self.isNaviBarHidden
-//            self.closeBtn?.isHidden = self.isNaviBarHidden
             
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.2) {
                 
                 if self.isNaviBarHidden{
                     self.naviBar?.alpha = 0.5
@@ -248,10 +245,6 @@ public class MHNavigationController: UINavigationController{
                 
                 }
             } completion: { _ in
-//                self.naviBar?.isHidden = self.isNaviBarHidden
-//                self.backBtn?.isHidden = self.isNaviBarHidden
-//                self.closeBtn?.isHidden = self.isNaviBarHidden
-                
                 if !self.isNaviBarHidden{
                     UIView.animate(withDuration: 0.3) {
                         self.naviBar?.alpha = 1
@@ -271,7 +264,7 @@ public class MHNavigationController: UINavigationController{
             }
             
             self.backBtn?.alpha = 0.3
-            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
                 if self.isBackBtnHidden{
                     self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 }else{
@@ -279,7 +272,7 @@ public class MHNavigationController: UINavigationController{
                 }
                 
             } completion: { _ in
-                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
                     self.backBtn?.alpha = self.isBackBtnHidden ? 0 : 1
                 }
             }
@@ -351,7 +344,7 @@ public class MHNavigationController: UINavigationController{
         
         self.statusBarView = UIView()
         self.statusBarColor = statusBarColor
-        self.view.addSubview(self.statusBarView)
+        
         //좀더보기
         self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
         self.statusBarView.heightAnchor
@@ -396,6 +389,7 @@ public class MHNavigationController: UINavigationController{
         self.naviBar?.addSubview(self.subTitleLabel!)
         self.view.addSubview(self.backBtn!)
         self.view.addSubview(self.closeBtn!)
+        self.view.addSubview(self.statusBarView)
     }
     
     
