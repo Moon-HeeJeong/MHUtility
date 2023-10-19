@@ -250,8 +250,8 @@ public class MHNavigationController: UINavigationController{
                 } completion: { _ in
                     UIView.animate(withDuration: 2) {
                         self.naviBar?.alpha = 1
-                        self.backBtn?.alpha = 1
-                        self.closeBtn?.alpha = 1
+//                        self.backBtn?.alpha = 1
+//                        self.closeBtn?.alpha = 1
                     }
                 }
             }
