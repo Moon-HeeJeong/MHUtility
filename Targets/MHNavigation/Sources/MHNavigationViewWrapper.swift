@@ -85,7 +85,7 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         }
         
         print("self \(self.isBackBtnHidden), controller \(uiViewController.isBackBtnHidden), owner \(context.coordinator.owner.isBackBtnHidden)")
-        if uiViewController.isBackBtnHidden != context.coordinator.owner.isBackBtnHidden {//!= uiViewController.isBackBtnHidden{
+        if isBackBtnHidden != context.coordinator.owner.isBackBtnHidden {//!= uiViewController.isBackBtnHidden{
             uiViewController.isBackBtnHidden = self.isBackBtnHidden
             
         }
