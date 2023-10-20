@@ -423,6 +423,7 @@ public class MHNavigationController: UINavigationController{
         self.view.addSubview(self.naviBar!)
         self.naviBar?.addSubview(self.titleLabel!)
         self.naviBar?.addSubview(self.subTitleLabel!)
+        self.naviBar?.addSubview(self.titleImageView!)
         self.view.addSubview(self.backBtn!)
         self.view.addSubview(self.closeBtn!)
         
