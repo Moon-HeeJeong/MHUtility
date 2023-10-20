@@ -81,6 +81,9 @@ public struct MHNavigationView<Content: View>: View {
             guard self.isUsePreference else{
                 return
             }
+            guard let image = image else{
+                return
+            }
             self.titleType = MHNavigationController.TitleType.image(image: image)
         })
         .onPreferenceChange(BackgroundTypePreferenceKey.self, perform: { type in

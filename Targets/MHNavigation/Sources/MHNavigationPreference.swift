@@ -73,7 +73,7 @@ public extension View{
         preference(key: StatusBarColorPreferenceKey.self, value: color)
     }
     func naviViewTitle(_ title: String?, _ subTitle: String? = nil) -> some View{
-        preference(key: TitleTextPreferenceKey.self, value: TitlePreferenceKey.TitleTexts(title: title, subTitle: subTitle))
+        preference(key: TitleTextPreferenceKey.self, value: TitleTextPreferenceKey.TitleTexts(title: title, subTitle: subTitle))
     }
     func naviViewTitleImage(_ image: UIImage?) -> some View{
         preference(key: TitleImagePreferenceKey.self, value: image)
