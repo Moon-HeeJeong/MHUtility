@@ -13,7 +13,7 @@ public struct StatusBarColorPreferenceKey: PreferenceKey{
         value = nextValue()
     }
 }
-public struct TitlePreferenceKey: PreferenceKey{
+public struct TitleTextPreferenceKey: PreferenceKey{
     
     public struct TitleTexts: Equatable{
         var title: String?
@@ -22,6 +22,12 @@ public struct TitlePreferenceKey: PreferenceKey{
     
     public static var defaultValue: TitleTexts = TitleTexts()
     public static func reduce(value: inout TitleTexts, nextValue: () -> TitleTexts) {
+        value = nextValue()
+    }
+}
+public struct TitleImagePreferenceKey: PreferenceKey{
+    public static var defaultValue: UIImage? = nil
+    public static func reduce(value: inout UIImage?, nextValue: () -> UIImage?) {
         value = nextValue()
     }
 }
@@ -67,7 +73,10 @@ public extension View{
         preference(key: StatusBarColorPreferenceKey.self, value: color)
     }
     func naviViewTitle(_ title: String?, _ subTitle: String? = nil) -> some View{
-        preference(key: TitlePreferenceKey.self, value: TitlePreferenceKey.TitleTexts(title: title, subTitle: subTitle))
+        preference(key: TitleTextPreferenceKey.self, value: TitlePreferenceKey.TitleTexts(title: title, subTitle: subTitle))
+    }
+    func naviViewTitleImage(_ image: UIImage?) -> some View{
+        preference(key: TitleImagePreferenceKey.self, value: image)
     }
     func naviViewBackgroundType(_ type: MHNavigationController.BackgroundType?) -> some View{
         preference(key: BackgroundTypePreferenceKey.self, value: type)

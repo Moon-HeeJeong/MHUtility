@@ -54,6 +54,7 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         let root = content()
             .naviViewStatusBarColor(self.statusBarColor)
             .naviViewTitle(self.titleType.title, self.titleType.subTitle)
+            .naviViewTitleImage(self.titleType.image)
             .naviViewBackgroundType(self.backgroundType)
             .naviViewBackButtonImage(self.backImage)
             .naviViewCloseButtonImage(self.closeImage)

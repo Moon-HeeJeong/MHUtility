@@ -67,6 +67,15 @@ public class MHNavigationController: UINavigationController{
                 return nil
             }
         }
+        
+        var image: UIImage?{
+            switch self {
+            case .text(_, _):
+                return nil
+            case .image(let image):
+                return image
+            }
+        }
     }
     
     public struct TextInfo: Equatable{
@@ -171,12 +180,16 @@ public class MHNavigationController: UINavigationController{
                 
                 
             case .image(let image):
+                guard let _ = image else{
+                    return
+                }
+                
                 let height = self.navigationHeight*(76.0/183.0)
                 let width = height*(image.size.width/image.size.height)
                 
                 self.titleImageView?.image = image
                 self.titleImageView?.frame.size = CGSize(width: width, height: height)
-                self.titleImageView?.backgroundColor = .red
+                
                 UIView.animate(withDuration: 0.3) {
                     self.titleLabel?.alpha = 0
                     self.subTitleLabel?.alpha = 0

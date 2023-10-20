@@ -65,7 +65,7 @@ public struct MHNavigationView<Content: View>: View {
             }
             self.statusBarColor = color
         })
-        .onPreferenceChange(TitlePreferenceKey.self, perform: { titles in
+        .onPreferenceChange(TitleTextPreferenceKey.self, perform: { titles in
             guard self.isUsePreference else{
                 return
             }
@@ -76,6 +76,12 @@ public struct MHNavigationView<Content: View>: View {
             self.titleType = MHNavigationController.TitleType.text(
                 title: MHNavigationController.TextInfo(text: titles.title, fontInfo: titleFont),
                 subTitle: MHNavigationController.TextInfo(text: titles.subTitle, fontInfo: subTitleFont))
+        })
+        .onPreferenceChange(TitleImagePreferenceKey.self, perform: { image in
+            guard self.isUsePreference else{
+                return
+            }
+            self.titleType = MHNavigationController.TitleType.image(image: image)
         })
         .onPreferenceChange(BackgroundTypePreferenceKey.self, perform: { type in
             guard self.isUsePreference else{
