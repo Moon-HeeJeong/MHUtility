@@ -113,6 +113,10 @@ public class MHNavigationController: UINavigationController{
             switch self.titleType {
             case .text(let titleInfo, let subTitleInfo):
                 
+                guard let _ = titleInfo.text else{
+                    return
+                }
+                
                 //title label
                 self.titleImageView?.alpha = 0
                 
