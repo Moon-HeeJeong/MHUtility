@@ -259,11 +259,7 @@ public class MHNavigationController: UINavigationController{
                     UIView.animate(withDuration: 0.5) {
                         
                         self.naviBar?.frame.origin.y = -(self.statusBarHeight + UINavigationController().navigationBar.frame.size.height)
-//                        self.additionalSafeAreaInsets.top = 0
-                    }completion: { _ in
-                        UIView.animate(withDuration: 0.5) {
-                            self.additionalSafeAreaInsets.top = 0
-                        }
+                        self.additionalSafeAreaInsets.top = 0
                     }
                 }
             }else{
@@ -271,17 +267,14 @@ public class MHNavigationController: UINavigationController{
                 UIView.animate(withDuration: 0.5) {
                     self.naviBar?.alpha = 0.5
                     
-//                    self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
-                    
+                    self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
                     self.naviBar?.frame.origin.y = self.statusBarHeight
                     
                 } completion: { _ in
-                    UIView.animate(withDuration: 0.5) {
+                    UIView.animate(withDuration: 0.2) {
                         self.naviBar?.alpha = 1
                         self.backBtn?.alpha = 1
                         self.closeBtn?.alpha = 1
-                        
-                        self.additionalSafeAreaInsets.top = self.navigationHeight - UINavigationController().navigationBar.frame.size.height
                     }
                 }
             }
