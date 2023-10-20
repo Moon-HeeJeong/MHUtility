@@ -89,10 +89,10 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         }
 //        uiViewController.backBtnImage = self.backImage
 //        uiViewController.closeBtnImage = self.closeImage
-        
-        uiViewController.isNaviBarHidden = self.isNavigationBarHidden
+
         uiViewController.isBackBtnHidden = self.isBackBtnHidden
         uiViewController.isCloseBtnHidden = self.isCloseBtnHidden
+        uiViewController.isNaviBarHidden = self.isNavigationBarHidden
         
         uiViewController.setBackEvent(event: self.backEvent)
         uiViewController.setCloseEvent(event: self.closeEvent)

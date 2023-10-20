@@ -32,9 +32,9 @@ public struct MHNavigationView<Content: View>: View {
         self.titleType = titleType
         self.backImage = backImage
         self.closeImage = closeImage
-        self.isNavigationBarHidden = isNavigationBarHidden
         self._isBackBtnHidden = isBackBtnHidden
         self._isCloseBtnHidden = isCloseBtnHidden
+        self.isNavigationBarHidden = isNavigationBarHidden
         self._isUsePreference = isUsePreference
         self._action = action
         self.backEvent = backEvent
