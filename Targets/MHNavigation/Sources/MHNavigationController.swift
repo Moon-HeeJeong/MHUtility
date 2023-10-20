@@ -172,14 +172,14 @@ public class MHNavigationController: UINavigationController{
                 
                 self.titleImageView?.image = image
                 self.titleImageView?.frame.size = CGSize(width: width, height: height)
-                
+                self.titleImageView?.backgroundColor = .red
                 UIView.animate(withDuration: 0.3) {
                     self.titleLabel?.alpha = 0
                     self.subTitleLabel?.alpha = 0
                     self.titleImageView?.alpha = 1
                     
                     self.titleImageView?.center.x = (self.naviBar?.frame.size.width ?? self.view.frame.size.width)/2
-                    self.titleImageView?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - (self.titleLabel?.frame.size.height ?? 0))/2
+                    self.titleImageView?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - height)/2
                 }
             default:
                 break
