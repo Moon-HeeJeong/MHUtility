@@ -83,8 +83,13 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         if let image = self.closeImage{
             uiViewController.closeBtnImage = image
         }
+        
+        if isBackBtnHidden != uiViewController.isBackBtnHidden {//!= uiViewController.isBackBtnHidden{
+            uiViewController.isBackBtnHidden = self.isBackBtnHidden
+            
+        }
 
-        uiViewController.isBackBtnHidden = self.isBackBtnHidden
+//        uiViewController.isBackBtnHidden = self.isBackBtnHidden
         uiViewController.isCloseBtnHidden = self.isCloseBtnHidden
         uiViewController.isNaviBarHidden = self.isNavigationBarHidden
         

@@ -303,7 +303,7 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-//            self.backBtn?.alpha = 1
+            self.backBtn?.alpha = 1
             
             if self.isBackBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
@@ -324,7 +324,7 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-//            self.closeBtn?.alpha = 1
+            self.closeBtn?.alpha = 1
             
             if self.isCloseBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
