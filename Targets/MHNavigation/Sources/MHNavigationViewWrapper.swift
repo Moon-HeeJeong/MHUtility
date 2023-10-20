@@ -11,10 +11,7 @@ import SwiftUI
 
 public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresentable{
     
-    
-    //변경될 수 있는 값
     @Binding var navigationBarHeight: CGFloat
-    
     @Binding var statusBarColor: Color
     @Binding var backgroundType: MHNavigationController.BackgroundType
     @Binding var titleType: MHNavigationController.TitleType
@@ -29,8 +26,7 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
     var closeEvent: MHNavigationController.Event?
     var content: () -> Content
     
-    var callback: (UINavigationController, UIViewController) -> Void //????????
-    
+    var callback: (UINavigationController, UIViewController) -> Void
     
     public init(navigationBarHeight: Binding<CGFloat>, statusBarColor: Binding<Color>, backgroundType: Binding<MHNavigationController.BackgroundType>, titleType: Binding<MHNavigationController.TitleType>, backImage: Binding<UIImage?>, closeImage: Binding<UIImage?>, isNavigationBarHidden: Binding<Bool>, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, action: Binding<MHNavigationController.CloseAction?>, backEvent: MHNavigationController.Event?, closeEvent: MHNavigationController.Event?, content: @escaping () -> Content, callback: @escaping (UINavigationController, UIViewController)->Void) {
         _statusBarColor = statusBarColor
@@ -62,7 +58,6 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
             .naviViewBackButtonHidden(self.isBackBtnHidden)
             .naviViewCloseButtonHidden(self.isCloseBtnHidden)
         
-        
         let navigationController = MHNavigationController(navigationHeight: navigationBarHeight,
                                                           statusBarColor: UIColor(cgColor: statusBarColor.cgColor!),
                                                           backgroundType: backgroundType,
@@ -88,8 +83,6 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         if let image = self.closeImage{
             uiViewController.closeBtnImage = image
         }
-//        uiViewController.backBtnImage = self.backImage
-//        uiViewController.closeBtnImage = self.closeImage
 
         uiViewController.isBackBtnHidden = self.isBackBtnHidden
         uiViewController.isCloseBtnHidden = self.isCloseBtnHidden
@@ -104,8 +97,6 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         NavigationSlave(owner: self)
     }
     
-    
-    //얘의 쓰임새?
     public class NavigationSlave: NSObject, UINavigationControllerDelegate{
         
         var owner: MHNavigationViewWrapper
@@ -116,7 +107,6 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
         
         public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
             self.owner.callback(navigationController, viewController)
-            //콜백
         }
         
     }

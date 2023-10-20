@@ -16,6 +16,10 @@ public class MHNavigationController: UINavigationController{
         .landscape
     }
     
+    public override var preferredStatusBarStyle: UIStatusBarStyle{
+        .lightContent
+    }
+    
     public typealias Event = ()->Void
     
     public enum CloseAction{
@@ -129,10 +133,12 @@ public class MHNavigationController: UINavigationController{
                 //title label
                 self.titleImageView?.alpha = 0
                 
+                let defaultTitleFontSize = UIScreen.main.bounds.height*(62.0/2436.0)
+                
                 if let customFontName =  titleInfo.fontInfo?.fontName{
-                    self.titleLabel?.font = UIFont(name: customFontName, size: titleInfo.fontInfo?.fontSize ?? 0)
+                    self.titleLabel?.font = UIFont(name: customFontName, size: titleInfo.fontInfo?.fontSize ?? defaultTitleFontSize)
                 }else{
-                    self.titleLabel?.font = UIFont.systemFont(ofSize: titleInfo.fontInfo?.fontSize ?? 0)
+                    self.titleLabel?.font = UIFont.systemFont(ofSize: titleInfo.fontInfo?.fontSize ?? defaultTitleFontSize)
                 }
                 
                 self.titleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
@@ -142,15 +148,16 @@ public class MHNavigationController: UINavigationController{
                 
                
                 //subtitle label
-                self.subTitleLabel?.alpha = 0
                 if let subTitle = subTitleInfo?.text{
                     self.subTitleLabel?.alpha = 0
                     
                     let info = subTitleInfo?.fontInfo
+                    let defaultSubTitleFontSize = UIScreen.main.bounds.height*(48.0/2436.0)
+                    
                     if let customFontName = info?.fontName{
-                        self.subTitleLabel?.font = UIFont(name: customFontName, size: info?.fontSize ?? 0)
+                        self.subTitleLabel?.font = UIFont(name: customFontName, size: info?.fontSize ?? defaultSubTitleFontSize)
                     }else{
-                        self.subTitleLabel?.font = UIFont.systemFont(ofSize: info?.fontSize ?? 0)
+                        self.subTitleLabel?.font = UIFont.systemFont(ofSize: info?.fontSize ?? defaultSubTitleFontSize)
                     }
                     
                     self.subTitleLabel?.frame.size.width = (self.naviBar?.frame.size.width ?? 0) - (self.backBtn?.frame.origin.x ?? 0)*4 - (self.backBtn?.frame.size.width ?? 0)*2
@@ -214,15 +221,12 @@ public class MHNavigationController: UINavigationController{
                 self.backBtn?.setImage(image, for: .normal)
             }else{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
-//                    self.backBtn?.alpha = 0.5
                     self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 } completion: { _ in
                     self.backBtn?.setImage(image, for: .normal)
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
                        
                         self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
-                        
-//                        self.backBtn?.alpha = 1
                     }
                 }
             }
@@ -242,12 +246,10 @@ public class MHNavigationController: UINavigationController{
                 self.closeBtn?.setImage(image, for: .normal)
             }else{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
-//                    self.closeBtn?.alpha = 0.5
                     self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
                 } completion: { _ in
                     self.closeBtn?.setImage(image, for: .normal)
                     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-//                        self.closeBtn?.alpha = 1
                         self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
                     }
                 }
@@ -301,23 +303,15 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-            self.backBtn?.alpha = 1//0.3
+            self.backBtn?.alpha = 1
             
             if self.isBackBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
                     self.backBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
-//                        self.backBtn?.alpha = 0
-                    }
                 }
             }else{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
                     self.backBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.backBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-//                        self.backBtn?.alpha = 1
-                    }
                 }
             }
         
@@ -330,23 +324,15 @@ public class MHNavigationController: UINavigationController{
                 return
             }
             
-            self.closeBtn?.alpha = 1//0.3
+            self.closeBtn?.alpha = 1
             
             if self.isCloseBtnHidden{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
                     self.closeBtn?.frame.origin.y = -(self.naviBar?.frame.size.height ?? 0)
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
-//                        self.closeBtn?.alpha = 0
-                    }
                 }
             }else{
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
                     self.closeBtn?.frame.origin.y = ((self.naviBar?.frame.size.height ?? 0) - ( self.closeBtn?.frame.size.height ?? 0))/2 + self.statusBarHeight
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-//                        self.closeBtn?.alpha = 1
-                    }
                 }
             }
         }
@@ -373,7 +359,6 @@ public class MHNavigationController: UINavigationController{
     }
     
     
-    
     private var statusBarView: UIView!
     private var naviBar: UIImageView?
     private var titleLabel: UILabel?
@@ -388,6 +373,7 @@ public class MHNavigationController: UINavigationController{
     private var isInit: Bool = true
     
     public init(navigationHeight: CGFloat, statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType? = nil, backImage: UIImage?, closeImage: UIImage?, backEvent: Event?, closeEvent: Event?, rootViewController: UIViewController) {
+        
         self.navigationHeight = navigationHeight
         super.init(rootViewController: rootViewController)
         
@@ -407,10 +393,8 @@ public class MHNavigationController: UINavigationController{
     
     func initView(statusBarColor: UIColor, backgroundType: BackgroundType, titleType: TitleType?, backImage: UIImage?, closeImage: UIImage?){
         
-        
         self.naviBar = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: self.statusBarHeight),
                                                  size: CGSize(width: self.view.frame.size.width, height: self.navigationHeight)))
-        
         
         
         self.titleLabel = UILabel()
@@ -441,11 +425,10 @@ public class MHNavigationController: UINavigationController{
         self.view.addSubview(self.backBtn!)
         self.view.addSubview(self.closeBtn!)
         
-        
         self.statusBarView = UIView()
         self.statusBarColor = statusBarColor
         self.view.addSubview(self.statusBarView)
-        //좀더보기
+        
         self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
         self.statusBarView.heightAnchor
             .constraint(equalToConstant: self.statusBarHeight).isActive = true
