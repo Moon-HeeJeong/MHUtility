@@ -86,7 +86,7 @@ public class MHNavigationController: UINavigationController{
         var text: String?
         var fontInfo: FontInfo?
         
-        public init(text: String? = nil, fontInfo: FontInfo? = nil) {
+        public init(text: String?, fontInfo: FontInfo?) {
             self.text = text
             self.fontInfo = fontInfo
         }
@@ -97,7 +97,7 @@ public class MHNavigationController: UINavigationController{
         var fontName: String?
         var fontSize: CGFloat?
         
-        public init(color: UIColor? = nil, fontName: String? = nil, fontSize: CGFloat? = nil) {
+        public init(color: UIColor?, fontName: String?, fontSize: CGFloat?) {
             self.color = color
             self.fontName = fontName
             self.fontSize = fontSize
