@@ -180,9 +180,6 @@ public class MHNavigationController: UINavigationController{
                 
                 
             case .image(let image):
-                guard let _ = image else{
-                    return
-                }
                 
                 let height = self.navigationHeight*(76.0/183.0)
                 let width = height*(image.size.width/image.size.height)
