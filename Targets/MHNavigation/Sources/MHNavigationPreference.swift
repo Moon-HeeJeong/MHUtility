@@ -56,14 +56,14 @@ public struct NavigationBarHiddenPreferenceKey: PreferenceKey{
     }
 }
 public struct BackButtonHiddenPreferenceKey: PreferenceKey{
-    public static var defaultValue: Bool = false
-    public static func reduce(value: inout Bool, nextValue: () -> Bool) {
+    public static var defaultValue: Bool? = nil
+    public static func reduce(value: inout Bool?, nextValue: () -> Bool?) {
         value = nextValue()
     }
 }
 public struct CloseButtonHiddenPreferenceKey: PreferenceKey{
-    public static var defaultValue: Bool = false
-    public static func reduce(value: inout Bool, nextValue: () -> Bool) {
+    public static var defaultValue: Bool? = nil
+    public static func reduce(value: inout Bool?, nextValue: () -> Bool?) {
         value = nextValue()
     }
 }
@@ -90,10 +90,10 @@ public extension View{
     func naviViewHidden(_ isHidden: Bool = false) -> some View{
         preference(key: NavigationBarHiddenPreferenceKey.self, value: isHidden)
     }
-    func naviViewBackButtonHidden(_ isHidden: Bool = false) -> some View{
+    func naviViewBackButtonHidden(_ isHidden: Bool?) -> some View{
         preference(key: BackButtonHiddenPreferenceKey.self, value: isHidden)
     }
-    func naviViewCloseButtonHidden(_ isHidden: Bool = false) -> some View{
+    func naviViewCloseButtonHidden(_ isHidden: Bool?) -> some View{
         preference(key: CloseButtonHiddenPreferenceKey.self, value: isHidden)
     }
 }

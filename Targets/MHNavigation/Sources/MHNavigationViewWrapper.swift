@@ -84,11 +84,11 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
             uiViewController.closeBtnImage = image
         }
         
-        print("self \(self.isBackBtnHidden), controller \(uiViewController.isBackBtnHidden), owner \(context.coordinator.owner.isBackBtnHidden)")
-        if isBackBtnHidden != context.coordinator.owner.isBackBtnHidden {//!= uiViewController.isBackBtnHidden{
-            uiViewController.isBackBtnHidden = self.isBackBtnHidden
-            
-        }
+//        print("self \(self.isBackBtnHidden), controller \(uiViewController.isBackBtnHidden), owner \(context.coordinator.owner.isBackBtnHidden)")
+//        if isBackBtnHidden != context.coordinator.owner.isBackBtnHidden {//!= uiViewController.isBackBtnHidden{
+//            uiViewController.isBackBtnHidden = self.isBackBtnHidden
+//            
+//        }
 
 //        uiViewController.isBackBtnHidden = self.isBackBtnHidden
         uiViewController.isCloseBtnHidden = self.isCloseBtnHidden

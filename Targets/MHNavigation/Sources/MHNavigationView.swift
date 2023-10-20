@@ -117,10 +117,16 @@ public struct MHNavigationView<Content: View>: View {
             guard self.isUsePreference else{
                 return
             }
+            guard let isHidden = isHidden else{
+                return
+            }
             self.isBackBtnHidden = isHidden
         })
         .onPreferenceChange(CloseButtonHiddenPreferenceKey.self, perform: { isHidden in
             guard self.isUsePreference else{
+                return
+            }
+            guard let isHidden = isHidden else{
                 return
             }
             self.isCloseBtnHidden = isHidden
