@@ -90,7 +90,7 @@ public struct MHNavigationViewWrapper<Content: View>: UIViewControllerRepresenta
 //            
 //        }
 
-//        uiViewController.isBackBtnHidden = self.isBackBtnHidden
+        uiViewController.isBackBtnHidden = self.isBackBtnHidden
         uiViewController.isCloseBtnHidden = self.isCloseBtnHidden
         uiViewController.isNaviBarHidden = self.isNavigationBarHidden
         
