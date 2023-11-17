@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct PrefrenceCanUsePreferenceKey: PreferenceKey{
-    public static var defaultValue: Bool = false
+    public static var defaultValue: Bool = true
     public static func reduce(value: inout Bool, nextValue: () -> Bool) {
         value = nextValue()
     }
