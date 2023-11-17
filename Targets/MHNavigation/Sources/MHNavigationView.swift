@@ -16,16 +16,17 @@ public struct MHNavigationView<Content: View>: View {
     @State var backImage: UIImage?
     @State var closeImage: UIImage?
     @State var isNavigationBarHidden: Bool
+    @State var isUsePreference: Bool
     @Binding var isBackBtnHidden: Bool
     @Binding var isCloseBtnHidden: Bool
-    @Binding var isUsePreference: Bool
+    
     
     @Binding var action: MHNavigationController.CloseAction?
     var backEvent: MHNavigationController.Event?
     var closeEvent: MHNavigationController.Event?
     var content: ()->Content
     
-    public init(navigationBarHeight: CGFloat, statusBarColor: Color, backgroundType: MHNavigationController.BackgroundType, titleType: MHNavigationController.TitleType, backImage: UIImage? = nil, closeImage: UIImage? = nil, isNavigationBarHidden: Bool, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, isUsePreference: Binding<Bool> = .constant(true), action: Binding<MHNavigationController.CloseAction?> = .constant(nil), backEvent: MHNavigationController.Event? = nil, closeEvent: MHNavigationController.Event? = nil, content: @escaping () -> Content) {
+    public init(navigationBarHeight: CGFloat, statusBarColor: Color, backgroundType: MHNavigationController.BackgroundType, titleType: MHNavigationController.TitleType, backImage: UIImage? = nil, closeImage: UIImage? = nil, isNavigationBarHidden: Bool, isBackBtnHidden: Binding<Bool>, isCloseBtnHidden: Binding<Bool>, isUsePreference: Bool = true, action: Binding<MHNavigationController.CloseAction?> = .constant(nil), backEvent: MHNavigationController.Event? = nil, closeEvent: MHNavigationController.Event? = nil, content: @escaping () -> Content) {
         self.navigationBarHeight = navigationBarHeight
         self.statusBarColor = statusBarColor
         self.backgroundType = backgroundType
@@ -35,7 +36,7 @@ public struct MHNavigationView<Content: View>: View {
         self._isBackBtnHidden = isBackBtnHidden
         self._isCloseBtnHidden = isCloseBtnHidden
         self.isNavigationBarHidden = isNavigationBarHidden
-        self._isUsePreference = isUsePreference
+        self.isUsePreference = isUsePreference
         self._action = action
         self.backEvent = backEvent
         self.closeEvent = closeEvent
@@ -57,6 +58,10 @@ public struct MHNavigationView<Content: View>: View {
                                 closeEvent: closeEvent,
                                 content: content, callback: { navi, controller in
             
+        })
+        
+        .onPreferenceChange(PrefrenceCanUsePreferenceKey.self, perform: { isCanUse in
+            self.isUsePreference = isCanUse
         })
         
         .onPreferenceChange(StatusBarColorPreferenceKey.self, perform: { color in

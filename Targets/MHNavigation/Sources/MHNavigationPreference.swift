@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+public struct PrefrenceCanUsePreferenceKey: PreferenceKey{
+    public static var defaultValue: Bool = false
+    public static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = nextValue()
+    }
+}
+
 public struct StatusBarColorPreferenceKey: PreferenceKey{
     public static var defaultValue: Color = .clear
     public static func reduce(value: inout Color, nextValue: () -> Color) {
@@ -69,6 +76,9 @@ public struct CloseButtonHiddenPreferenceKey: PreferenceKey{
 }
 
 public extension View{
+    func naviViewCanUsePreference(_ isCanUse: Bool) -> some View{
+        preference(key: PrefrenceCanUsePreferenceKey.self, value: isCanUse)
+    }
     func naviViewStatusBarColor(_ color: Color) -> some View{
         preference(key: StatusBarColorPreferenceKey.self, value: color)
     }
