@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,12 +18,15 @@
 		1C86BB80011EEF5C464CB1E7 /* MHExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18BFACE1ED0AB74230FDF1C /* MHExtension.framework */; };
 		22B28C76E7E550199C370FF2 /* MHExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E84977201D0BDFD951FB8E /* MHExtensionTests.swift */; };
 		24925AA87FFCD44E2450E23F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8AD5D8D1160C66C4C58661 /* Assets.xcassets */; };
+		256FDC7B5C059BAC1D5A00AE /* MHNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BA093C5F68F4D6384EE0A /* MHNavigationView.swift */; };
+		2778FB293301DCCBA103A919 /* MHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */; };
 		2AA0B1EA51B967DD36BB4F52 /* MHUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB905519593ABC86515257 /* MHUserDefaultsTests.swift */; };
 		2B6527384D4A3686AD82B296 /* MHUIUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */; };
 		2DE7A0EFBA5E8754ED55EB40 /* MHOrientationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22239DB9BA1F6D228B70F6B8 /* MHOrientationTests.swift */; };
 		2E5562452A3553930FA08245 /* MHUIUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */; };
 		2EBD8F274D9CE835518DD70A /* MHOrientation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB8E040E4CC64662A0994B /* MHOrientation.framework */; };
 		3148DE85A84542042D511C57 /* UIUtilityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */; };
+		323B44E714B14F0440715DA1 /* MHNavigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F78289B83C157DF409EFD6F7 /* MHNavigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39FBBAAB7B605BCBABF2EAE8 /* MHDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 518EB92335D0C40FD544E597 /* MHDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A6D49E76D39C193E613DBB5 /* icons_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F54F067A5AF4C2B9BAD6659 /* icons_2.png */; };
 		3EB5305B447FAD30FC29A663 /* MHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F7487DC9D4D097B89A1A7E /* MHLog.swift */; };
@@ -32,10 +35,12 @@
 		42E5FFC1BCD353015CC1F4BF /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CDD3D6078126BBCE4F3016 /* Int.swift */; };
 		433BA93EB30F7CAC65D3555C /* MHImageCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4BEE7802E6D88625B55AE455 /* MHUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D3120C3609065ABCE1A9BE /* MHUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E6B12A3EB5F1F416A9C3B7F /* MHNavigationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFF1982E4E02479AD036310 /* MHNavigationPreference.swift */; };
 		4E98FC396EF0A29ACD837D38 /* TuistBundle+MHImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628BB726D0AFD49E8741EE6E /* TuistBundle+MHImageCacheTests.swift */; };
 		4EA800F5FD7085E16417B340 /* MHUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D3120C3609065ABCE1A9BE /* MHUserDefaults.framework */; };
 		5096E0F1A2C3DBB877A8315F /* MHAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD09D7EC1DA8904D1A3A8AF /* MHAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		556C9CBF39863E798D379995 /* MHTextFieldListView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8EEE9681BE11DEC0FFD13CA7 /* MHTextFieldListView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55D58B365799F6224F32570B /* MHNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78289B83C157DF409EFD6F7 /* MHNavigation.framework */; };
 		57DF7E82C0535A78D905D25B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B45DD237923D2F5366D015 /* UIView.swift */; };
 		58C5F24B2840B168DF2B8530 /* MHDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518EB92335D0C40FD544E597 /* MHDownloader.framework */; };
 		5A3A6DAF339B452569862918 /* MHOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E94DD8E756E9C37E5FE8F /* MHOrientation.swift */; };
@@ -56,6 +61,7 @@
 		85B34E8237FDAF67A52533EF /* MHImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47506A31BB9D138B33117F2C /* MHImageCacheTests.swift */; };
 		85B7157A24ACB546AAF1172F /* MHImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */; };
 		86534DBF3D6DB82EAD6A06DE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048DB3470F8635B33AC8C9B /* UIColor.swift */; };
+		865DCE2A009D7E37A096F129 /* MHNavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39FA951A4484CF106ACF75 /* MHNavigationViewWrapper.swift */; };
 		8B19CE71E4BD870A294817A6 /* UIDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C137F45296C5E7B1E8BA4 /* UIDeviceOrientation.swift */; };
 		8CBDEF6BA5921BB5487521F1 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FE4081CAFCE2962312129 /* BaseVM.swift */; };
 		9327123BF2E750F00D7DD311 /* MHLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE3B347970A4DB419AB6B03 /* MHLog.framework */; };
@@ -68,10 +74,13 @@
 		A6EE3F06D93E59075C7779A2 /* icons_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 486B907DA1ADF08BF9793288 /* icons_3.png */; };
 		AA5C9BB1228F1EFA5D401D81 /* MHLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E855BCE8A6DF803E51B8868 /* MHLogTests.swift */; };
 		AC377E96EDAE9D0B8BD273C5 /* MHUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D3120C3609065ABCE1A9BE /* MHUserDefaults.framework */; };
+		ACB35C9FC31548FCE7324733 /* MHNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78289B83C157DF409EFD6F7 /* MHNavigation.framework */; };
+		AD128B08820F10F4553952EA /* MHCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA1CCAFF354C224251DEE8 /* MHCircleProgressView.swift */; };
 		AF1771F0CF689C3B878F4BA1 /* MHUIUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B39DE3F2B9925D57D2FE4A57 /* MHDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902640516CAC48CDAA0EECEF /* MHDownloaderTests.swift */; };
 		B4AF597EBD7FA45B8C99F746 /* MHOrientation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB8E040E4CC64662A0994B /* MHOrientation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55416370BBCCE65133D871E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D175D3F620BD4D087521E /* UIImage.swift */; };
+		B64439592B0C80CD00D8F57D /* MHNavigationConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64439582B0C80CD00D8F57D /* MHNavigationConfigurations.swift */; };
 		B78E1E35A14224F28867EC61 /* TuistBundle+MHUtilityTestAppSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F35F1E8DD56984AAB32D1 /* TuistBundle+MHUtilityTestAppSwiftUI.swift */; };
 		B88565E4F7E4B8820A1A5050 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E17E2243F1C9AA837BF155 /* ContentView.swift */; };
 		B9FD725F19C551F9A785C74C /* MHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192AA1409994BEEDC2262A31 /* MHDevice.swift */; };
@@ -92,11 +101,13 @@
 		E4287090059430643426B90C /* ScaleAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F57A36A188239EC9A01 /* ScaleAnimationStyle.swift */; };
 		E5EA926961CB24170766B97C /* BrightAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AA9F8B5B68467C09F660D /* BrightAnimationStyle.swift */; };
 		E63FAE4BBEF36CA1B38473CD /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E461D2138003072D856AE1E /* Bool.swift */; };
+		EFC2A15D17396FDC94BED500 /* MHDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF25A891063E05E850FE3A /* MHDeviceTests.swift */; };
 		F30DDF58CD049AC8F414EAFF /* MHTextFieldListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78ED46EE751817188A072BE /* MHTextFieldListViewTests.swift */; };
 		F3E347BF4E6D037393EDB525 /* MHAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD09D7EC1DA8904D1A3A8AF /* MHAPI.framework */; };
 		F5D2BDCC636AD8700E35EF09 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A53D84C6D2C80F54C8594F7 /* String.swift */; };
 		FB3821F77E2D7C660E86FC73 /* MHDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7576367B0AB6FC6B6AEF35 /* MHDevice.framework */; };
 		FEBC6432020ACB35FBBCF64B /* MHUIUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3746E031E133951E70F909F /* MHUIUtilityTests.swift */; };
+		FF426601FEFA69863198D0A1 /* MHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344518F5ABA27DAE7BF2DEE /* MHNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +167,13 @@
 			remoteGlobalIDString = 06BBDD91C5F8946640EED235;
 			remoteInfo = MHUtilityTestAppSwiftUI;
 		};
+		429BC40CAFB1178CB2942D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 511BC61AC4D4C412CF6B2726 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C641CFC8DD9016582C9539A5;
+			remoteInfo = MHNavigation;
+		};
 		4BE0967BDA3F7882BEF46736 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 511BC61AC4D4C412CF6B2726 /* Project object */;
@@ -204,6 +222,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6C92BA7C2FEF3B362D32BAE2;
 			remoteInfo = MHUIUtility;
+		};
+		970EED1F55F6389B8278EF22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 511BC61AC4D4C412CF6B2726 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C641CFC8DD9016582C9539A5;
+			remoteInfo = MHNavigation;
 		};
 		C7A53A9CB2F84F8E421C3828 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -291,6 +316,16 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		11136AA1ED21444D5F8B3053 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209FD49BE3F8E062A4CC1151 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -402,10 +437,21 @@
 				412D2BFCAD0904B9A1D4AF24 /* MHExtension.framework in Embed Frameworks */,
 				433BA93EB30F7CAC65D3555C /* MHImageCache.framework in Embed Frameworks */,
 				BA8CAE72D197C5B0249088E7 /* MHLog.framework in Embed Frameworks */,
+				323B44E714B14F0440715DA1 /* MHNavigation.framework in Embed Frameworks */,
 				B4AF597EBD7FA45B8C99F746 /* MHOrientation.framework in Embed Frameworks */,
 				556C9CBF39863E798D379995 /* MHTextFieldListView.framework in Embed Frameworks */,
 				AF1771F0CF689C3B878F4BA1 /* MHUIUtility.framework in Embed Frameworks */,
 				4BEE7802E6D88625B55AE455 /* MHUserDefaults.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0DFA1D843092B1D1E867F11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,9 +539,11 @@
 		192AA1409994BEEDC2262A31 /* MHDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDevice.swift; sourceTree = "<group>"; };
 		1AC07DF1E8040994D9BD780F /* icons_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons_1.png; sourceTree = "<group>"; };
 		1B861D087D692D4C7389D1CA /* MHImageCacheTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHImageCacheTests-Info.plist"; sourceTree = "<group>"; };
+		1D39FA951A4484CF106ACF75 /* MHNavigationViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationViewWrapper.swift; sourceTree = "<group>"; };
 		1F6FDB28B294ACCDBFC6887F /* MHLogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHLogTests-Info.plist"; sourceTree = "<group>"; };
 		2089A2DBFFE408FCCA9A6C4C /* MHUserDefaultsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHUserDefaultsTests-Info.plist"; sourceTree = "<group>"; };
 		22239DB9BA1F6D228B70F6B8 /* MHOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHOrientationTests.swift; sourceTree = "<group>"; };
+		2344518F5ABA27DAE7BF2DEE /* MHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationController.swift; sourceTree = "<group>"; };
 		24E17E2243F1C9AA837BF155 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		276101DA0467C74CDAEB95F7 /* MHUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHUserDefaults.swift; sourceTree = "<group>"; };
 		2ADD8141A5DAAC55C74BB439 /* MHDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -515,6 +563,7 @@
 		486B907DA1ADF08BF9793288 /* icons_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons_3.png; sourceTree = "<group>"; };
 		4BB9A54316C0138AC289FD1D /* MHUtilityTestAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHUtilityTestAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		4BD8EAE309BA0D3C74FFF280 /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
+		4D17C3C12D1EC10EFC436B8D /* MHNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F54F067A5AF4C2B9BAD6659 /* icons_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons_2.png; sourceTree = "<group>"; };
 		518EB92335D0C40FD544E597 /* MHDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D3120C3609065ABCE1A9BE /* MHUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -525,6 +574,7 @@
 		628BB726D0AFD49E8741EE6E /* TuistBundle+MHImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MHImageCacheTests.swift"; sourceTree = "<group>"; };
 		638F32BB90212B414B353C56 /* MHDevice-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHDevice-Info.plist"; sourceTree = "<group>"; };
 		6AFC82B6AC28DA49A0147E87 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6DAF25A891063E05E850FE3A /* MHDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDeviceTests.swift; sourceTree = "<group>"; };
 		6DC744F4F05A19BCDC694993 /* MHExtension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHExtension-Info.plist"; sourceTree = "<group>"; };
 		6F62B0A3BBB80C69580F3F8F /* MHOrientationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHOrientationTests-Info.plist"; sourceTree = "<group>"; };
 		72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilityInfo.swift; sourceTree = "<group>"; };
@@ -536,9 +586,11 @@
 		84297A6F72EFDFE24B9A1A08 /* MHAPI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHAPI-Info.plist"; sourceTree = "<group>"; };
 		868672C2010C0A6F7021FCE6 /* TuistAssets+MHUtilityTestAppSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+MHUtilityTestAppSwiftUI.swift"; sourceTree = "<group>"; };
 		89A0D00B43A5ACD412F4096F /* MHAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAPITests.swift; sourceTree = "<group>"; };
+		8DAA1CCAFF354C224251DEE8 /* MHCircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHCircleProgressView.swift; sourceTree = "<group>"; };
 		8E855BCE8A6DF803E51B8868 /* MHLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHLogTests.swift; sourceTree = "<group>"; };
 		8EEE9681BE11DEC0FFD13CA7 /* MHTextFieldListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHTextFieldListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		902640516CAC48CDAA0EECEF /* MHDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDownloaderTests.swift; sourceTree = "<group>"; };
+		9AA9956EED8AA61EF11F6749 /* MHNavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHNavigationTests-Info.plist"; sourceTree = "<group>"; };
 		9D1AA9F8B5B68467C09F660D /* BrightAnimationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightAnimationStyle.swift; sourceTree = "<group>"; };
 		9D51AE7D4B8A8903EB988D42 /* MHTextFieldListView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHTextFieldListView-Info.plist"; sourceTree = "<group>"; };
 		9FF4125BD6E8BD4EC26AEB37 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
@@ -557,14 +609,18 @@
 		B2972079CD84C331A547325A /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B2CDD3D6078126BBCE4F3016 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHUIUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B64439582B0C80CD00D8F57D /* MHNavigationConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationConfigurations.swift; sourceTree = "<group>"; };
 		BD81E21FE3356DA57DCC9DF7 /* MHTextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHTextFieldListView.swift; sourceTree = "<group>"; };
+		BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAlertView.swift; sourceTree = "<group>"; };
 		C0F2390BF3A9F3707A2305A5 /* MHDownloader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHDownloader-Info.plist"; sourceTree = "<group>"; };
 		C18BFACE1ED0AB74230FDF1C /* MHExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C308274CB235534D1B9C5449 /* DisplayOnOpenMenuViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOnOpenMenuViewModifier.swift; sourceTree = "<group>"; };
+		C8FB48492A0372B04B630E1A /* MHNavigation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHNavigation-Info.plist"; sourceTree = "<group>"; };
 		CBCB8E040E4CC64662A0994B /* MHOrientation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHOrientation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B45DD237923D2F5366D015 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D558EDF2E3B9FB805CF86102 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D6FD7466337C3AA301BFD765 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		DB2BA093C5F68F4D6384EE0A /* MHNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationView.swift; sourceTree = "<group>"; };
 		DBB1348C96E5B8502E029EC1 /* MHTextFieldListViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHTextFieldListViewTests-Info.plist"; sourceTree = "<group>"; };
 		DD5FE4081CAFCE2962312129 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
 		DD8AD5D8D1160C66C4C58661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -575,9 +631,11 @@
 		EB5748C20700824FFF0E210D /* MHUtilityTestAppSwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHUtilityTestAppSwiftUI-Info.plist"; sourceTree = "<group>"; };
 		EC29F764CB5E5C880288EB46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED6E2191ED2BF8782BB54756 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		EDFF1982E4E02479AD036310 /* MHNavigationPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationPreference.swift; sourceTree = "<group>"; };
 		F32B52BEB61C6225505525F4 /* TuistBundle+MHImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MHImageCache.swift"; sourceTree = "<group>"; };
 		F57A73EC9C61AB5D91B946E8 /* UIUtilityModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilityModifier.swift; sourceTree = "<group>"; };
 		F725966CC62EFA605D593C59 /* MHDeviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHDeviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F78289B83C157DF409EFD6F7 /* MHNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78ED46EE751817188A072BE /* MHTextFieldListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHTextFieldListViewTests.swift; sourceTree = "<group>"; };
 		F81D8AB6CB62DD11970AC447 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F87C137F45296C5E7B1E8BA4 /* UIDeviceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceOrientation.swift; sourceTree = "<group>"; };
@@ -632,6 +690,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		204BFEB513B137C2DCF8E1FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F8E141CA7E093BF236B99BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,6 +739,7 @@
 				1C86BB80011EEF5C464CB1E7 /* MHExtension.framework in Frameworks */,
 				D3D5BF2B12884640FC023726 /* MHImageCache.framework in Frameworks */,
 				DF1BF356139B8E0BEE9EA403 /* MHLog.framework in Frameworks */,
+				55D58B365799F6224F32570B /* MHNavigation.framework in Frameworks */,
 				2EBD8F274D9CE835518DD70A /* MHOrientation.framework in Frameworks */,
 				E03E01EB7E99744734046E9F /* MHTextFieldListView.framework in Frameworks */,
 				2B6527384D4A3686AD82B296 /* MHUIUtility.framework in Frameworks */,
@@ -743,6 +809,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F380D03D28A92B6022AC61B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB35C9FC31548FCE7324733 /* MHNavigation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +895,14 @@
 				0C9204B00E8F1B1C6B0D087C /* Tests */,
 			);
 			path = MHDevice;
+			sourceTree = "<group>";
+		};
+		229049F4F6BD4ABFF46851C9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6DAF25A891063E05E850FE3A /* MHDeviceTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		289774B9D53E63359D5F228C /* MHExtension */ = {
@@ -931,6 +1013,7 @@
 				C199C5E696D50A7EA8AE35A3 /* MHExtension */,
 				A8D4F2CB12C49F994085E9F2 /* MHImageCache */,
 				E8DA99857526A148A7BF7C47 /* MHLog */,
+				ADB38B6AE8BFC9CD9B10D27E /* MHNavigation */,
 				E052B8C633F1EF77B23D388D /* MHOrientation */,
 				EF3453BBF30BE0BF1A888E40 /* MHTextFieldListView */,
 				BFF34D0A62846189A45F2A7B /* MHUIUtility */,
@@ -947,6 +1030,18 @@
 				DD8AD5D8D1160C66C4C58661 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7EF7F9BD7BF3295913F72124 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2344518F5ABA27DAE7BF2DEE /* MHNavigationController.swift */,
+				EDFF1982E4E02479AD036310 /* MHNavigationPreference.swift */,
+				DB2BA093C5F68F4D6384EE0A /* MHNavigationView.swift */,
+				1D39FA951A4484CF106ACF75 /* MHNavigationViewWrapper.swift */,
+				B64439582B0C80CD00D8F57D /* MHNavigationConfigurations.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		85108CA5B15EE352E07D2039 /* Sources */ = {
@@ -1018,6 +1113,15 @@
 			path = MHImageCache;
 			sourceTree = "<group>";
 		};
+		ADB38B6AE8BFC9CD9B10D27E /* MHNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				7EF7F9BD7BF3295913F72124 /* Sources */,
+				229049F4F6BD4ABFF46851C9 /* Tests */,
+			);
+			path = MHNavigation;
+			sourceTree = "<group>";
+		};
 		AEA75C1225B1EF7D87E3C9DC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,6 +1135,8 @@
 			children = (
 				DD5FE4081CAFCE2962312129 /* BaseVM.swift */,
 				54D30CD537C838688DD6D915 /* ExtensionView.swift */,
+				BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */,
+				8DAA1CCAFF354C224251DEE8 /* MHCircleProgressView.swift */,
 				72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */,
 				F57A73EC9C61AB5D91B946E8 /* UIUtilityModifier.swift */,
 			);
@@ -1096,6 +1202,8 @@
 				1B861D087D692D4C7389D1CA /* MHImageCacheTests-Info.plist */,
 				3F034EDEEC4A7A4421B3EBAE /* MHLog-Info.plist */,
 				1F6FDB28B294ACCDBFC6887F /* MHLogTests-Info.plist */,
+				C8FB48492A0372B04B630E1A /* MHNavigation-Info.plist */,
+				9AA9956EED8AA61EF11F6749 /* MHNavigationTests-Info.plist */,
 				F8F9645368EF0DE3D42D7D40 /* MHOrientation-Info.plist */,
 				6F62B0A3BBB80C69580F3F8F /* MHOrientationTests-Info.plist */,
 				9D51AE7D4B8A8903EB988D42 /* MHTextFieldListView-Info.plist */,
@@ -1190,6 +1298,8 @@
 				3F5B6AA3BA6F23D5F5663933 /* MHImageCacheTests.xctest */,
 				7AE3B347970A4DB419AB6B03 /* MHLog.framework */,
 				3138D11FF92F84AF08158421 /* MHLogTests.xctest */,
+				F78289B83C157DF409EFD6F7 /* MHNavigation.framework */,
+				4D17C3C12D1EC10EFC436B8D /* MHNavigationTests.xctest */,
 				CBCB8E040E4CC64662A0994B /* MHOrientation.framework */,
 				431624B85713717DAE08A27D /* MHOrientationTests.xctest */,
 				8EEE9681BE11DEC0FFD13CA7 /* MHTextFieldListView.framework */,
@@ -1260,6 +1370,7 @@
 				6CEF3D40CE62F27A6DBBF151 /* PBXTargetDependency */,
 				17FFA72B8B972E34580A8D1B /* PBXTargetDependency */,
 				7167707886B74AB948AB70B5 /* PBXTargetDependency */,
+				8C8DE921F41E393F14F065E9 /* PBXTargetDependency */,
 				0BEC25A498A918BBFB5B7582 /* PBXTargetDependency */,
 				02B651FDD8F43094745C573B /* PBXTargetDependency */,
 				C4A630900F4C4E64B540E8CE /* PBXTargetDependency */,
@@ -1306,6 +1417,25 @@
 			productName = MHDownloader;
 			productReference = 518EB92335D0C40FD544E597 /* MHDownloader.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		3071CEFFF738B7FF05290330 /* MHNavigationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 544D11210531107018E54744 /* Build configuration list for PBXNativeTarget "MHNavigationTests" */;
+			buildPhases = (
+				3046DAAAA83F45AF740DA21C /* Sources */,
+				970414A2A38916407266F392 /* Resources */,
+				B0DFA1D843092B1D1E867F11 /* Embed Frameworks */,
+				F380D03D28A92B6022AC61B2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4707D359E0766349675993B7 /* PBXTargetDependency */,
+			);
+			name = MHNavigationTests;
+			productName = MHNavigationTests;
+			productReference = 4D17C3C12D1EC10EFC436B8D /* MHNavigationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		39A7B2325ECD723F89F0E78E /* MHExtensionTests */ = {
 			isa = PBXNativeTarget;
@@ -1567,6 +1697,24 @@
 			productReference = 089B350C5584D64F7177ED1D /* MHUserDefaultsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C641CFC8DD9016582C9539A5 /* MHNavigation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 222617CB66BCC748A0132D90 /* Build configuration list for PBXNativeTarget "MHNavigation" */;
+			buildPhases = (
+				376A763BBB48AF2221DCE881 /* Sources */,
+				47ED52B59D6D57652DCA1E1D /* Resources */,
+				209FD49BE3F8E062A4CC1151 /* Embed Frameworks */,
+				204BFEB513B137C2DCF8E1FD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MHNavigation;
+			productName = MHNavigation;
+			productReference = F78289B83C157DF409EFD6F7 /* MHNavigation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		DE95313432F3385CCBDE1311 /* MHImageCache */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45960C37C667CEDF423A5AEF /* Build configuration list for PBXNativeTarget "MHImageCache" */;
@@ -1704,6 +1852,8 @@
 				E829F5AB2D614D0025968A39 /* MHUIUtilityTests */,
 				B24189CE26E1FC37666145AD /* MHTextFieldListView */,
 				844F5AF90E3CDAE2AEB5051D /* MHTextFieldListViewTests */,
+				C641CFC8DD9016582C9539A5 /* MHNavigation */,
+				3071CEFFF738B7FF05290330 /* MHNavigationTests */,
 				06BBDD91C5F8946640EED235 /* MHUtilityTestAppSwiftUI */,
 				924CDF5442B8A38FD8116D4F /* MHUtilityTestAppSwiftUITests */,
 			);
@@ -1726,6 +1876,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		21A8905C80AE6D0AAF8106C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ED52B59D6D57652DCA1E1D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1792,6 +1949,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		94122D41A0162A379A1FEEA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		970414A2A38916407266F392 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1908,6 +2072,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3046DAAAA83F45AF740DA21C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFC2A15D17396FDC94BED500 /* MHDeviceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		376A763BBB48AF2221DCE881 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF426601FEFA69863198D0A1 /* MHNavigationController.swift in Sources */,
+				4E6B12A3EB5F1F416A9C3B7F /* MHNavigationPreference.swift in Sources */,
+				256FDC7B5C059BAC1D5A00AE /* MHNavigationView.swift in Sources */,
+				B64439592B0C80CD00D8F57D /* MHNavigationConfigurations.swift in Sources */,
+				865DCE2A009D7E37A096F129 /* MHNavigationViewWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CBA5FC9CE6191D013E4F13F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2007,6 +2191,8 @@
 			files = (
 				8CBDEF6BA5921BB5487521F1 /* BaseVM.swift in Sources */,
 				1192303204C91F13AA25946D /* ExtensionView.swift in Sources */,
+				2778FB293301DCCBA103A919 /* MHAlertView.swift in Sources */,
+				AD128B08820F10F4553952EA /* MHCircleProgressView.swift in Sources */,
 				3148DE85A84542042D511C57 /* UIUtilityInfo.swift in Sources */,
 				7482470F7BF0F69D5FFA41C0 /* UIUtilityModifier.swift in Sources */,
 			);
@@ -2139,6 +2325,12 @@
 			target = B87481969ED7B890427F1E58 /* MHAPI */;
 			targetProxy = 6AA76180C73917AB681698F4 /* PBXContainerItemProxy */;
 		};
+		4707D359E0766349675993B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MHNavigation;
+			target = C641CFC8DD9016582C9539A5 /* MHNavigation */;
+			targetProxy = 429BC40CAFB1178CB2942D83 /* PBXContainerItemProxy */;
+		};
 		574673FD86685EBD87D34268 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MHDownloader;
@@ -2174,6 +2366,12 @@
 			name = MHAPI;
 			target = B87481969ED7B890427F1E58 /* MHAPI */;
 			targetProxy = 30401C9A402A008247435F4F /* PBXContainerItemProxy */;
+		};
+		8C8DE921F41E393F14F065E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MHNavigation;
+			target = C641CFC8DD9016582C9539A5 /* MHNavigation */;
+			targetProxy = 970EED1F55F6389B8278EF22 /* PBXContainerItemProxy */;
 		};
 		B472C18493C36FBC95D325E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2230,7 +2428,6 @@
 				PRODUCT_NAME = MHExtensionTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2255,7 +2452,6 @@
 				PRODUCT_NAME = MHDeviceTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2287,7 +2483,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2321,7 +2516,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2348,7 +2542,6 @@
 				PRODUCT_NAME = MHDownloaderTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2373,7 +2566,6 @@
 				PRODUCT_NAME = MHUtilityTestAppSwiftUITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2400,7 +2592,6 @@
 				PRODUCT_NAME = MHUtilityTestAppSwiftUI;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2431,7 +2622,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2464,7 +2654,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2490,7 +2679,6 @@
 				PRODUCT_NAME = MHLogTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2515,7 +2703,6 @@
 				PRODUCT_NAME = MHImageCacheTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2593,7 +2780,6 @@
 				PRODUCT_NAME = MHAPITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2617,7 +2803,6 @@
 				PRODUCT_NAME = MHImageCacheTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2641,7 +2826,6 @@
 				PRODUCT_NAME = MHTextFieldListViewTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2667,7 +2851,6 @@
 				PRODUCT_NAME = MHUtilityTestAppSwiftUI;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2692,7 +2875,6 @@
 				PRODUCT_NAME = MHExtensionTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2723,7 +2905,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2750,7 +2931,6 @@
 				PRODUCT_NAME = MHTextFieldListViewTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2774,7 +2954,6 @@
 				PRODUCT_NAME = MHUIUtilityTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2806,7 +2985,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2839,7 +3017,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2872,13 +3049,35 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7763FD8F2F3B8C650273F262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/MHNavigationTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHNavigationTests;
+				PRODUCT_NAME = MHNavigationTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2905,7 +3104,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2939,7 +3137,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2973,7 +3170,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2999,7 +3195,6 @@
 				PRODUCT_NAME = MHUserDefaultsTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3024,13 +3219,45 @@
 				PRODUCT_NAME = MHUIUtilityTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		8F8A328840270A208BE3F7A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MHNavigation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHNavigation;
+				PRODUCT_NAME = MHNavigation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		90EA0F59ED76475DDC8717A8 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3055,7 +3282,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3088,7 +3314,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3115,7 +3340,6 @@
 				PRODUCT_NAME = MHOrientationTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3198,7 +3422,6 @@
 				PRODUCT_NAME = MHAPITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3223,7 +3446,6 @@
 				PRODUCT_NAME = MHUserDefaultsTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3254,7 +3476,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3288,7 +3509,62 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE1A03D25C61FF84E0303662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/MHNavigationTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHNavigationTests;
+				PRODUCT_NAME = MHNavigationTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1639DB5F694E613EB8DE24F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MHNavigation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHNavigation;
+				PRODUCT_NAME = MHNavigation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3321,7 +3597,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3355,7 +3630,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3381,7 +3655,6 @@
 				PRODUCT_NAME = MHDeviceTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3405,7 +3678,6 @@
 				PRODUCT_NAME = MHOrientationTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3437,7 +3709,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3464,7 +3735,6 @@
 				PRODUCT_NAME = MHDownloaderTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3489,7 +3759,6 @@
 				PRODUCT_NAME = MHLogTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3514,7 +3783,6 @@
 				PRODUCT_NAME = MHUtilityTestAppSwiftUITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3548,7 +3816,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -3581,7 +3848,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3600,6 +3866,15 @@
 			buildConfigurations = (
 				4B53A206782564A21A09F362 /* Debug */,
 				5BAF3796F56819E778995573 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		222617CB66BCC748A0132D90 /* Build configuration list for PBXNativeTarget "MHNavigation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F8A328840270A208BE3F7A2 /* Debug */,
+				C1639DB5F694E613EB8DE24F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3645,6 +3920,15 @@
 			buildConfigurations = (
 				DB2F84FB2FAEB7EF169F6C9F /* Debug */,
 				857170461D18C7A07A396488 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		544D11210531107018E54744 /* Build configuration list for PBXNativeTarget "MHNavigationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1A03D25C61FF84E0303662 /* Debug */,
+				7763FD8F2F3B8C650273F262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
