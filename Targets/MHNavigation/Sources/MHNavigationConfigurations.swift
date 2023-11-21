@@ -76,7 +76,8 @@ public struct MHNavigationWrapper<Content: View>: UIViewControllerRepresentable{
         let navigationController = MHNavigationController(navigationHeight: self.config.navigationBarHeight,
                                                           statusBarColor: UIColor(cgColor: self.config.statusBarColor.cgColor!),
                                                           backgroundType: self.config.navigationBarBackgroundType,
-                                                          titleType: self.config.navigationBarTitleType,
+                                                          titleType: self.$config.navigationBarTitleType.wrappedValue,
+                                                        
                                                           backImage: self.config.backImage,
                                                           closeImage: self.config.closeImage,
                                                           backEvent: self.config.backEvent,
