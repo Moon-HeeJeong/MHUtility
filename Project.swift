@@ -34,7 +34,8 @@ let project = Project.app(name: "MHUtility",
                                                  "MHLog",
                                                  "MHUserDefaults",
                                                  "MHUIUtility",
-                                                 "MHTextFieldListView"])
+                                                 "MHTextFieldListView",
+                                                "MHNavigation"])
 
 
 //roject.app(name: "MHUtility",
