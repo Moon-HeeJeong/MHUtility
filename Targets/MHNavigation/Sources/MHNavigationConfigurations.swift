@@ -71,7 +71,7 @@ public struct MHNavigation<Content: View>: UIViewControllerRepresentable{
     }
 
     public func makeUIViewController(context: Context) -> MHNavigationController {
-        let root = content()
+        let root = content().ignoresSafeArea([.container])
         
         let navigationController = MHNavigationController(navigationHeight: self.config.navigationBarHeight,
                                                           statusBarColor: UIColor(cgColor: self.config.statusBarColor.cgColor!),
