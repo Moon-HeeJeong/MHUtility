@@ -62,7 +62,13 @@ public struct MHNavigation<Content: View>: UIViewControllerRepresentable{
 
     @ObservedObject var config: MHNavigationConfiguration
     var content: () -> Content
-    var callback: (UINavigationController, UIViewController) -> Void
+//    var callback: (UINavigationController, UIViewController) -> Void
+    
+    public init(config: MHNavigationConfiguration, content: @escaping () -> Content) {
+        self.config = config
+        self.content = content
+//        self.callback = callback
+    }
 
     public func makeUIViewController(context: Context) -> MHNavigationController {
         let root = content()
@@ -115,7 +121,7 @@ public struct MHNavigation<Content: View>: UIViewControllerRepresentable{
         }
         
         public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-            self.owner.callback(navigationController, viewController)
+//            self.owner.callback(navigationController, viewController)
         }
         
     }
