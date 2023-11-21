@@ -62,12 +62,10 @@ public struct MHNavigationWrapper<Content: View>: UIViewControllerRepresentable{
 
     @ObservedObject var config: MHNavigationConfiguration
     var content: () -> Content
-//    var callback: (UINavigationController, UIViewController) -> Void
     
     public init(config: MHNavigationConfiguration, content: @escaping () -> Content) {
         self.config = config
         self.content = content
-//        self.callback = callback
     }
 
     public func makeUIViewController(context: Context) -> MHNavigationController {
@@ -76,8 +74,7 @@ public struct MHNavigationWrapper<Content: View>: UIViewControllerRepresentable{
         let navigationController = MHNavigationController(navigationHeight: self.config.navigationBarHeight,
                                                           statusBarColor: UIColor(cgColor: self.config.statusBarColor.cgColor!),
                                                           backgroundType: self.config.navigationBarBackgroundType,
-                                                          titleType: self.$config.navigationBarTitleType.wrappedValue,
-                                                        
+                                                          titleType: self.config.navigationBarTitleType,
                                                           backImage: self.config.backImage,
                                                           closeImage: self.config.closeImage,
                                                           backEvent: self.config.backEvent,
