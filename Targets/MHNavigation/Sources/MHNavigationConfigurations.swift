@@ -58,7 +58,7 @@ public class MHNavigationConfiguration: ObservableObject{
 }
 
 
-public struct MHNavigation<Content: View>: UIViewControllerRepresentable{
+public struct MHNavigationWrapper<Content: View>: UIViewControllerRepresentable{
 
     @ObservedObject var config: MHNavigationConfiguration
     var content: () -> Content
@@ -114,15 +114,33 @@ public struct MHNavigation<Content: View>: UIViewControllerRepresentable{
     
     public class NavigationSlave: NSObject, UINavigationControllerDelegate{
         
-        var owner: MHNavigation
+        var owner: MHNavigationWrapper
         
-        public init(owner: MHNavigation) {
+        public init(owner: MHNavigationWrapper) {
             self.owner = owner
         }
         
         public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
 //            self.owner.callback(navigationController, viewController)
         }
+        
+    }
+}
+
+
+public struct MHNavigation<Content: View>: View{
+
+    @ObservedObject public var config: MHNavigationConfiguration
+    public var content: () -> Content
+
+    public init(config: MHNavigationConfiguration, content: @escaping () -> Content) {
+        self.config = config
+        self.content = content
+    }
+    
+    public var body: some View{
+        MHNavigationWrapper(config: config, content: content)
+            .ignoresSafeArea([.container])
         
     }
 }
