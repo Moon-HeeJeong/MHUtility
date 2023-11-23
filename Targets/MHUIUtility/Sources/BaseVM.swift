@@ -21,7 +21,10 @@ open class BaseVM: ObservableObject{
     public var cancellables = Set<AnyCancellable>()
     
     open func makeUIUtility(kind: UIUtility_E){
-        self.uiUtilitykind = kind
+        DispatchQueue.main.async {
+            self.uiUtilitykind = kind
+        }
+        
     }
     
     public init(uiUtilitykind: UIUtility_E = .stop) {
