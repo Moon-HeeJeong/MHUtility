@@ -6,7 +6,7 @@ import AVKit
 public class MHSoundPlayer: NSObject{
     
     deinit {
-        print("deinit sound")
+        print("deinit MHSoundPlayer")
         self.stop()
     }
     
@@ -49,7 +49,7 @@ public class MHSoundPlayer: NSObject{
         }
     }
     
-    override init(){
+    override public init(){
         super.init()
     }
     
