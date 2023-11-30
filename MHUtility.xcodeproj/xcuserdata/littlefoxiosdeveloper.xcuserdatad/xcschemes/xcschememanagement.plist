@@ -46,47 +46,61 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>MHOrientation.xcscheme_^#shared#^_</key>
+		<key>MHNavigation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>MHTextFieldListView.xcscheme_^#shared#^_</key>
+		<key>MHOrientation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>MHUIUtility.xcscheme_^#shared#^_</key>
+		<key>MHSoundPlayer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>MHUserDefaults.xcscheme_^#shared#^_</key>
+		<key>MHTextFieldListView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>MHUtilityTestAppSwiftUI.xcscheme_^#shared#^_</key>
+		<key>MHUIUtility.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>MHUserDefaults.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>MHUtilityTestAppSwiftUI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>MHUtilityTestAppSwiftUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>14</integer>
 		</dict>
 	</dict>
 </dict>

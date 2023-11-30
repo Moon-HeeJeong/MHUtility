@@ -182,6 +182,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C641CFC8DD9016582C9539A5"
+               BuildableName = "MHNavigation.framework"
+               BlueprintName = "MHNavigation"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3071CEFFF738B7FF05290330"
+               BuildableName = "MHNavigationTests.xctest"
+               BlueprintName = "MHNavigationTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "E22DDB1158C9CA6892379A3A"
                BuildableName = "MHOrientation.framework"
                BlueprintName = "MHOrientation"
@@ -199,6 +227,34 @@
                BlueprintIdentifier = "9565BFBCD104325417719864"
                BuildableName = "MHOrientationTests.xctest"
                BlueprintName = "MHOrientationTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9858EBBC261D58E3D131C1E0"
+               BuildableName = "MHSoundPlayer.framework"
+               BlueprintName = "MHSoundPlayer"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C6046C9ABA436041FB8CEA83"
+               BuildableName = "MHSoundPlayerTests.xctest"
+               BlueprintName = "MHSoundPlayerTests"
                ReferencedContainer = "container:MHUtility.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -386,9 +442,29 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3071CEFFF738B7FF05290330"
+               BuildableName = "MHNavigationTests.xctest"
+               BlueprintName = "MHNavigationTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "9565BFBCD104325417719864"
                BuildableName = "MHOrientationTests.xctest"
                BlueprintName = "MHOrientationTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C6046C9ABA436041FB8CEA83"
+               BuildableName = "MHSoundPlayerTests.xctest"
+               BlueprintName = "MHSoundPlayerTests"
                ReferencedContainer = "container:MHUtility.xcodeproj">
             </BuildableReference>
          </TestableReference>
