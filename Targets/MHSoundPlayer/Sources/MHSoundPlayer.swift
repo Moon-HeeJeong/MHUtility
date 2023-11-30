@@ -10,7 +10,7 @@ public class MHSoundPlayer: NSObject{
         self.stop()
     }
     
-    public enum SoundStatus{
+    public enum SoundStatus: Equatable{
         case playStart
         case playEnd
         case playStop
