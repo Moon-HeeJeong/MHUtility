@@ -43,7 +43,10 @@ let package = Package(
             targets: ["MHUserDefaults"]),
         .library(
             name: "MHNavigation",
-            targets: ["MHNavigation"])
+            targets: ["MHNavigation"]),
+        .library(
+            name: "MHSoundPlayer",
+            targets: ["MHSoundPlayer"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -141,5 +144,13 @@ let package = Package(
             name: "MHNavigationTests",
             dependencies: ["MHNavigation"],
             path: "Targets/MHNavigation/Tests"),
+        .target(
+            name: "MHSoundPlayer",
+            dependencies: [],
+            path: "Targets/MHSoundPlayer/Sources"),
+        .testTarget(
+            name: "MHSoundPlayerTests",
+            dependencies: ["MHSoundPlayer"],
+            path: "Targets/MHSoundPlayer/Tests"),
     ]
 )
