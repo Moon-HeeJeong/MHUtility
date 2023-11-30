@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 public protocol MHUserDefaults_P: RawRepresentable where RawValue == String{
     associatedtype T
@@ -20,6 +21,17 @@ extension MHUserDefaults_P{
         print("UserDefaultsKey Save \(self.rawValue): \(value)")
         UserDefaults.standard.set(value, forKey: self.rawValue)
         UserDefaults.standard.synchronize()
+    }
+    
+    public func setValueAndGetResult(_ value: T?)->AnyPublisher<Bool, Never>{
+        guard let value = value else{
+            return Result<Bool, Never>.Publisher(false).eraseToAnyPublisher()
+        }
+        print("UserDefaultsKey Save \(self.rawValue): \(value)")
+        UserDefaults.standard.set(value, forKey: self.rawValue)
+        let isSuccess = UserDefaults.standard.synchronize()
+        
+        return Result<Bool, Never>.Publisher(isSuccess).eraseToAnyPublisher()
     }
     
     public var value: T?{
