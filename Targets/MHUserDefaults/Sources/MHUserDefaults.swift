@@ -38,6 +38,11 @@ extension MHUserDefaults_P{
         UserDefaults.standard.value(forKey: self.rawValue) as? T
     }
     
+    public var publishedValue: AnyPublisher<T?, Never>{
+        let value = UserDefaults.standard.value(forKey: self.rawValue) as? T
+        return Result<T?, Never>.Publisher(value).eraseToAnyPublisher()
+    }
+    
     public func removeValue(){
         UserDefaults.standard.removeObject(forKey: self.rawValue)
     }
