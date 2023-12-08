@@ -36,10 +36,9 @@ public struct MHVideoPlayer: UIViewRepresentable{
     @Binding var seekOperationValue: SeekOperation
     
     var urlStr: String
-    
     var statusCallback: (_ status: VideoPlayerStatus)->()
     
-    init(urlStr: String, isPlaying: Binding<Bool>, seekOperationValue: Binding<SeekOperation>, statusCallback: @escaping (_: VideoPlayerStatus) -> Void) {
+    public init(urlStr: String, isPlaying: Binding<Bool>, seekOperationValue: Binding<SeekOperation>, statusCallback: @escaping (_: VideoPlayerStatus) -> Void) {
         _isPlaying = isPlaying
         _seekOperationValue = seekOperationValue
         self.urlStr = urlStr
