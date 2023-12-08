@@ -11,27 +11,26 @@ import SwiftUI
 import AVKit
 import Combine
 
-enum VideoPlayerStatus{
-    case loadStart
-    case loadFinish(isSuccess: Bool)
-    case currentTime(time: Double)
-    case duration(time: Double)
-    case playerFinished
-    case playerStatus(status: AVPlayer.Status, error: Error?)
-    case playerItemStatus(status: AVPlayerItem.Status, error: Error?)
-    case loadedTimeRanges(range: [CMTimeRange])
-    case rate(rate: Float)
-    case keepUp(isLikelyKeepUp: Bool)
-}
-
 public struct MHVideoPlayer: UIViewRepresentable{
+    public enum VideoPlayerStatus{
+        case loadStart
+        case loadFinish(isSuccess: Bool)
+        case currentTime(time: Double)
+        case duration(time: Double)
+        case playerFinished
+        case playerStatus(status: AVPlayer.Status, error: Error?)
+        case playerItemStatus(status: AVPlayerItem.Status, error: Error?)
+        case loadedTimeRanges(range: [CMTimeRange])
+        case rate(rate: Float)
+        case keepUp(isLikelyKeepUp: Bool)
+    }
     
-    enum SeekStatus{
+    public enum SeekStatus{
         case `do`
         case stop
     }
     
-    typealias SeekOperation = (status: SeekStatus, targetTime: Double)
+    public typealias SeekOperation = (status: SeekStatus, targetTime: Double)
     
     @Binding var isPlaying: Bool
     @Binding var seekOperationValue: SeekOperation

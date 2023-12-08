@@ -39,6 +39,8 @@ public struct MHVideoPlayerTestView: View{
                             if abs(time - self.currentTime) > 0.1{
                                 self.currentTime = time
                             }
+                        default:
+                            break
                         }
                     }
                     
