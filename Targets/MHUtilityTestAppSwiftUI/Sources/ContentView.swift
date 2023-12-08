@@ -6,16 +6,49 @@
 //
 
 import SwiftUI
+import MHVideoPlayerWithDelegateView
+
+
+enum AppRouter: SheetRouterProtocol{
+  
+    case videoPlayer
+    
+    var id: String {
+        "\(self)"
+    }
+    
+    @ViewBuilder func buildView(isSheeted: Binding<Bool>) -> some View {
+        switch self {
+        case .videoPlayer:
+            return MHVideoPlayerTestView()
+        }
+    }
+}
+enum AppRouterKind{
+    case studyWithVideo
+}
+
+class AppRouterVM: ObservableObject{
+    func received(event: AppRouterKind) {
+        print("event \(event)")
+    }
+}
 
 struct ContentView: View {
+    @StateObject var vm = AppRouterVM()
+    @StateObject var router = MovingSheetOperator<AppRouter>()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        MHVideoPlayerTestView()
+//        List {
+//            Section {
+//                Button("video player") {
+//                    router.go(.videoPlayer, animation: .full(animationOn: true))
+//                }
+//            }
+//        }
+//        .routering($router.sheets)
+        
     }
 }
 

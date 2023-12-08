@@ -370,6 +370,34 @@
                ReferencedContainer = "container:MHUtility.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "11EFDF3B47AABDD7F1FDB400"
+               BuildableName = "MHVideoPlayerWithDelegateView.framework"
+               BlueprintName = "MHVideoPlayerWithDelegateView"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4AF9D5D9EF337237533AFF00"
+               BuildableName = "MHVideoPlayerWithDelegateViewTests.xctest"
+               BlueprintName = "MHVideoPlayerWithDelegateViewTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -505,6 +533,16 @@
                BlueprintIdentifier = "924CDF5442B8A38FD8116D4F"
                BuildableName = "MHUtilityTestAppSwiftUITests.xctest"
                BlueprintName = "MHUtilityTestAppSwiftUITests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4AF9D5D9EF337237533AFF00"
+               BuildableName = "MHVideoPlayerWithDelegateViewTests.xctest"
+               BlueprintName = "MHVideoPlayerWithDelegateViewTests"
                ReferencedContainer = "container:MHUtility.xcodeproj">
             </BuildableReference>
          </TestableReference>

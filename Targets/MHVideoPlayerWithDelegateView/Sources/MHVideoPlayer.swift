@@ -12,11 +12,19 @@ import AVKit
 import Combine
 
 enum VideoPlayerStatus{
+    case loadStart
     case loadFinish(isSuccess: Bool)
     case currentTime(time: Double)
+    case duration(time: Double)
+    case playerFinished
+    case playerStatus(status: AVPlayer.Status, error: Error?)
+    case playerItemStatus(status: AVPlayerItem.Status, error: Error?)
+    case loadedTimeRanges(range: [CMTimeRange])
+    case rate(rate: Float)
+    case keepUp(isLikelyKeepUp: Bool)
 }
 
-struct MHVideoPlayer: UIViewRepresentable{
+public struct MHVideoPlayer: UIViewRepresentable{
     
     enum SeekStatus{
         case `do`
@@ -39,7 +47,7 @@ struct MHVideoPlayer: UIViewRepresentable{
         self.statusCallback = statusCallback
     }
     
-    func makeUIView(context: Context) -> MHVideoPlayerWithDelegateView {
+    public func makeUIView(context: Context) -> MHVideoPlayerWithDelegateView {
         
         let player = MHVideoPlayerWithDelegateView()
         player.delegate = context.coordinator
@@ -51,11 +59,11 @@ struct MHVideoPlayer: UIViewRepresentable{
         return player
     }
     
-    func makeCoordinator() -> VideoPlayerViewCoordinator{
+    public func makeCoordinator() -> VideoPlayerViewCoordinator{
         return VideoPlayerViewCoordinator(owner: self)
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
+    public func updateUIView(_ uiView: UIViewType, context: Context) {
         
         uiView.isPlaying = self.isPlaying
         
@@ -81,7 +89,7 @@ struct MHVideoPlayer: UIViewRepresentable{
         
     }
     
-    class VideoPlayerViewCoordinator: NSObject, MHVideoPlayerViewDelegate{
+    public class VideoPlayerViewCoordinator: NSObject, MHVideoPlayerViewDelegate{
         
         var owner: MHVideoPlayer
         
@@ -89,45 +97,44 @@ struct MHVideoPlayer: UIViewRepresentable{
             self.owner = owner
         }
         
-        func mhVideoPlayerCallback(loadStart playerView: MHVideoPlayerWithDelegateView) {
-            
+        public func mhVideoPlayerCallback(loadStart playerView: MHVideoPlayerWithDelegateView) {
+            self.owner.statusCallback(.loadStart)
         }
         
-        func mhVideoPlayerCallback(loadFinish playerView: MHVideoPlayerWithDelegateView, isLoadSuccess: Bool, error: Error?) {
+        public func mhVideoPlayerCallback(loadFinish playerView: MHVideoPlayerWithDelegateView, isLoadSuccess: Bool, error: Error?) {
             self.owner.statusCallback(.loadFinish(isSuccess: isLoadSuccess))
 
         }
         
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, statusPlayer: AVPlayer.Status, error: Error?) {
-            
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, statusPlayer: AVPlayer.Status, error: Error?) {
+            self.owner.statusCallback(.playerStatus(status: statusPlayer, error: error))
         }
         
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, statusItemPlayer: AVPlayerItem.Status, error: Error?) {
-            
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, statusItemPlayer: AVPlayerItem.Status, error: Error?) {
+            self.owner.statusCallback(.playerItemStatus(status: statusItemPlayer, error: error))        }
+        
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, loadedTimeRanges: [CMTimeRange]) {
+            self.owner.statusCallback(.loadedTimeRanges(range: loadedTimeRanges))
         }
         
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, loadedTimeRanges: [CMTimeRange]) {
-            
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, duration: Double) {
+            self.owner.statusCallback(.duration(time: duration))
         }
         
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, duration: Double) {
-//            self.playerDurationCallback(duration)
-        }
-        
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, currentTime: Double) {
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, currentTime: Double) {
             self.owner.statusCallback(.currentTime(time: currentTime))
         }
         
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, rate: Float) {
-            
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, rate: Float) {
+            self.owner.statusCallback(.rate(rate: rate))
         }
         
-        func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, isLikelyKeepUp: Bool) {
-        
+        public func mhVideoPlayerCallback(playerView: MHVideoPlayerWithDelegateView, isLikelyKeepUp: Bool) {
+            self.owner.statusCallback(.keepUp(isLikelyKeepUp: isLikelyKeepUp))
         }
         
-        func mhVideoPlayerCallback(playerFinished playerView: MHVideoPlayerWithDelegateView) {
-            
+        public func mhVideoPlayerCallback(playerFinished playerView: MHVideoPlayerWithDelegateView) {
+            self.owner.statusCallback(.playerFinished)
         }
     }
 }
