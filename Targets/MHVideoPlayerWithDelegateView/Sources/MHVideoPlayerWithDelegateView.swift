@@ -143,16 +143,16 @@ public class MHVideoPlayerWithDelegateView: UIView{
         }
     }
     
-    public var isPlaying: Bool = false{
-        didSet{
-            if self.isPlaying{
-                print("playing \(self.rate)")
-                self.play(rate: self.rate)
-            }else{
-                self.pause()
-            }
-        }
-    }
+    public var isPlaying: Bool = false
+//    {
+//        didSet{
+//            if self.isPlaying{
+//                self.play(rate: self.rate)
+//            }else{
+//                self.pause()
+//            }
+//        }
+//    }
     
     public var rate: Float{
         set{
@@ -505,13 +505,20 @@ extension MHVideoPlayerWithDelegateView{
         }
     }
     
-//    func setPlayerStatus(isPlaying: Bool, velocity: Float){
-//        if isPlaying{
-//            print("playing \(velocity)")
-//            self.play(rate: velocity)
-//        }else{
-//            self.pause()
-//        }
-//    }
+    func setPlayerStatus(isPlaying: Bool, velocity: Float){
+        
+        guard isPlaying != self.isPlaying else{
+            return
+        }
+        
+        self.isPlaying = isPlaying
+        
+        if isPlaying{
+            print("playing \(velocity)")
+            self.play(rate: velocity)
+        }else{
+            self.pause()
+        }
+    }
 }
 

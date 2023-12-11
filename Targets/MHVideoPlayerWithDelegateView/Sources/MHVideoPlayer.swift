@@ -71,11 +71,11 @@ public struct MHVideoPlayer: UIViewRepresentable{
             uiView.url = url
         }
             
-        uiView.rate = self.velocity
-        uiView.isPlaying = self.isPlaying
+//        uiView.rate = self.velocity
+//        uiView.isPlaying = self.isPlaying
         
         
-//        uiView.setPlayerStatus(isPlaying: self.isPlaying, velocity: self.velocity)
+        uiView.setPlayerStatus(isPlaying: self.isPlaying, velocity: self.velocity)
         
         if self.seekOperationValue.status == .do{
             uiView.seekOperation(targetTime: self.seekOperationValue.targetTime) {
