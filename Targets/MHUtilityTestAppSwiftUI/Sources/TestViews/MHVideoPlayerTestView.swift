@@ -14,7 +14,9 @@ public struct MHVideoPlayerTestView: View{
     @State var currentTime: Double = 0.0
     @State var totalTime: Double = 0.0
     
+    @State var urlStr: String = ""
     @State var seekOperationValue: MHVideoPlayer.SeekOperation = (.stop, 0)
+    @State var velocity: Float = 1
     
     public init(){
         
@@ -28,14 +30,14 @@ public struct MHVideoPlayerTestView: View{
        
                 VStack(content: {
                     
-                    MHVideoPlayer(urlStr: "https://cdn.littlefox.co.kr/contents_5/phonics/movie/1080/ddf23a4bfe/169864286899ba5c4097c6b8fef5ed774a1a6714b8.mp4?_=1698642873", isPlaying: $isPlaying, seekOperationValue: $seekOperationValue) { status in
+                    MHVideoPlayer(urlStr: $urlStr, isPlaying: $isPlaying, seekOperationValue: $seekOperationValue, velocity: $velocity) { status in
                         switch status {
                         case .loadFinish(let isSuccess):
                             print("loadFinish \(isSuccess)")
                             self.isPlaying = isSuccess
                         case .currentTime(let time):
                             
-                            print("currentTime \(time)")
+//                            print("currentTime \(time)")
                             if abs(time - self.currentTime) > 0.1{
                                 self.currentTime = time
                             }
@@ -72,12 +74,35 @@ public struct MHVideoPlayerTestView: View{
                     
                     Button(action: {
 //                        self.seekTime(targetTime: 5.0)
-                        self.seekOperationValue = (.do, 5.0)
+                        self.seekOperationValue = (.do, currentTime + 5.0)
                         
                     }, label: {
                         ZStack(content: {
                             Rectangle().fill(Color.blue)
-                            Text("seek 5.0")
+                            Text("seek +5.0")
+                                .foregroundColor(.white)
+                        })
+                    })
+                    
+                    Button(action: {
+//                        self.seekTime(targetTime: 5.0)
+                        self.velocity = 0.75
+                        
+                    }, label: {
+                        ZStack(content: {
+                            Rectangle().fill(Color.green)
+                            Text("velocity 0.75")
+                                .foregroundColor(.white)
+                        })
+                    })
+                    Button(action: {
+//                        self.seekTime(targetTime: 5.0)
+                        self.velocity = 1.25
+                        
+                    }, label: {
+                        ZStack(content: {
+                            Rectangle().fill(Color.green)
+                            Text("velocity 1.25")
                                 .foregroundColor(.white)
                         })
                     })
@@ -88,6 +113,9 @@ public struct MHVideoPlayerTestView: View{
                 
                 
             })
+            .onAppear {
+                self.urlStr = "https://cdn.littlefox.co.kr/contents_5/phonics/movie/1080/ddf23a4bfe/169864286899ba5c4097c6b8fef5ed774a1a6714b8.mp4?_=1698642873"
+            }
         })
     }
     

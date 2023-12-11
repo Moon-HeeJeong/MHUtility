@@ -32,16 +32,18 @@ public struct MHVideoPlayer: UIViewRepresentable{
     
     public typealias SeekOperation = (status: SeekStatus, targetTime: Double)
     
+    @Binding var urlStr: String
     @Binding var isPlaying: Bool
     @Binding var seekOperationValue: SeekOperation
+    @Binding var velocity: Float
     
-    var urlStr: String
     var statusCallback: (_ status: VideoPlayerStatus)->()
     
-    public init(urlStr: String, isPlaying: Binding<Bool>, seekOperationValue: Binding<SeekOperation>, statusCallback: @escaping (_: VideoPlayerStatus) -> Void) {
+    public init(urlStr: Binding<String>, isPlaying: Binding<Bool>, seekOperationValue: Binding<SeekOperation>, velocity: Binding<Float>, statusCallback: @escaping (_: VideoPlayerStatus) -> Void) {
         _isPlaying = isPlaying
         _seekOperationValue = seekOperationValue
-        self.urlStr = urlStr
+        _velocity = velocity
+        _urlStr = urlStr
         self.statusCallback = statusCallback
     }
     
@@ -50,10 +52,12 @@ public struct MHVideoPlayer: UIViewRepresentable{
         let player = MHVideoPlayerWithDelegateView()
         player.delegate = context.coordinator
         
-        if let url = URL(string: self.urlStr){
-            player.url = url
-        }
-               
+//        if let url = URL(string: self.urlStr){
+//            player.url = url
+//        }
+//        if let url = URL(string: "https://cdn.littlefox.co.kr/contents_5/phonics/movie/1080/ddf23a4bfe/169864286899ba5c4097c6b8fef5ed774a1a6714b8.mp4?_=1698642873"){
+//            player.url = url
+//        }
         return player
     }
     
@@ -63,21 +67,15 @@ public struct MHVideoPlayer: UIViewRepresentable{
     
     public func updateUIView(_ uiView: UIViewType, context: Context) {
         
+        if let url = URL(string: self.urlStr){
+            uiView.url = url
+        }
+            
+        uiView.rate = self.velocity
         uiView.isPlaying = self.isPlaying
         
-//        if self.isSeeking{
-//            uiView.seekTime = self.seekTime
-//        }
         
-//        uiView.seekOperation = self.seekOperationValue
-        
-        
-//        if self.isSeeking{
-//            uiView.seekOperation(targetTime: self.seekTime) {
-//                self.isSeeking = false
-//            }
-//        }
-        
+//        uiView.setPlayerStatus(isPlaying: self.isPlaying, velocity: self.velocity)
         
         if self.seekOperationValue.status == .do{
             uiView.seekOperation(targetTime: self.seekOperationValue.targetTime) {

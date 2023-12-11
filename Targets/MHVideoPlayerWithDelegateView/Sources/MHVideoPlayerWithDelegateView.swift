@@ -106,6 +106,7 @@ public class MHVideoPlayerWithDelegateView: UIView{
     
     public var isCanBackgroundPlay: Bool = true
     
+    
     public var isReleasePlayer: Bool{
         set{
             if newValue, self.isCanBackgroundPlay{  //백그라운드 재생 가능하고, 현재 백그라운드인 경우
@@ -124,13 +125,20 @@ public class MHVideoPlayerWithDelegateView: UIView{
         }
     }
     
+    public var isHaveURL: Bool = false
+    
     public var url: URL?{
         didSet{
+            
+            guard !self.isHaveURL else{
+                return
+            }
             guard let url = url else {
                 return
             }
             
             print("video url ::: \(url)")
+            self.isHaveURL = true
             self.preparePlayer(url: url)
         }
     }
@@ -138,7 +146,8 @@ public class MHVideoPlayerWithDelegateView: UIView{
     public var isPlaying: Bool = false{
         didSet{
             if self.isPlaying{
-                self.play()
+                print("playing \(self.rate)")
+                self.play(rate: self.rate)
             }else{
                 self.pause()
             }
@@ -147,6 +156,10 @@ public class MHVideoPlayerWithDelegateView: UIView{
     
     public var rate: Float{
         set{
+            guard self.rate != newValue else {
+                return
+            }
+            
             if newValue == 0{
                 self.removeCurrentTimeObserver()
             }else if self.rate == 0 && newValue != 0{
@@ -491,5 +504,14 @@ extension MHVideoPlayerWithDelegateView{
             completion()
         }
     }
+    
+//    func setPlayerStatus(isPlaying: Bool, velocity: Float){
+//        if isPlaying{
+//            print("playing \(velocity)")
+//            self.play(rate: velocity)
+//        }else{
+//            self.pause()
+//        }
+//    }
 }
 
