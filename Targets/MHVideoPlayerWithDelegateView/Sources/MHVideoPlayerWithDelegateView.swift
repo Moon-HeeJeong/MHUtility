@@ -507,12 +507,12 @@ extension MHVideoPlayerWithDelegateView{
     
     func setPlayerStatus(isPlaying: Bool, velocity: Float){
         
-        guard isPlaying != self.isPlaying else{
-            self.setVelocity(velocity: velocity)
-            return
-        }
+//        guard isPlaying != self.isPlaying else{
+//            self.setVelocity(velocity: velocity)
+//            return
+//        }
         
-        self.isPlaying = isPlaying
+//        self.isPlaying = isPlaying
         
         if isPlaying{
 //            print("playing \(velocity)")
