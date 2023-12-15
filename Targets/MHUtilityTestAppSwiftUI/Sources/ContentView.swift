@@ -39,7 +39,10 @@ struct ContentView: View {
     @StateObject var router = MovingSheetOperator<AppRouter>()
     
     var body: some View {
-        MHVideoPlayerTestView()
+//        MHVideoPlayerTestView()
+        DragGestureTestView()
+        
+        
 //        List {
 //            Section {
 //                Button("video player") {

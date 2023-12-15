@@ -10,7 +10,11 @@ import SwiftUI
 
 extension GeometryProxy{
     public var guideResolution: CGSize {
-        return CGSize(width: 1125, height: 2436)
+        if UIDevice.current.userInterfaceIdiom == .phone{
+            return CGSize(width: 1125, height: 2436)
+        }else{
+            return CGSize(width: 2048, height: 1536)
+        }
     }
     
     public enum Measurement {
