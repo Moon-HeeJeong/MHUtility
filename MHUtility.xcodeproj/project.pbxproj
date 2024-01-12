@@ -105,6 +105,9 @@
 		D9B9D3402B20557A0022F27D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D9B9D33F2B20557A0022F27D /* RxSwift */; };
 		D9B9D3422B2057710022F27D /* MHVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B9D3412B2057710022F27D /* MHVideoPlayer.swift */; };
 		D9B9D3442B2057E60022F27D /* MHVideoPlayerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B9D3432B2057E60022F27D /* MHVideoPlayerTestView.swift */; };
+		D9FA8D142B4CE2A1007DBCE9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA8D0F2B4BC271007DBCE9 /* CoreDataManager.swift */; };
+		D9FA8D162B4CE2A7007DBCE9 /* MHDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9FA8D122B4BC2B1007DBCE9 /* MHDataModel.xcdatamodeld */; };
+		D9FA8D182B4CE2CB007DBCE9 /* CoreDataTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA8D172B4CE2CB007DBCE9 /* CoreDataTestView.swift */; };
 		DB046D6C0CEA652951D08A8C /* MHDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7576367B0AB6FC6B6AEF35 /* MHDevice.framework */; };
 		DB9FDCD3A9421AC64C127F88 /* icons_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC07DF1E8040994D9BD780F /* icons_1.png */; };
 		DBFDC511859FAE0EE9506516 /* MHUtilityTestAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB9A54316C0138AC289FD1D /* MHUtilityTestAppSwiftUIApp.swift */; };
@@ -715,6 +718,9 @@
 		D9800CE12B27FF95003D4FCB /* DragGestureTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureTestView.swift; sourceTree = "<group>"; };
 		D9B9D3412B2057710022F27D /* MHVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayer.swift; sourceTree = "<group>"; };
 		D9B9D3432B2057E60022F27D /* MHVideoPlayerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayerTestView.swift; sourceTree = "<group>"; };
+		D9FA8D0F2B4BC271007DBCE9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D9FA8D132B4BC2B1007DBCE9 /* MHDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MHDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D9FA8D172B4CE2CB007DBCE9 /* CoreDataTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestView.swift; sourceTree = "<group>"; };
 		DB2BA093C5F68F4D6384EE0A /* MHNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationView.swift; sourceTree = "<group>"; };
 		DB33D94624EAF7F7A210060E /* MHVideoPlayerWithDelegateView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHVideoPlayerWithDelegateView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB1348C96E5B8502E029EC1 /* MHTextFieldListViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHTextFieldListViewTests-Info.plist"; sourceTree = "<group>"; };
@@ -1148,6 +1154,7 @@
 		64F4DCCCE140D97AC41017C5 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
+				D9FA8D0E2B4BC1B2007DBCE9 /* MHCoreData */,
 				5182F49FC2B53FF5B2E19044 /* MHAPI */,
 				1A250B40FBC7DC4463EB01B2 /* MHDevice */,
 				BD38B39F2484E7FBA60D7ACE /* MHDownloader */,
@@ -1429,8 +1436,26 @@
 			children = (
 				D9B9D3432B2057E60022F27D /* MHVideoPlayerTestView.swift */,
 				D9800CE12B27FF95003D4FCB /* DragGestureTestView.swift */,
+				D9FA8D172B4CE2CB007DBCE9 /* CoreDataTestView.swift */,
 			);
 			path = TestViews;
+			sourceTree = "<group>";
+		};
+		D9FA8D0E2B4BC1B2007DBCE9 /* MHCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D9FA8D112B4BC285007DBCE9 /* Resources */,
+				D9FA8D0F2B4BC271007DBCE9 /* CoreDataManager.swift */,
+			);
+			path = MHCoreData;
+			sourceTree = "<group>";
+		};
+		D9FA8D112B4BC285007DBCE9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9FA8D122B4BC2B1007DBCE9 /* MHDataModel.xcdatamodeld */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E052B8C633F1EF77B23D388D /* MHOrientation */ = {
@@ -2435,11 +2460,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FA8D162B4CE2A7007DBCE9 /* MHDataModel.xcdatamodeld in Sources */,
 				77E3968F6B87AC551A042E8F /* TuistAssets+MHUtilityTestAppSwiftUI.swift in Sources */,
 				B78E1E35A14224F28867EC61 /* TuistBundle+MHUtilityTestAppSwiftUI.swift in Sources */,
 				B88565E4F7E4B8820A1A5050 /* ContentView.swift in Sources */,
 				DBFDC511859FAE0EE9506516 /* MHUtilityTestAppSwiftUIApp.swift in Sources */,
+				D9FA8D182B4CE2CB007DBCE9 /* CoreDataTestView.swift in Sources */,
 				864789F48FE5FE9B8977E720 /* MHVideoPlayerView.swift in Sources */,
+				D9FA8D142B4CE2A1007DBCE9 /* CoreDataManager.swift in Sources */,
 				BEF4CFB480D5D0A2F17880E8 /* SheetRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4820,6 +4848,19 @@
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D9FA8D122B4BC2B1007DBCE9 /* MHDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9FA8D132B4BC2B1007DBCE9 /* MHDataModel.xcdatamodel */,
+			);
+			currentVersion = D9FA8D132B4BC2B1007DBCE9 /* MHDataModel.xcdatamodel */;
+			path = MHDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 511BC61AC4D4C412CF6B2726 /* Project object */;
 }

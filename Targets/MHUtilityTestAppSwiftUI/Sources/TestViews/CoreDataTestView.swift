@@ -9,7 +9,19 @@ import SwiftUI
 
 struct CoreDataTestView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(content: {
+            Button(action: {
+                
+            }, label: {
+                Text("save the user data")
+            })
+            
+            Button(action: {
+                
+            }, label: {
+                Text("get the user data")
+            })
+        })
     }
 }
 
