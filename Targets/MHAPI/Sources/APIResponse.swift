@@ -20,12 +20,12 @@ public protocol Response_P: Model_T{
 }
 
 public enum Response_E{
-    case ok(message: String?)
+    case ok(code: Int, message: String?)
     case error(code: Int, message: String?)
     
     public var message: String?{
         switch self {
-        case .ok(let message):
+        case .ok(_, let message):
             return message
         case .error(_, let message):
             return message
@@ -34,7 +34,7 @@ public enum Response_E{
     
     public var isOK: Bool{
         switch self {
-        case .ok(_):
+        case .ok(_, _):
             return true
         case .error(_, _):
             return false
@@ -43,15 +43,17 @@ public enum Response_E{
     
     public var code: Int{
         switch self {
-        case .ok( _):
-            return 200
+        case .ok(let code, _):
+            return code
         case .error(let code, _):
             return code
         }
     }
 }
 
-public struct PhcResponse<Model: MHDataType_P>: Response_P{
+
+//example
+public struct Response<Model: MHDataType_P>: Response_P{
     
     public var responseType: Response_E
     public var data: Model?
@@ -89,10 +91,12 @@ public struct PhcResponse<Model: MHDataType_P>: Response_P{
         self.data = try? container.decode(Model.self, forKey: .data)
         
         if status == 200{
-            self.responseType = .ok(message: message)
+//            self.responseType = .ok(message: message)
+            self.responseType = .ok(code: 200, message: message)
         }else{
             if let _ = self.data{
-                self.responseType = .ok(message: message)
+//                self.responseType = .ok(message: message)
+                self.responseType = .ok(code: status ?? 200, message: message)
             }else{
                 self.responseType = .error(code: status ?? -1, message: message)
             }
