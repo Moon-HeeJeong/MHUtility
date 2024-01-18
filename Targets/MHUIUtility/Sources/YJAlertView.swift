@@ -11,7 +11,7 @@ import SwiftUI
 struct YJAlertView: View {
     
     @Binding var info: AlertInfo?
-    @State var isShow: Bool = false
+    @State var isShow: Bool = true
     
     var body: some View{
         GeometryReader(content: { geometry in
@@ -27,36 +27,41 @@ struct YJAlertView: View {
                 :Image(systemName: "exclamationmark.triangle.fill")
 
                 Rectangle()
-                    .fill(Color(red: 0, green: 0, blue: 0, opacity: 0.3))
+                    .fill(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
                     .opacity(self.isShow ? 1 : 0)
                     .animation(.easeIn(duration: 0.1), value: self.isShow)
                 //817*526
+                let wRate: CGFloat = 817 * (UIDevice.current.userInterfaceIdiom == .pad ? 0.9 : 1)
+                let hRate: CGFloat = 526 * (UIDevice.current.userInterfaceIdiom == .pad ? 0.9 : 1)
+                
+                let thRate: CGFloat = hRate*0.2467
+                let bhRate: CGFloat = hRate - thRate
 //                if self.isShow {
                     let w: CGFloat = {
                         if UIDevice.current.userInterfaceIdiom == .pad{
                             let s = max(geometry.size.width, geometry.size.height)
-                            return s*(817/2436)
+                            return s*(wRate/2436)
                         }else{
                             let s = min(geometry.size.width, geometry.size.height)
                             return s*0.7
                         }
                     }()
-                    let h = w * (526/817)
+                    let h = w * (hRate/wRate)
                     
                     VStack(spacing: 0){
                         
-                        let topH = h * (130/526)
+                        let topH = h * thRate/hRate
                         let bottomH = h - topH
                         HStack{
                             Spacer()
-                                .frame(width: w*(35/817))
+                                .frame(width: w*(35/wRate))
                             systemNameImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(height: topH*0.5)
                                 .colorInvert()
                             Spacer()
-                                .frame(width: w*(35/817))
+                                .frame(width: w*(35/wRate))
                             Text(info?.title ?? "")
                                 .font(.system(size: topH*0.4, weight: .medium))
                                 .foregroundColor(.white)
@@ -68,14 +73,14 @@ struct YJAlertView: View {
                         VStack(spacing: 0){
                             HStack{
                                 Text(info?.message ?? "")
-                                    .font(.system(size: bottomH*(50/413), weight:.regular))
+                                    .font(.system(size: bottomH*(50/bhRate), weight:.regular))
                                     .foregroundColor(.black)
                                 Spacer()
                             }
                             Spacer()
                             HStack{
                                 Text(info?.errorDesc ?? "")
-                                    .font(.system(size: bottomH*(40/413), weight:.light))
+                                    .font(.system(size: bottomH*(40/bhRate), weight:.light))
                                     .foregroundColor(.gray)
                                 Spacer()
                             }
@@ -92,7 +97,7 @@ struct YJAlertView: View {
 //                                            self.info = nil
                                         } label: {
                                             Text(actionTitle ?? "닫기")
-                                                .font(.system(size: bottomH*(45/413), weight: .bold))
+                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
                                                 .foregroundColor(color)
                                         }
                                     }
@@ -113,7 +118,7 @@ struct YJAlertView: View {
                                             self.isShow = false
                                         } label: {
                                             Text(actionTitle ?? "닫기")
-                                                .font(.system(size: bottomH*(45/413), weight: .bold))
+                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
                                                 .foregroundColor(color)
                                         }
                                     }
@@ -125,7 +130,7 @@ struct YJAlertView: View {
                                             self.isShow = false
                                         } label: {
                                             Text(actionTitle ?? "확인")
-                                                .font(.system(size: bottomH*(45/413), weight: .bold))
+                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
                                                 .foregroundColor(.black)
                                         }
                                         Spacer()
@@ -135,7 +140,7 @@ struct YJAlertView: View {
                                             self.isShow = false
                                         } label: {
                                             Text(cancelTitle ?? "닫기")
-                                                .font(.system(size: bottomH*(45/413), weight: .bold))
+                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
                                                 .foregroundColor(color)
                                         }
                                     }
