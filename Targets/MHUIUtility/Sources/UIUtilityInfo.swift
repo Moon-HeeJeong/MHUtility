@@ -12,6 +12,7 @@ import SwiftUI
 public enum UIUtility_E: Identifiable{
     
     case alert(info: AlertInfo?)
+    case yjAlert(info: AlertInfo?)
     case loading(isEnabled: Bool, color: Color = .blue)
     case stop
     
@@ -31,6 +32,16 @@ public enum UIUtility_E: Identifiable{
             return false
         }
     }
+    
+    var isYJAlert: Bool{
+        switch self {
+        case .yjAlert(_):
+            return true
+        default:
+            return false
+        }
+    }
+    
     var loadingColor: Color{
         switch self {
         case .loading(_, let color):
@@ -53,9 +64,35 @@ public enum UIUtility_E: Identifiable{
         Binding {
             switch self {
             case .alert(let info):
-                return info!
+                return info
             default:
                 return nil
+            }
+        } set: { _ in
+            
+        }
+    }
+    
+    var yjAlertInfoBinding: Binding<AlertInfo?>{
+        Binding {
+            switch self {
+            case .yjAlert(let info):
+                return info
+            default:
+                return nil
+            }
+        } set: { _ in
+            
+        }
+    }
+    
+    var isYJAlertBinding: Binding<Bool>{
+        Binding {
+            switch self {
+            case .yjAlert(let info):
+                return info != nil
+            default:
+                return false
             }
         } set: { _ in
             
@@ -73,6 +110,12 @@ public enum AlertType{
     case twoBtn_custom(actionTitle:String? = nil, cancelTitle:String? = nil, action: ()->(), cancelAction: (()->())? = nil)
 }
 
+
+public enum AlertKind{
+    case warnning
+    case infomation
+}
+
 public struct AlertInfo: Identifiable, Equatable{
     
     public var id: UUID
@@ -80,12 +123,18 @@ public struct AlertInfo: Identifiable, Equatable{
     public var type: AlertType
     public var title: String
     public var message: String
+    public var errorDesc: String?
     
-    public init(id: UUID = UUID(), type: AlertType, title: String, message: String) {
+    public var kind: AlertKind
+    
+    public init(id: UUID = UUID(), type: AlertType, title: String, message: String, errorDesc: String? = nil, kind: AlertKind = .infomation) {
         self.id = id
         self.type = type
         self.title = title
         self.message = message
+        
+        self.errorDesc = errorDesc
+        self.kind = kind
     }
     
     public static func == (lhs: AlertInfo, rhs: AlertInfo) -> Bool {

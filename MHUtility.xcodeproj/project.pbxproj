@@ -88,6 +88,7 @@
 		B39DE3F2B9925D57D2FE4A57 /* MHDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902640516CAC48CDAA0EECEF /* MHDownloaderTests.swift */; };
 		B4AF597EBD7FA45B8C99F746 /* MHOrientation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB8E040E4CC64662A0994B /* MHOrientation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55416370BBCCE65133D871E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D175D3F620BD4D087521E /* UIImage.swift */; };
+		B60F453A2B57899700CC62DC /* YJAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60F45392B57899700CC62DC /* YJAlertView.swift */; };
 		B78E1E35A14224F28867EC61 /* TuistBundle+MHUtilityTestAppSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F35F1E8DD56984AAB32D1 /* TuistBundle+MHUtilityTestAppSwiftUI.swift */; };
 		B88565E4F7E4B8820A1A5050 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E17E2243F1C9AA837BF155 /* ContentView.swift */; };
 		B9FD725F19C551F9A785C74C /* MHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192AA1409994BEEDC2262A31 /* MHDevice.swift */; };
@@ -704,6 +705,7 @@
 		B2972079CD84C331A547325A /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B2CDD3D6078126BBCE4F3016 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHUIUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60F45392B57899700CC62DC /* YJAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJAlertView.swift; sourceTree = "<group>"; };
 		BB53690800AD7DB0C10979C0 /* MHVideoPlayerWithDelegateView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHVideoPlayerWithDelegateView-Info.plist"; sourceTree = "<group>"; };
 		BD81E21FE3356DA57DCC9DF7 /* MHTextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHTextFieldListView.swift; sourceTree = "<group>"; };
 		BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAlertView.swift; sourceTree = "<group>"; };
@@ -1295,6 +1297,7 @@
 				DD5FE4081CAFCE2962312129 /* BaseVM.swift */,
 				54D30CD537C838688DD6D915 /* ExtensionView.swift */,
 				BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */,
+				B60F45392B57899700CC62DC /* YJAlertView.swift */,
 				8DAA1CCAFF354C224251DEE8 /* MHCircleProgressView.swift */,
 				72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */,
 				F57A73EC9C61AB5D91B946E8 /* UIUtilityModifier.swift */,
@@ -2557,6 +2560,7 @@
 				1192303204C91F13AA25946D /* ExtensionView.swift in Sources */,
 				2778FB293301DCCBA103A919 /* MHAlertView.swift in Sources */,
 				AD128B08820F10F4553952EA /* MHCircleProgressView.swift in Sources */,
+				B60F453A2B57899700CC62DC /* YJAlertView.swift in Sources */,
 				3148DE85A84542042D511C57 /* UIUtilityInfo.swift in Sources */,
 				7482470F7BF0F69D5FFA41C0 /* UIUtilityModifier.swift in Sources */,
 			);
@@ -3020,7 +3024,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
+				DEVELOPMENT_TEAM = SL6Z6PSCF7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUtilityTestAppSwiftUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -3361,7 +3365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
+				DEVELOPMENT_TEAM = SL6Z6PSCF7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUtilityTestAppSwiftUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
