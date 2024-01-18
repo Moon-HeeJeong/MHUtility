@@ -73,7 +73,7 @@ struct YJAlertView: View {
                         VStack(spacing: 0){
                             HStack{
                                 Text(info?.message ?? "")
-                                    .font(.system(size: bottomH*(50/bhRate), weight:.regular))
+                                    .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 50)/bhRate), weight:.regular))
                                     .foregroundColor(.black)
                                 Spacer()
                             }
@@ -86,6 +86,7 @@ struct YJAlertView: View {
                             }
                             Spacer()
                             HStack{
+                                let fontSize = bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 40 : 45)/bhRate)
                                 switch info?.type{
                                 case .oneBtn_confirm(let actionTitle, let action):
                                     HStack{
@@ -97,7 +98,7 @@ struct YJAlertView: View {
 //                                            self.info = nil
                                         } label: {
                                             Text(actionTitle ?? "닫기")
-                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
+                                                .font(.system(size: fontSize, weight: .bold))
                                                 .foregroundColor(color)
                                         }
                                     }
@@ -118,7 +119,7 @@ struct YJAlertView: View {
                                             self.isShow = false
                                         } label: {
                                             Text(actionTitle ?? "닫기")
-                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
+                                                .font(.system(size: fontSize, weight: .bold))
                                                 .foregroundColor(color)
                                         }
                                     }
@@ -130,7 +131,7 @@ struct YJAlertView: View {
                                             self.isShow = false
                                         } label: {
                                             Text(actionTitle ?? "확인")
-                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
+                                                .font(.system(size: fontSize, weight: .bold))
                                                 .foregroundColor(.black)
                                         }
                                         Spacer()
@@ -140,7 +141,7 @@ struct YJAlertView: View {
                                             self.isShow = false
                                         } label: {
                                             Text(cancelTitle ?? "닫기")
-                                                .font(.system(size: bottomH*(45/bhRate), weight: .bold))
+                                                .font(.system(size: fontSize, weight: .bold))
                                                 .foregroundColor(color)
                                         }
                                     }
