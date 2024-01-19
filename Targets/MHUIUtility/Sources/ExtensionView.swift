@@ -27,9 +27,16 @@ extension View{
                 MHAlertView(info: kind.wrappedValue.alertInfoBinding)
                     .opacity(kind.wrappedValue.isAlert ? 1:0)
                 
+            
+                YJAlertView(info: kind.wrappedValue.yjAlertInfoBinding)
+                    .opacity(kind.wrappedValue.isYJAlert ? 1:0)
+                
                 MHCircleProgressView(isEnabled: kind.wrappedValue.isLoadingEnabled, color: kind.wrappedValue.loadingColor)
                     .opacity(kind.wrappedValue.isLoading ? 1:0)
             })
         )
+//        .background(
+//            
+//        )
     }
 }
