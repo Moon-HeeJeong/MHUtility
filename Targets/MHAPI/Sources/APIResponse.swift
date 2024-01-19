@@ -16,7 +16,7 @@ public protocol Response_P: Model_T{
     var responseType: Response_E {get set}
     var data: Model? {get set}
     
-//    init(responseType: Response_E, data: Model?)
+    init(responseType: Response_E, data: Model?)
 }
 
 public enum Response_E{
