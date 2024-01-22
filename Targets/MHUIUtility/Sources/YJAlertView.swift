@@ -75,7 +75,7 @@ struct YJAlertView: View {
                             HStack{
                                 Text(info?.message ?? "")
                                     .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 50)/bhRate), weight:.regular))
-                                
+                                    .foregroundColor(.black)
                                 Spacer()
                             }
                             
