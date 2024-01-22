@@ -26,8 +26,8 @@ struct YJAlertView: View {
                 Image(systemName: "bell.circle.fill")
                 :Image(systemName: "exclamationmark.triangle.fill")
                 
-                systemNameImage
-                    .foregroundColor(.white)
+//                systemNameImage
+//                    .foregroundColor(.blue)
 
                 Rectangle()
                     .fill(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
@@ -62,7 +62,8 @@ struct YJAlertView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(height: topH*0.5)
-                                .colorInvert()
+                                .foregroundColor(.white)
+//                                .colorInvert()
                             Spacer()
                                 .frame(width: w*(35/wRate))
                             Text(info?.title ?? "")
@@ -77,15 +78,18 @@ struct YJAlertView: View {
                             HStack{
                                 Text(info?.message ?? "")
                                     .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 50)/bhRate), weight:.regular))
-                                    .frame(width: w - (w*(35/wRate))*2)
+                                
                                 Spacer()
                             }
-                            Spacer()
-                            HStack{
-                                Text(info?.errorDesc ?? "")
-                                    .font(.system(size: bottomH*(40/bhRate), weight:.light))
-                                    .foregroundColor(.gray)
+                            
+                            if let errorDesc = info?.errorDesc{
                                 Spacer()
+                                HStack{
+                                    Text(errorDesc)
+                                        .font(.system(size: bottomH*(40/bhRate), weight:.light))
+                                        .foregroundColor(.gray)
+                                    Spacer()
+                                }
                             }
                             Spacer()
                             HStack{
@@ -191,5 +195,5 @@ struct YJAlertView: View {
         print("취소")
     }, cancelAction: {
         print("로그아웃")
-    }), title: "APIError", message: "로그아웃 하시겠습니까?")))
+    }), title: "APIError", message: "로그아웃 하시겠습니까? 로그아웃을 어케어케해서 저렇게저렇게 어리너리ㅏㅇ쇼셔ㅛ셔ㅛ셔")))
 }
