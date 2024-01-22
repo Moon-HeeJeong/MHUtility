@@ -26,9 +26,6 @@ struct YJAlertView: View {
                 Image(systemName: "bell.circle.fill")
                 :Image(systemName: "exclamationmark.triangle.fill")
                 
-//                systemNameImage
-//                    .foregroundColor(.blue)
-
                 Rectangle()
                     .fill(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
                     .opacity(self.isShow ? 1 : 0)
