@@ -25,6 +25,9 @@ struct YJAlertView: View {
                 let systemNameImage = info?.kind == .infomation ?
                 Image(systemName: "bell.circle.fill")
                 :Image(systemName: "exclamationmark.triangle.fill")
+                
+                systemNameImage
+                    .foregroundColor(.white)
 
                 Rectangle()
                     .fill(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
@@ -74,7 +77,7 @@ struct YJAlertView: View {
                             HStack{
                                 Text(info?.message ?? "")
                                     .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 50)/bhRate), weight:.regular))
-                                    .foregroundColor(.black)
+                                    .frame(width: w - (w*(35/wRate))*2)
                                 Spacer()
                             }
                             Spacer()
