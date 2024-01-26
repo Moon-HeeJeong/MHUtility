@@ -19,8 +19,8 @@ struct YJAlertView: View {
             ZStack{
                 
                 let color = info?.kind == .infomation ? 
-                Color.init(red: 0, green: 180/255, blue: 255)
-                :Color.init(red: 255/255, green: 201/255, blue: 0)
+                Color.init(red: 0, green: 179/255, blue: 255)
+                :Color.init(red: 255/255, green: 202/255, blue: 0)
                 
                 let systemNameImage = info?.kind == .infomation ?
                 Image(systemName: "bell.circle.fill")
@@ -76,7 +76,8 @@ struct YJAlertView: View {
                                 Text(info?.message ?? "")
                                     .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 50)/bhRate), weight:.regular))
                                     .foregroundColor(.black)
-                                Spacer()
+//                                    .frame(maxHeight: 200)
+//                                Spacer()
                             }
                             
                             if let errorDesc = info?.errorDesc{
@@ -192,5 +193,6 @@ struct YJAlertView: View {
         print("취소")
     }, cancelAction: {
         print("로그아웃")
-    }), title: "APIError", message: "로그아웃 하시겠습니까? 로그아웃을 어케어케해서 저렇게저렇게 어리너리ㅏㅇ쇼셔ㅛ셔ㅛ셔")))
+    }), title: "APIError", message: "작성 중인 내용이 1개 이상인 상태에서 터치 시 작성 중인 내용이 모두 삭제됩니다.")))
+    //작성 중인 내용이 1개 이상인 상태에서 터치 시 작성 중인 내용이 모두 삭제됩니다.\n이전 페이지로 이동하시겠습니까?
 }
