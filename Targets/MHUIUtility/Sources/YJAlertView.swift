@@ -71,7 +71,7 @@ struct YJAlertView: View {
                         .frame(width: w, height: topH)
                         .background(color)
                         
-                        VStack(spacing: 0){
+                        VStack(alignment: .leading, spacing: 0){
                             HStack{
                                 Text(info?.message ?? "")
                                     .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 49)/bhRate), weight:.regular))
@@ -193,6 +193,6 @@ struct YJAlertView: View {
         print("취소")
     }, cancelAction: {
         print("로그아웃")
-    }), title: "APIError", message: "작성 중인 내용이 1개 이상인 상태에서 터치 시 작성 중인 내용이 모두 삭제됩니다.\n이전 페이지로 이동하시겠습니까?")))
+    }), title: "APIError", message: "작성 중인 내용이~~")))
     //작성 중인 내용이 1개 이상인 상태에서 터치 시 작성 중인 내용이 모두 삭제됩니다.\n이전 페이지로 이동하시겠습니까?
 }
