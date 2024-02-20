@@ -85,10 +85,16 @@ public class MHAPI{
             return data
             
         }
-        .decode(type: T.Response.self, decoder: JSONDecoder())
+//        .decode(type: T.Response.self, decoder: JSONDecoder())
+        .tryMap { data -> T.Response in
+            do {
+                return try JSONDecoder().decode(T.Response.self, from: data)
+            } catch {
+                throw APICallError_E.decodingErr(message: error.localizedDescription)
+            }
+        }
         .tryMap({ res -> T.Response.Model in
             print("🦊 response ::: \(res)")
-            
             if res.responseType.isOK{
                 if let d = res.data{
                     return d
@@ -100,9 +106,7 @@ public class MHAPI{
             }
         })
         .mapError { err in
-            if let decodingError = err as? DecodingError {
-                return APICallError_E.decodingErr(message: decodingError.localizedDescription)
-            }else if let apiCallError = err as? APICallError_E {
+            if let apiCallError = err as? APICallError_E {
                     return apiCallError
             } else {
                 return APICallError_E.inServerError(code: (err as NSError).code, message: err.localizedDescription)
