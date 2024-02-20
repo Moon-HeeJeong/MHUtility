@@ -101,7 +101,7 @@ public class MHAPI{
                     case .dataCorrupted(let context):
                         return "could not find key in JSON: \(context.debugDescription)"
                     @unknown default:
-                        return "Unknowed Error in JSON"
+                        return err.localizedDescription
                     }
                 }()
                 
