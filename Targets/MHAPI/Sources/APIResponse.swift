@@ -53,6 +53,7 @@ public enum Response_E{
 
 
 //example
+/**
 public struct Response<Model: MHDataType_P>: Response_P{
     
     public var responseType: Response_E
@@ -105,3 +106,4 @@ public struct Response<Model: MHDataType_P>: Response_P{
         self.accessToken = try? container.decode(String.self, forKey: .access_token)
     }
 }
+ */

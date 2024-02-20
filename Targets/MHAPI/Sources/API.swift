@@ -90,7 +90,23 @@ public class MHAPI{
         })
         .mapError { err in
             if let decodingError = err as? DecodingError {
-                return APICallError_E.decodingErr(message: decodingError.localizedDescription)
+                let message: String = {
+                    switch decodingError {
+                    case .typeMismatch(let any, let context):
+                        return "could not find key \(any) in JSON: \(context.debugDescription)"
+                    case .valueNotFound(let any, let context):
+                        return "could not find key \(any) in JSON: \(context.debugDescription)"
+                    case .keyNotFound(let codingKey, let context):
+                        return "could not find key \(codingKey) in JSON: \(context.debugDescription)"
+                    case .dataCorrupted(let context):
+                        return "could not find key in JSON: \(context.debugDescription)"
+                    @unknown default:
+                        return "Unknowed Error in JSON"
+                    }
+                }()
+                
+                return APICallError_E.decodingErr(message: message)
+                
             } else if let apiCallError = err as? APICallError_E {
                 return apiCallError
             } else {
