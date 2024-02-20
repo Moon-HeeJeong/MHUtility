@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1242,8 +1242,9 @@
 		5D8A9127F693C56F9DD06BBA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C7E7D45FAE3B5B2906A75EA3 /* ImageManager.swift */,
+				F33981B5A0691F3AAC43D547 /* MHImage.swift */,
 				17A52391B9648B31F141FCD8 /* ControllCenter */,
-				7BEB20FA4EDE982CFDF8EFF2 /* MHImage */,
 				D72CECD6075F589A9582E4FE /* Sample.swift */,
 			);
 			path = Sources;
@@ -1286,15 +1287,6 @@
 				DD8AD5D8D1160C66C4C58661 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		7BEB20FA4EDE982CFDF8EFF2 /* MHImage */ = {
-			isa = PBXGroup;
-			children = (
-				C7E7D45FAE3B5B2906A75EA3 /* ImageManager.swift */,
-				F33981B5A0691F3AAC43D547 /* MHImage.swift */,
-			);
-			path = MHImage;
 			sourceTree = "<group>";
 		};
 		7EF7F9BD7BF3295913F72124 /* Sources */ = {

@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 
-struct MHImage: View {
+public struct MHImage: View {
     
     @StateObject var imageManager: ImageManager
     var urlStr: String?

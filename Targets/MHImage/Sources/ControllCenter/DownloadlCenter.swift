@@ -10,7 +10,7 @@ import UIKit
 import Combine
 import SwiftUI
 
-class DownloadCenter: NSObject{
+public class DownloadCenter: NSObject{
     
     static let `default` = DownloadCenter()
     
@@ -104,7 +104,8 @@ public class LoaderOperation: Operation{
         if let imageCache = DownloadCenter.default.getSavedCache(key: urlStr){ //캐시 이미지
                 image = imageCache
         }else if manager.isExistCacheFile(urlStr: urlStr){ //파일 이미지
-            let fileImg = UIImage(contentsOfFile: manager.imageFilePath(urlStr: urlStr)!.path())
+            let fileImg = UIImage(contentsOfFile: manager.imageFilePath(urlStr: urlStr)!.path)
+//            let fileImg = UIImage(contentsOfFile: manager.imageFilePath(urlStr: urlStr)!.path())
             DownloadCenter.default.saveCache(fileImg!, key: urlStr) // 파일 안에 이미지가 있으면 캐시에 저장?
             image = fileImg
         }else{
@@ -144,7 +145,8 @@ public class LoaderOperation: Operation{
                 resultSubject.send(.success(image: Image(uiImage: imageCache)))
                 
             }else if manager.isExistCacheFile(urlStr: self.urlStr){ //파일 이미지
-                if let fileImg = UIImage(contentsOfFile: manager.imageFilePath(urlStr: self.urlStr)!.path()){
+//                if let fileImg = UIImage(contentsOfFile: manager.imageFilePath(urlStr: self.urlStr)!.path()){
+                if let fileImg = UIImage(contentsOfFile: manager.imageFilePath(urlStr: urlStr)!.path){
                     DownloadCenter.default.saveCache(fileImg, key: self.urlStr) // 파일 안에 이미지가 있으면 캐시에 저장
                     resultSubject.send(.success(image: Image(uiImage: fileImg)))
                 }else{
@@ -187,7 +189,7 @@ extension String{
 }
 
 //enum DataConnectedError: Error{
-enum ImageLoadingError: Error, Equatable{
+public enum ImageLoadingError: Error, Equatable{
     case invalidUrl
     case notFoundImage
     case notFoundImageInFile
@@ -213,7 +215,7 @@ enum ImageLoadingError: Error, Equatable{
     }
 }
 
-enum ImageLoadResponse{
+public enum ImageLoadResponse{
     case success(image: Image)
     case error(error: ImageLoadingError)
 }
