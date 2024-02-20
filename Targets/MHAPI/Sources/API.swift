@@ -85,25 +85,27 @@ public class MHAPI{
             return data
             
         }
-//        .decode(type: T.Response.self, decoder: JSONDecoder())
-        .tryMap { data -> T.Response in
-            do {
-                return try JSONDecoder().decode(T.Response.self, from: data)
-            } catch {
-                throw APICallError_E.decodingErr(message: error.localizedDescription)
-            }
-        }
+        .decode(type: T.Response.self, decoder: JSONDecoder())
+//        .tryMap { data -> T.Response in
+//            do {
+//                return try JSONDecoder().decode(T.Response.self, from: data)
+//            } catch {
+//                throw APICallError_E.decodingErr(message: error.localizedDescription)
+//            }
+//        }
         .tryMap({ res -> T.Response.Model in
             print("🦊 response ::: \(res)")
-            if res.responseType.isOK{
-                if let d = res.data{
-                    return d
-                }else{
-                    throw APICallError_E.noDataErr(message: "No data received")
-                }
-            }else{
-                throw APICallError_E.inServerError(code: res.responseType.code, message: res.responseType.message)
-            }
+//            if res.responseType.isOK{
+//                if let d = res.data{
+//                    return d
+//                }else{
+//                    throw APICallError_E.noDataErr(message: "No data received")
+//                }
+//            }else{
+//                throw APICallError_E.inServerError(code: res.responseType.code, message: res.responseType.message)
+//            }
+            
+            return res.data
         })
         .mapError { err in
             if let apiCallError = err as? APICallError_E {
