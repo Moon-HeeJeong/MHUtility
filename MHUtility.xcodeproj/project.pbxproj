@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		036942782FC41A785A85405D /* DisplayOnOpenMenuViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C308274CB235534D1B9C5449 /* DisplayOnOpenMenuViewModifier.swift */; };
 		0623E51542C35DBE256AC052 /* icons_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 486B907DA1ADF08BF9793288 /* icons_3.png */; };
 		07E37AA405B9F0B3541FFDCA /* MHAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD09D7EC1DA8904D1A3A8AF /* MHAPI.framework */; };
+		08CD7BDF22251FAC11FC9AB5 /* MHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33981B5A0691F3AAC43D547 /* MHImage.swift */; };
+		0CF5BFD0D0E2B52B63FEC6CB /* MHVideoPlayerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ACAED0F848CC9BC59B7D30 /* MHVideoPlayerTestView.swift */; };
 		0D9F75CA47F9172A9716C0BF /* MHVideoPlayerWithDelegateViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E303AA658DA46B2A8521D67 /* MHVideoPlayerWithDelegateViewTests.swift */; };
 		0F01C6C6B0BD727264CA29E1 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4125BD6E8BD4EC26AEB37 /* APIInfo.swift */; };
 		10A921A21C466F1EF1E3D7D9 /* MHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276101DA0467C74CDAEB95F7 /* MHUserDefaults.swift */; };
@@ -29,6 +31,7 @@
 		2EBD8F274D9CE835518DD70A /* MHOrientation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB8E040E4CC64662A0994B /* MHOrientation.framework */; };
 		3148DE85A84542042D511C57 /* UIUtilityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */; };
 		323B44E714B14F0440715DA1 /* MHNavigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F78289B83C157DF409EFD6F7 /* MHNavigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		352EA5FBD35F82E2FDC44C48 /* MHImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F79F0DCDF0E9318BCFFC6EF /* MHImage.framework */; };
 		39FBBAAB7B605BCBABF2EAE8 /* MHDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 518EB92335D0C40FD544E597 /* MHDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A6D49E76D39C193E613DBB5 /* icons_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F54F067A5AF4C2B9BAD6659 /* icons_2.png */; };
 		3EB5305B447FAD30FC29A663 /* MHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F7487DC9D4D097B89A1A7E /* MHLog.swift */; };
@@ -38,6 +41,7 @@
 		433BA93EB30F7CAC65D3555C /* MHImageCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		475484D1DDA73CD16F176D6D /* MHVideoPlayerWithDelegateView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB33D94624EAF7F7A210060E /* MHVideoPlayerWithDelegateView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477A689C5F51FAFC8E778909 /* MHVideoPlayerWithDelegateView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB33D94624EAF7F7A210060E /* MHVideoPlayerWithDelegateView.framework */; };
+		484D38E393F070AEC8D0B9AC /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CECD6075F589A9582E4FE /* Sample.swift */; };
 		4BEE7802E6D88625B55AE455 /* MHUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D3120C3609065ABCE1A9BE /* MHUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E6B12A3EB5F1F416A9C3B7F /* MHNavigationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFF1982E4E02479AD036310 /* MHNavigationPreference.swift */; };
 		4E98FC396EF0A29ACD837D38 /* TuistBundle+MHImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628BB726D0AFD49E8741EE6E /* TuistBundle+MHImageCacheTests.swift */; };
@@ -48,15 +52,18 @@
 		57DF7E82C0535A78D905D25B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B45DD237923D2F5366D015 /* UIView.swift */; };
 		58C5F24B2840B168DF2B8530 /* MHDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518EB92335D0C40FD544E597 /* MHDownloader.framework */; };
 		5A3A6DAF339B452569862918 /* MHOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E94DD8E756E9C37E5FE8F /* MHOrientation.swift */; };
+		5C94513AB782E23334370198 /* MHImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F79F0DCDF0E9318BCFFC6EF /* MHImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F27AA23819630A7857140D1 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2972079CD84C331A547325A /* CGFloat.swift */; };
 		5F39360BEAAF8E2875E85F76 /* MHExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18BFACE1ED0AB74230FDF1C /* MHExtension.framework */; };
 		5F62442DA0182EAC0DE08DCD /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD6A45D099B6EF94E47E38 /* APIResponse.swift */; };
 		60E6A3D7B10AB74B9B91A74D /* MHSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886BBA9445E5E69909A6E6D0 /* MHSoundPlayer.swift */; };
 		645CA44F1AF068955821A541 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E2191ED2BF8782BB54756 /* UITableView.swift */; };
 		6CC347CD03246E54EB1B0040 /* MHDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F258AD5ABDEFCDF2D68F78 /* MHDeviceTests.swift */; };
+		72035C5936FFC2B7C9BBB690 /* MHImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F79F0DCDF0E9318BCFFC6EF /* MHImage.framework */; };
 		727DC2977E70DC35A8E7B0AB /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F95BE1EA8F3BA7FB452B23 /* Double.swift */; };
 		7482470F7BF0F69D5FFA41C0 /* UIUtilityModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A73EC9C61AB5D91B946E8 /* UIUtilityModifier.swift */; };
 		762894307B97678A628A1764 /* MHDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518EB92335D0C40FD544E597 /* MHDownloader.framework */; };
+		768786DE3DE508E703CB79B4 /* MHVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953961B0EC1872942470D178 /* MHVideoPlayer.swift */; };
 		77E3968F6B87AC551A042E8F /* TuistAssets+MHUtilityTestAppSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868672C2010C0A6F7021FCE6 /* TuistAssets+MHUtilityTestAppSwiftUI.swift */; };
 		7C1A0E3B52E875CCCD7C4EB5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BCA4712AF0F865B0D205E /* UIApplication.swift */; };
 		81D23EE1BD297D6CAF7BAB7C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC82B6AC28DA49A0147E87 /* API.swift */; };
@@ -69,26 +76,31 @@
 		86534DBF3D6DB82EAD6A06DE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048DB3470F8635B33AC8C9B /* UIColor.swift */; };
 		865DCE2A009D7E37A096F129 /* MHNavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39FA951A4484CF106ACF75 /* MHNavigationViewWrapper.swift */; };
 		880B9E7F399EF3607E86AF19 /* MHSoundPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAF921EAC9F8CF7C1701AD5 /* MHSoundPlayer.framework */; };
+		8A4D2B5308B3BA0421983536 /* MHNavigationConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A05D7F1FBCE18DF9FBA2A3F /* MHNavigationConfigurations.swift */; };
 		8B19CE71E4BD870A294817A6 /* UIDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C137F45296C5E7B1E8BA4 /* UIDeviceOrientation.swift */; };
 		8CBDEF6BA5921BB5487521F1 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FE4081CAFCE2962312129 /* BaseVM.swift */; };
 		9327123BF2E750F00D7DD311 /* MHLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE3B347970A4DB419AB6B03 /* MHLog.framework */; };
 		953B1BBAF69FD441E88E4151 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D558EDF2E3B9FB805CF86102 /* View.swift */; };
 		984AF09018EF992B19ACA875 /* icons_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC07DF1E8040994D9BD780F /* icons_1.png */; };
+		9E5B8889007947D722E3D894 /* DownloadlCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77D4957A30748687CC259E /* DownloadlCenter.swift */; };
 		A24DD0C7EA12C261C9A14E9C /* MHSoundPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAF921EAC9F8CF7C1701AD5 /* MHSoundPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3F9B4AA5DD476E981CABDFB /* MHTextFieldListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EEE9681BE11DEC0FFD13CA7 /* MHTextFieldListView.framework */; };
 		A47E0A66FDD0C624B35A8A9C /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C4FBA4DCE0394EF2CA9A1 /* APIConfig.swift */; };
 		A5DB92054A843B2AB30000A3 /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D62B437919C55F24F0B6F /* AnyTransition.swift */; };
 		A670E2CF5F56DD95B0BE7A30 /* MHUtilityTestAppSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D2B9710EAD739B95DA56 /* MHUtilityTestAppSwiftUITests.swift */; };
+		A6D750A56C02B18698066BC1 /* DragGestureTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF10BB44D547762D146CB5D /* DragGestureTestView.swift */; };
 		A6EE3F06D93E59075C7779A2 /* icons_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 486B907DA1ADF08BF9793288 /* icons_3.png */; };
 		AA5C9BB1228F1EFA5D401D81 /* MHLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E855BCE8A6DF803E51B8868 /* MHLogTests.swift */; };
 		AC377E96EDAE9D0B8BD273C5 /* MHUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D3120C3609065ABCE1A9BE /* MHUserDefaults.framework */; };
 		ACB35C9FC31548FCE7324733 /* MHNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78289B83C157DF409EFD6F7 /* MHNavigation.framework */; };
 		AD128B08820F10F4553952EA /* MHCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAA1CCAFF354C224251DEE8 /* MHCircleProgressView.swift */; };
 		AF1771F0CF689C3B878F4BA1 /* MHUIUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3344BA673EF464BC6B549B9 /* YJAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00C5FC1C015F7AF4DD5D85 /* YJAlertView.swift */; };
 		B39DE3F2B9925D57D2FE4A57 /* MHDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902640516CAC48CDAA0EECEF /* MHDownloaderTests.swift */; };
+		B41553BF0C4014403E4CDEBF /* CoreDataTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0683EF17FA1B017CAC0B432B /* CoreDataTestView.swift */; };
 		B4AF597EBD7FA45B8C99F746 /* MHOrientation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB8E040E4CC64662A0994B /* MHOrientation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55416370BBCCE65133D871E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D175D3F620BD4D087521E /* UIImage.swift */; };
-		B60F453A2B57899700CC62DC /* YJAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60F45392B57899700CC62DC /* YJAlertView.swift */; };
+		B768B8F99BB455B880999A69 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7981223D5CBC9FBC9177B440 /* ImageFileManager.swift */; };
 		B78E1E35A14224F28867EC61 /* TuistBundle+MHUtilityTestAppSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F35F1E8DD56984AAB32D1 /* TuistBundle+MHUtilityTestAppSwiftUI.swift */; };
 		B88565E4F7E4B8820A1A5050 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E17E2243F1C9AA837BF155 /* ContentView.swift */; };
 		B9FD725F19C551F9A785C74C /* MHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192AA1409994BEEDC2262A31 /* MHDevice.swift */; };
@@ -100,15 +112,9 @@
 		CD5287889F9381A20CC210BC /* MHVideoPlayerWithDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809326C170B7FE7D50C60C7 /* MHVideoPlayerWithDelegateView.swift */; };
 		CF6924A7E1AAEDA2C2276325 /* MHTextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81E21FE3356DA57DCC9DF7 /* MHTextFieldListView.swift */; };
 		CF890D632A01327F4CD74006 /* MHDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754F6772B84EE7F815F7A8E /* MHDownloader.swift */; };
+		D1CE6CBD909B25D4BD1DED07 /* MHImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1057AFD94243478B9DEFA8 /* MHImageTests.swift */; };
 		D3D5BF2B12884640FC023726 /* MHImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */; };
 		D86CD303C0138297036FF0D8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FD7466337C3AA301BFD765 /* Date.swift */; };
-		D9800CE22B27FF95003D4FCB /* DragGestureTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9800CE12B27FF95003D4FCB /* DragGestureTestView.swift */; };
-		D9B9D3402B20557A0022F27D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D9B9D33F2B20557A0022F27D /* RxSwift */; };
-		D9B9D3422B2057710022F27D /* MHVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B9D3412B2057710022F27D /* MHVideoPlayer.swift */; };
-		D9B9D3442B2057E60022F27D /* MHVideoPlayerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B9D3432B2057E60022F27D /* MHVideoPlayerTestView.swift */; };
-		D9FA8D142B4CE2A1007DBCE9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA8D0F2B4BC271007DBCE9 /* CoreDataManager.swift */; };
-		D9FA8D162B4CE2A7007DBCE9 /* MHDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9FA8D122B4BC2B1007DBCE9 /* MHDataModel.xcdatamodeld */; };
-		D9FA8D182B4CE2CB007DBCE9 /* CoreDataTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA8D172B4CE2CB007DBCE9 /* CoreDataTestView.swift */; };
 		DB046D6C0CEA652951D08A8C /* MHDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7576367B0AB6FC6B6AEF35 /* MHDevice.framework */; };
 		DB9FDCD3A9421AC64C127F88 /* icons_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC07DF1E8040994D9BD780F /* icons_1.png */; };
 		DBFDC511859FAE0EE9506516 /* MHUtilityTestAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB9A54316C0138AC289FD1D /* MHUtilityTestAppSwiftUIApp.swift */; };
@@ -119,8 +125,10 @@
 		E5EA926961CB24170766B97C /* BrightAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AA9F8B5B68467C09F660D /* BrightAnimationStyle.swift */; };
 		E63FAE4BBEF36CA1B38473CD /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E461D2138003072D856AE1E /* Bool.swift */; };
 		EA0933A5582DFDAE5512275D /* MHSoundPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAF921EAC9F8CF7C1701AD5 /* MHSoundPlayer.framework */; };
+		EFC2A15D17396FDC94BED500 /* MHDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF25A891063E05E850FE3A /* MHDeviceTests.swift */; };
 		EFF42EFCD8683FDBE2ED696C /* MHVideoPlayerWithDelegateView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB33D94624EAF7F7A210060E /* MHVideoPlayerWithDelegateView.framework */; };
 		F30DDF58CD049AC8F414EAFF /* MHTextFieldListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78ED46EE751817188A072BE /* MHTextFieldListViewTests.swift */; };
+		F339B8FADB784CC35ADA834A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E7D45FAE3B5B2906A75EA3 /* ImageManager.swift */; };
 		F3E347BF4E6D037393EDB525 /* MHAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD09D7EC1DA8904D1A3A8AF /* MHAPI.framework */; };
 		F5D2BDCC636AD8700E35EF09 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A53D84C6D2C80F54C8594F7 /* String.swift */; };
 		FB3821F77E2D7C660E86FC73 /* MHDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7576367B0AB6FC6B6AEF35 /* MHDevice.framework */; };
@@ -241,6 +249,13 @@
 			remoteGlobalIDString = 2AC769C43A50CFD356251206;
 			remoteInfo = MHDownloader;
 		};
+		88E98678D0E0C5ED3011A31C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 511BC61AC4D4C412CF6B2726 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9622423B640AA349564A662C;
+			remoteInfo = MHImage;
+		};
 		96A205FD9ECAD1A63D1FB93E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 511BC61AC4D4C412CF6B2726 /* Project object */;
@@ -261,6 +276,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 11EFDF3B47AABDD7F1FDB400;
 			remoteInfo = MHVideoPlayerWithDelegateView;
+		};
+		C60880D241FA2524780B3FB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 511BC61AC4D4C412CF6B2726 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9622423B640AA349564A662C;
+			remoteInfo = MHImage;
 		};
 		C7A53A9CB2F84F8E421C3828 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -391,6 +413,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		308048789E0DCC32B413F04B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31B7FE0816BAFD5613ADB44E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +503,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A60C1799436EFB0D840F7E41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A68D117AED22E63B20815F9B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,6 +533,7 @@
 				BA97BAA1394B9434BE072C3D /* MHDevice.framework in Embed Frameworks */,
 				39FBBAAB7B605BCBABF2EAE8 /* MHDownloader.framework in Embed Frameworks */,
 				412D2BFCAD0904B9A1D4AF24 /* MHExtension.framework in Embed Frameworks */,
+				5C94513AB782E23334370198 /* MHImage.framework in Embed Frameworks */,
 				433BA93EB30F7CAC65D3555C /* MHImageCache.framework in Embed Frameworks */,
 				BA8CAE72D197C5B0249088E7 /* MHLog.framework in Embed Frameworks */,
 				323B44E714B14F0440715DA1 /* MHNavigation.framework in Embed Frameworks */,
@@ -619,10 +662,13 @@
 /* Begin PBXFileReference section */
 		00D08F57A36A188239EC9A01 /* ScaleAnimationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleAnimationStyle.swift; sourceTree = "<group>"; };
 		031543EB457C5B8F83D6053C /* MHUtilityTestAppSwiftUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHUtilityTestAppSwiftUITests-Info.plist"; sourceTree = "<group>"; };
+		0683EF17FA1B017CAC0B432B /* CoreDataTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestView.swift; sourceTree = "<group>"; };
 		073F35F1E8DD56984AAB32D1 /* TuistBundle+MHUtilityTestAppSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MHUtilityTestAppSwiftUI.swift"; sourceTree = "<group>"; };
 		089B350C5584D64F7177ED1D /* MHUserDefaultsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHUserDefaultsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F95BE1EA8F3BA7FB452B23 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0CD211145238C89B686CC209 /* MHDownloaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHDownloaderTests-Info.plist"; sourceTree = "<group>"; };
+		126882CA1B8D0A5CB9D48568 /* MHImageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHImageTests-Info.plist"; sourceTree = "<group>"; };
+		160C7F68F752937F3EE8C08E /* MHImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EC83DE2A9D1132E30D4CF6 /* MHAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		192AA1409994BEEDC2262A31 /* MHDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDevice.swift; sourceTree = "<group>"; };
 		1AC07DF1E8040994D9BD780F /* icons_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons_1.png; sourceTree = "<group>"; };
@@ -652,6 +698,7 @@
 		47506A31BB9D138B33117F2C /* MHImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHImageCacheTests.swift; sourceTree = "<group>"; };
 		4754F6772B84EE7F815F7A8E /* MHDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDownloader.swift; sourceTree = "<group>"; };
 		486B907DA1ADF08BF9793288 /* icons_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons_3.png; sourceTree = "<group>"; };
+		4A05D7F1FBCE18DF9FBA2A3F /* MHNavigationConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationConfigurations.swift; sourceTree = "<group>"; };
 		4BB9A54316C0138AC289FD1D /* MHUtilityTestAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHUtilityTestAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		4BD8EAE309BA0D3C74FFF280 /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
 		4D17C3C12D1EC10EFC436B8D /* MHNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -666,11 +713,13 @@
 		628BB726D0AFD49E8741EE6E /* TuistBundle+MHImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MHImageCacheTests.swift"; sourceTree = "<group>"; };
 		638F32BB90212B414B353C56 /* MHDevice-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHDevice-Info.plist"; sourceTree = "<group>"; };
 		6AFC82B6AC28DA49A0147E87 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6DAF25A891063E05E850FE3A /* MHDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDeviceTests.swift; sourceTree = "<group>"; };
 		6DC744F4F05A19BCDC694993 /* MHExtension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHExtension-Info.plist"; sourceTree = "<group>"; };
 		6F62B0A3BBB80C69580F3F8F /* MHOrientationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHOrientationTests-Info.plist"; sourceTree = "<group>"; };
 		72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilityInfo.swift; sourceTree = "<group>"; };
 		762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7946C43D4159DFADF17F0756 /* SheetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRouter.swift; sourceTree = "<group>"; };
+		7981223D5CBC9FBC9177B440 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		7A53D84C6D2C80F54C8594F7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7AE3B347970A4DB419AB6B03 /* MHLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D00DD8727E7A02F57D95113 /* MHSoundPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHSoundPlayerTests-Info.plist"; sourceTree = "<group>"; };
@@ -685,10 +734,13 @@
 		8E99DC04762D891615B79AAD /* MHVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayerView.swift; sourceTree = "<group>"; };
 		8EEE9681BE11DEC0FFD13CA7 /* MHTextFieldListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHTextFieldListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		902640516CAC48CDAA0EECEF /* MHDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHDownloaderTests.swift; sourceTree = "<group>"; };
+		953961B0EC1872942470D178 /* MHVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayer.swift; sourceTree = "<group>"; };
 		9AA9956EED8AA61EF11F6749 /* MHNavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHNavigationTests-Info.plist"; sourceTree = "<group>"; };
 		9CAF921EAC9F8CF7C1701AD5 /* MHSoundPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHSoundPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0271490BDDCB2589C02285 /* MHImage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHImage-Info.plist"; sourceTree = "<group>"; };
 		9D1AA9F8B5B68467C09F660D /* BrightAnimationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightAnimationStyle.swift; sourceTree = "<group>"; };
 		9D51AE7D4B8A8903EB988D42 /* MHTextFieldListView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHTextFieldListView-Info.plist"; sourceTree = "<group>"; };
+		9F79F0DCDF0E9318BCFFC6EF /* MHImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF4125BD6E8BD4EC26AEB37 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		A2153148103355F69717A5C1 /* MHImageCache-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHImageCache-Info.plist"; sourceTree = "<group>"; };
 		A36916141E971E96D4440318 /* MHImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHImageCache.swift; sourceTree = "<group>"; };
@@ -705,27 +757,24 @@
 		B2972079CD84C331A547325A /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B2CDD3D6078126BBCE4F3016 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B4BF6A998F6028D7874D3EA5 /* MHUIUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHUIUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60F45392B57899700CC62DC /* YJAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJAlertView.swift; sourceTree = "<group>"; };
 		BB53690800AD7DB0C10979C0 /* MHVideoPlayerWithDelegateView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHVideoPlayerWithDelegateView-Info.plist"; sourceTree = "<group>"; };
 		BD81E21FE3356DA57DCC9DF7 /* MHTextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHTextFieldListView.swift; sourceTree = "<group>"; };
 		BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAlertView.swift; sourceTree = "<group>"; };
 		C0F2390BF3A9F3707A2305A5 /* MHDownloader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHDownloader-Info.plist"; sourceTree = "<group>"; };
 		C18BFACE1ED0AB74230FDF1C /* MHExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C308274CB235534D1B9C5449 /* DisplayOnOpenMenuViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOnOpenMenuViewModifier.swift; sourceTree = "<group>"; };
+		C7E7D45FAE3B5B2906A75EA3 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		C8FB48492A0372B04B630E1A /* MHNavigation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHNavigation-Info.plist"; sourceTree = "<group>"; };
 		CBCB8E040E4CC64662A0994B /* MHOrientation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHOrientation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF10BB44D547762D146CB5D /* DragGestureTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureTestView.swift; sourceTree = "<group>"; };
 		D4B45DD237923D2F5366D015 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D558EDF2E3B9FB805CF86102 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D6FD7466337C3AA301BFD765 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		D9800CE12B27FF95003D4FCB /* DragGestureTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureTestView.swift; sourceTree = "<group>"; };
-		D9B9D3412B2057710022F27D /* MHVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayer.swift; sourceTree = "<group>"; };
-		D9B9D3432B2057E60022F27D /* MHVideoPlayerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayerTestView.swift; sourceTree = "<group>"; };
-		D9FA8D0F2B4BC271007DBCE9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		D9FA8D132B4BC2B1007DBCE9 /* MHDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MHDataModel.xcdatamodel; sourceTree = "<group>"; };
-		D9FA8D172B4CE2CB007DBCE9 /* CoreDataTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestView.swift; sourceTree = "<group>"; };
+		D72CECD6075F589A9582E4FE /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		DB2BA093C5F68F4D6384EE0A /* MHNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationView.swift; sourceTree = "<group>"; };
 		DB33D94624EAF7F7A210060E /* MHVideoPlayerWithDelegateView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHVideoPlayerWithDelegateView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB1348C96E5B8502E029EC1 /* MHTextFieldListViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHTextFieldListViewTests-Info.plist"; sourceTree = "<group>"; };
+		DD00C5FC1C015F7AF4DD5D85 /* YJAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YJAlertView.swift; sourceTree = "<group>"; };
 		DD5FE4081CAFCE2962312129 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
 		DD8AD5D8D1160C66C4C58661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA1028945D859DD6D75B7D0 /* MHDeviceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHDeviceTests-Info.plist"; sourceTree = "<group>"; };
@@ -733,12 +782,14 @@
 		E08AF6642EA7513BDA746B65 /* MHUIUtility-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHUIUtility-Info.plist"; sourceTree = "<group>"; };
 		E56E94DD8E756E9C37E5FE8F /* MHOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHOrientation.swift; sourceTree = "<group>"; };
 		E809326C170B7FE7D50C60C7 /* MHVideoPlayerWithDelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayerWithDelegateView.swift; sourceTree = "<group>"; };
+		E9ACAED0F848CC9BC59B7D30 /* MHVideoPlayerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHVideoPlayerTestView.swift; sourceTree = "<group>"; };
 		EB5748C20700824FFF0E210D /* MHUtilityTestAppSwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHUtilityTestAppSwiftUI-Info.plist"; sourceTree = "<group>"; };
 		EB812C166BC2259C5B24D76B /* MHSoundPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHSoundPlayer-Info.plist"; sourceTree = "<group>"; };
 		EC29F764CB5E5C880288EB46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED6E2191ED2BF8782BB54756 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		EDFF1982E4E02479AD036310 /* MHNavigationPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHNavigationPreference.swift; sourceTree = "<group>"; };
 		F32B52BEB61C6225505525F4 /* TuistBundle+MHImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MHImageCache.swift"; sourceTree = "<group>"; };
+		F33981B5A0691F3AAC43D547 /* MHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHImage.swift; sourceTree = "<group>"; };
 		F57A73EC9C61AB5D91B946E8 /* UIUtilityModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilityModifier.swift; sourceTree = "<group>"; };
 		F725966CC62EFA605D593C59 /* MHDeviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHDeviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78289B83C157DF409EFD6F7 /* MHNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -748,7 +799,9 @@
 		F8F9645368EF0DE3D42D7D40 /* MHOrientation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHOrientation-Info.plist"; sourceTree = "<group>"; };
 		F9F7487DC9D4D097B89A1A7E /* MHLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHLog.swift; sourceTree = "<group>"; };
 		FA1050C19237BE71E975B16B /* MHUserDefaults-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MHUserDefaults-Info.plist"; sourceTree = "<group>"; };
+		FB77D4957A30748687CC259E /* DownloadlCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadlCenter.swift; sourceTree = "<group>"; };
 		FC67E7D44139B799D41229E2 /* MHSoundPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHSoundPlayerTests.swift; sourceTree = "<group>"; };
+		FF1057AFD94243478B9DEFA8 /* MHImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHImageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -852,6 +905,7 @@
 				FB3821F77E2D7C660E86FC73 /* MHDevice.framework in Frameworks */,
 				762894307B97678A628A1764 /* MHDownloader.framework in Frameworks */,
 				1C86BB80011EEF5C464CB1E7 /* MHExtension.framework in Frameworks */,
+				352EA5FBD35F82E2FDC44C48 /* MHImage.framework in Frameworks */,
 				D3D5BF2B12884640FC023726 /* MHImageCache.framework in Frameworks */,
 				DF1BF356139B8E0BEE9EA403 /* MHLog.framework in Frameworks */,
 				55D58B365799F6224F32570B /* MHNavigation.framework in Frameworks */,
@@ -886,6 +940,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E1FEAD4B676525D580FA207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72035C5936FFC2B7C9BBB690 /* MHImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		976790FDE35DB5574D9A597F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -913,11 +975,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B9D3402B20557A0022F27D /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B591F9FD602E1DF03302AFDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBADD18E508A9B21918FCBD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1029,6 +1097,15 @@
 			path = MHVideoPlayerWithDelegateView;
 			sourceTree = "<group>";
 		};
+		17A52391B9648B31F141FCD8 /* ControllCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FB77D4957A30748687CC259E /* DownloadlCenter.swift */,
+				7981223D5CBC9FBC9177B440 /* ImageFileManager.swift */,
+			);
+			path = ControllCenter;
+			sourceTree = "<group>";
+		};
 		18B5DC25952B4C359A2F0146 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1044,6 +1121,14 @@
 				0C9204B00E8F1B1C6B0D087C /* Tests */,
 			);
 			path = MHDevice;
+			sourceTree = "<group>";
+		};
+		229049F4F6BD4ABFF46851C9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6DAF25A891063E05E850FE3A /* MHDeviceTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		289774B9D53E63359D5F228C /* MHExtension */ = {
@@ -1116,6 +1201,15 @@
 			path = SwiftUIModifier;
 			sourceTree = "<group>";
 		};
+		3F1F8F40F4668019743351F5 /* MHImage */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A9127F693C56F9DD06BBA /* Sources */,
+				C38F94E38D2991BFA9CBA198 /* Tests */,
+			);
+			path = MHImage;
+			sourceTree = "<group>";
+		};
 		44253E4B17EA339D42413B47 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1145,6 +1239,16 @@
 			path = MHAPI;
 			sourceTree = "<group>";
 		};
+		5D8A9127F693C56F9DD06BBA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				17A52391B9648B31F141FCD8 /* ControllCenter */,
+				7BEB20FA4EDE982CFDF8EFF2 /* MHImage */,
+				D72CECD6075F589A9582E4FE /* Sample.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		5EF3707F5121ADDF98A90B5F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -1156,11 +1260,11 @@
 		64F4DCCCE140D97AC41017C5 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
-				D9FA8D0E2B4BC1B2007DBCE9 /* MHCoreData */,
 				5182F49FC2B53FF5B2E19044 /* MHAPI */,
 				1A250B40FBC7DC4463EB01B2 /* MHDevice */,
 				BD38B39F2484E7FBA60D7ACE /* MHDownloader */,
 				C199C5E696D50A7EA8AE35A3 /* MHExtension */,
+				3F1F8F40F4668019743351F5 /* MHImage */,
 				A8D4F2CB12C49F994085E9F2 /* MHImageCache */,
 				E8DA99857526A148A7BF7C47 /* MHLog */,
 				ADB38B6AE8BFC9CD9B10D27E /* MHNavigation */,
@@ -1184,9 +1288,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7BEB20FA4EDE982CFDF8EFF2 /* MHImage */ = {
+			isa = PBXGroup;
+			children = (
+				C7E7D45FAE3B5B2906A75EA3 /* ImageManager.swift */,
+				F33981B5A0691F3AAC43D547 /* MHImage.swift */,
+			);
+			path = MHImage;
+			sourceTree = "<group>";
+		};
 		7EF7F9BD7BF3295913F72124 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4A05D7F1FBCE18DF9FBA2A3F /* MHNavigationConfigurations.swift */,
 				2344518F5ABA27DAE7BF2DEE /* MHNavigationController.swift */,
 				EDFF1982E4E02479AD036310 /* MHNavigationPreference.swift */,
 				DB2BA093C5F68F4D6384EE0A /* MHNavigationView.swift */,
@@ -1206,7 +1320,7 @@
 		854DDF3191376A7746B2FB6A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D99717532B22ED7D00FA7668 /* TestViews */,
+				D9C8B1FCF3CC46A713E6840D /* TestViews */,
 				24E17E2243F1C9AA837BF155 /* ContentView.swift */,
 				4BB9A54316C0138AC289FD1D /* MHUtilityTestAppSwiftUIApp.swift */,
 				8E99DC04762D891615B79AAD /* MHVideoPlayerView.swift */,
@@ -1279,6 +1393,7 @@
 			isa = PBXGroup;
 			children = (
 				7EF7F9BD7BF3295913F72124 /* Sources */,
+				229049F4F6BD4ABFF46851C9 /* Tests */,
 			);
 			path = MHNavigation;
 			sourceTree = "<group>";
@@ -1297,10 +1412,10 @@
 				DD5FE4081CAFCE2962312129 /* BaseVM.swift */,
 				54D30CD537C838688DD6D915 /* ExtensionView.swift */,
 				BE1C61D4712050A5D0CEAB06 /* MHAlertView.swift */,
-				B60F45392B57899700CC62DC /* YJAlertView.swift */,
 				8DAA1CCAFF354C224251DEE8 /* MHCircleProgressView.swift */,
 				72D6366D33C8C774C35F53E4 /* UIUtilityInfo.swift */,
 				F57A73EC9C61AB5D91B946E8 /* UIUtilityModifier.swift */,
+				DD00C5FC1C015F7AF4DD5D85 /* YJAlertView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1358,6 +1473,14 @@
 			path = MHExtension;
 			sourceTree = "<group>";
 		};
+		C38F94E38D2991BFA9CBA198 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FF1057AFD94243478B9DEFA8 /* MHImageTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		C3E758C2D46CA1B6D5E3F5D9 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
@@ -1369,8 +1492,10 @@
 				0CD211145238C89B686CC209 /* MHDownloaderTests-Info.plist */,
 				6DC744F4F05A19BCDC694993 /* MHExtension-Info.plist */,
 				AFB015C6C1702226CFB99FA0 /* MHExtensionTests-Info.plist */,
+				9D0271490BDDCB2589C02285 /* MHImage-Info.plist */,
 				A2153148103355F69717A5C1 /* MHImageCache-Info.plist */,
 				1B861D087D692D4C7389D1CA /* MHImageCacheTests-Info.plist */,
+				126882CA1B8D0A5CB9D48568 /* MHImageTests-Info.plist */,
 				3F034EDEEC4A7A4421B3EBAE /* MHLog-Info.plist */,
 				1F6FDB28B294ACCDBFC6887F /* MHLogTests-Info.plist */,
 				C8FB48492A0372B04B630E1A /* MHNavigation-Info.plist */,
@@ -1428,37 +1553,20 @@
 		D5ED4659DD3CFE9AEA18DF1F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				953961B0EC1872942470D178 /* MHVideoPlayer.swift */,
 				E809326C170B7FE7D50C60C7 /* MHVideoPlayerWithDelegateView.swift */,
-				D9B9D3412B2057710022F27D /* MHVideoPlayer.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		D99717532B22ED7D00FA7668 /* TestViews */ = {
+		D9C8B1FCF3CC46A713E6840D /* TestViews */ = {
 			isa = PBXGroup;
 			children = (
-				D9B9D3432B2057E60022F27D /* MHVideoPlayerTestView.swift */,
-				D9800CE12B27FF95003D4FCB /* DragGestureTestView.swift */,
-				D9FA8D172B4CE2CB007DBCE9 /* CoreDataTestView.swift */,
+				0683EF17FA1B017CAC0B432B /* CoreDataTestView.swift */,
+				CCF10BB44D547762D146CB5D /* DragGestureTestView.swift */,
+				E9ACAED0F848CC9BC59B7D30 /* MHVideoPlayerTestView.swift */,
 			);
 			path = TestViews;
-			sourceTree = "<group>";
-		};
-		D9FA8D0E2B4BC1B2007DBCE9 /* MHCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				D9FA8D112B4BC285007DBCE9 /* Resources */,
-				D9FA8D0F2B4BC271007DBCE9 /* CoreDataManager.swift */,
-			);
-			path = MHCoreData;
-			sourceTree = "<group>";
-		};
-		D9FA8D112B4BC285007DBCE9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D9FA8D122B4BC2B1007DBCE9 /* MHDataModel.xcdatamodeld */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		E052B8C633F1EF77B23D388D /* MHOrientation */ = {
@@ -1505,8 +1613,10 @@
 				2ADD8141A5DAAC55C74BB439 /* MHDownloaderTests.xctest */,
 				C18BFACE1ED0AB74230FDF1C /* MHExtension.framework */,
 				5FBD31E82FCD71516CB0A50D /* MHExtensionTests.xctest */,
+				9F79F0DCDF0E9318BCFFC6EF /* MHImage.framework */,
 				762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */,
 				3F5B6AA3BA6F23D5F5663933 /* MHImageCacheTests.xctest */,
+				160C7F68F752937F3EE8C08E /* MHImageTests.xctest */,
 				7AE3B347970A4DB419AB6B03 /* MHLog.framework */,
 				3138D11FF92F84AF08158421 /* MHLogTests.xctest */,
 				F78289B83C157DF409EFD6F7 /* MHNavigation.framework */,
@@ -1591,6 +1701,7 @@
 				5AE350AF669B0F79032A8F7F /* PBXTargetDependency */,
 				B472C18493C36FBC95D325E3 /* PBXTargetDependency */,
 				6CEF3D40CE62F27A6DBBF151 /* PBXTargetDependency */,
+				18A3D925AE1EB9AA0A6D4063 /* PBXTargetDependency */,
 				17FFA72B8B972E34580A8D1B /* PBXTargetDependency */,
 				7167707886B74AB948AB70B5 /* PBXTargetDependency */,
 				8C8DE921F41E393F14F065E9 /* PBXTargetDependency */,
@@ -1848,6 +1959,43 @@
 			productReference = 431624B85713717DAE08A27D /* MHOrientationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9622423B640AA349564A662C /* MHImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F381472318B2A89F25F844 /* Build configuration list for PBXNativeTarget "MHImage" */;
+			buildPhases = (
+				1A3648A88CAC02CEABFF0603 /* Sources */,
+				96EE7F2805401B0C4E92FB69 /* Resources */,
+				A60C1799436EFB0D840F7E41 /* Embed Frameworks */,
+				CBADD18E508A9B21918FCBD2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MHImage;
+			productName = MHImage;
+			productReference = 9F79F0DCDF0E9318BCFFC6EF /* MHImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		96589E8766D620AD5A274D09 /* MHImageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB98ED6F485858E785CA64E /* Build configuration list for PBXNativeTarget "MHImageTests" */;
+			buildPhases = (
+				6A283A38037A9E1CDAA23215 /* Sources */,
+				D317840628A1F08F78193991 /* Resources */,
+				308048789E0DCC32B413F04B /* Embed Frameworks */,
+				8E1FEAD4B676525D580FA207 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB7E055E7FE83CFB34BE1613 /* PBXTargetDependency */,
+			);
+			name = MHImageTests;
+			productName = MHImageTests;
+			productReference = 160C7F68F752937F3EE8C08E /* MHImageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9858EBBC261D58E3D131C1E0 /* MHSoundPlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57C33594C015C362A1755492 /* Build configuration list for PBXNativeTarget "MHSoundPlayer" */;
@@ -1917,9 +2065,6 @@
 			dependencies = (
 			);
 			name = MHTextFieldListView;
-			packageProductDependencies = (
-				D9B9D33F2B20557A0022F27D /* RxSwift */,
-			);
 			productName = MHTextFieldListView;
 			productReference = 8EEE9681BE11DEC0FFD13CA7 /* MHTextFieldListView.framework */;
 			productType = "com.apple.product-type.framework";
@@ -2130,9 +2275,6 @@
 				en,
 			);
 			mainGroup = B2F2A3DEC3259520F6C8BC3C;
-			packageReferences = (
-				D9B9D33E2B2055100022F27D /* XCRemoteSwiftPackageReference "RxSwift" */,
-			);
 			productRefGroup = EAF6133B9926FD3419902B47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2147,6 +2289,8 @@
 				7A02897FA325FF0282E1A068 /* MHDownloaderTests */,
 				DE95313432F3385CCBDE1311 /* MHImageCache */,
 				F67594D9A9D20CD4EA09BDAF /* MHImageCacheTests */,
+				9622423B640AA349564A662C /* MHImage */,
+				96589E8766D620AD5A274D09 /* MHImageTests */,
 				7899DB63A13D2F01489C3EC5 /* MHDevice */,
 				C2C2386846BA4C72C4E926DB /* MHDeviceTests */,
 				A277106EED539E0DE7BBC0E6 /* MHLog */,
@@ -2278,6 +2422,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96EE7F2805401B0C4E92FB69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		970414A2A38916407266F392 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2351,6 +2502,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D317840628A1F08F78193991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E55B48C0093A818C6CC65973 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2385,6 +2543,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A3648A88CAC02CEABFF0603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E5B8889007947D722E3D894 /* DownloadlCenter.swift in Sources */,
+				B768B8F99BB455B880999A69 /* ImageFileManager.swift in Sources */,
+				F339B8FADB784CC35ADA834A /* ImageManager.swift in Sources */,
+				08CD7BDF22251FAC11FC9AB5 /* MHImage.swift in Sources */,
+				484D38E393F070AEC8D0B9AC /* Sample.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		244401253366E8DD5BFB8A29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2413,6 +2583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC2A15D17396FDC94BED500 /* MHDeviceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2420,6 +2591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4D2B5308B3BA0421983536 /* MHNavigationConfigurations.swift in Sources */,
 				FF426601FEFA69863198D0A1 /* MHNavigationController.swift in Sources */,
 				4E6B12A3EB5F1F416A9C3B7F /* MHNavigationPreference.swift in Sources */,
 				256FDC7B5C059BAC1D5A00AE /* MHNavigationView.swift in Sources */,
@@ -2463,15 +2635,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9FA8D162B4CE2A7007DBCE9 /* MHDataModel.xcdatamodeld in Sources */,
 				77E3968F6B87AC551A042E8F /* TuistAssets+MHUtilityTestAppSwiftUI.swift in Sources */,
 				B78E1E35A14224F28867EC61 /* TuistBundle+MHUtilityTestAppSwiftUI.swift in Sources */,
 				B88565E4F7E4B8820A1A5050 /* ContentView.swift in Sources */,
 				DBFDC511859FAE0EE9506516 /* MHUtilityTestAppSwiftUIApp.swift in Sources */,
-				D9FA8D182B4CE2CB007DBCE9 /* CoreDataTestView.swift in Sources */,
 				864789F48FE5FE9B8977E720 /* MHVideoPlayerView.swift in Sources */,
-				D9FA8D142B4CE2A1007DBCE9 /* CoreDataManager.swift in Sources */,
 				BEF4CFB480D5D0A2F17880E8 /* SheetRouter.swift in Sources */,
+				B41553BF0C4014403E4CDEBF /* CoreDataTestView.swift in Sources */,
+				A6D750A56C02B18698066BC1 /* DragGestureTestView.swift in Sources */,
+				0CF5BFD0D0E2B52B63FEC6CB /* MHVideoPlayerTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2489,6 +2661,14 @@
 			files = (
 				BE5C858292B48C57013CFDF8 /* TuistBundle+MHImageCache.swift in Sources */,
 				853AE11E10F56F146E22325B /* MHImageCache.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A283A38037A9E1CDAA23215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1CE6CBD909B25D4BD1DED07 /* MHImageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2537,10 +2717,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9800CE22B27FF95003D4FCB /* DragGestureTestView.swift in Sources */,
+				768786DE3DE508E703CB79B4 /* MHVideoPlayer.swift in Sources */,
 				CD5287889F9381A20CC210BC /* MHVideoPlayerWithDelegateView.swift in Sources */,
-				D9B9D3422B2057710022F27D /* MHVideoPlayer.swift in Sources */,
-				D9B9D3442B2057E60022F27D /* MHVideoPlayerTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2560,9 +2738,9 @@
 				1192303204C91F13AA25946D /* ExtensionView.swift in Sources */,
 				2778FB293301DCCBA103A919 /* MHAlertView.swift in Sources */,
 				AD128B08820F10F4553952EA /* MHCircleProgressView.swift in Sources */,
-				B60F453A2B57899700CC62DC /* YJAlertView.swift in Sources */,
 				3148DE85A84542042D511C57 /* UIUtilityInfo.swift in Sources */,
 				7482470F7BF0F69D5FFA41C0 /* UIUtilityModifier.swift in Sources */,
+				B3344BA673EF464BC6B549B9 /* YJAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2689,6 +2867,12 @@
 			target = DE95313432F3385CCBDE1311 /* MHImageCache */;
 			targetProxy = 2C3D963D814EBE2E638ED866 /* PBXContainerItemProxy */;
 		};
+		18A3D925AE1EB9AA0A6D4063 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MHImage;
+			target = 9622423B640AA349564A662C /* MHImage */;
+			targetProxy = 88E98678D0E0C5ED3011A31C /* PBXContainerItemProxy */;
+		};
 		1A0CA4AD4FF1AD11CD38B152 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MHLog;
@@ -2779,6 +2963,12 @@
 			target = 2AC769C43A50CFD356251206 /* MHDownloader */;
 			targetProxy = 7C853E9E19A4C2C79A59300D /* PBXContainerItemProxy */;
 		};
+		BB7E055E7FE83CFB34BE1613 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MHImage;
+			target = 9622423B640AA349564A662C /* MHImage */;
+			targetProxy = C60880D241FA2524780B3FB9 /* PBXContainerItemProxy */;
+		};
 		BF5BC76EC3685E6A63E70DFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MHUIUtility;
@@ -2817,7 +3007,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHExtensionTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2843,7 +3032,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHDeviceTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2970,7 +3158,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHDownloaderTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2996,7 +3183,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUtilityTestAppSwiftUITests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3018,13 +3204,36 @@
 			};
 			name = Release;
 		};
+		2859915888A78C23FD018A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/MHImageTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHImageTests;
+				PRODUCT_NAME = MHImageTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2DAD08809C79B04888CD1F51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = SL6Z6PSCF7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUtilityTestAppSwiftUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -3111,6 +3320,31 @@
 			};
 			name = Release;
 		};
+		35BDF3B293279AFAB68E4DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/MHImageTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHImageTests;
+				PRODUCT_NAME = MHImageTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		36ACE8C97C1FB40BD5737438 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3183,7 +3417,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHLogTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3209,7 +3442,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHImageCacheTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3288,7 +3520,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHAPITests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3313,7 +3544,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHImageCacheTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3333,12 +3563,45 @@
 			};
 			name = Release;
 		};
+		4ABF86049545ECE6D0B12832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MHImage-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHImage;
+				PRODUCT_NAME = MHImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4B53A206782564A21A09F362 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHTextFieldListViewTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3365,7 +3628,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = SL6Z6PSCF7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUtilityTestAppSwiftUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -3391,7 +3653,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHExtensionTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3450,7 +3711,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHTextFieldListViewTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3475,7 +3735,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUIUtilityTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3501,7 +3760,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHVideoPlayerWithDelegateViewTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3626,7 +3884,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHSoundPlayerTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3652,7 +3909,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHNavigationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3778,7 +4034,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUserDefaultsTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3804,7 +4059,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUIUtilityTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3930,7 +4184,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHOrientationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4014,7 +4267,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHVideoPlayerWithDelegateViewTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4039,7 +4291,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHAPITests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4065,7 +4316,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUserDefaultsTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4157,7 +4407,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHSoundPlayerTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4182,7 +4431,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHNavigationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4223,6 +4471,39 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHNavigation;
 				PRODUCT_NAME = MHNavigation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C338314592D0529203B2EAF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MHImage-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mh.MHImage;
+				PRODUCT_NAME = MHImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -4341,7 +4622,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHDeviceTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4366,7 +4646,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHOrientationTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4426,7 +4705,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHDownloaderTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4452,7 +4730,6 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHLogTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4478,7 +4755,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 44U694XUDY;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHUtilityTestAppSwiftUITests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4724,6 +5000,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		93F381472318B2A89F25F844 /* Build configuration list for PBXNativeTarget "MHImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ABF86049545ECE6D0B12832 /* Debug */,
+				C338314592D0529203B2EAF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9AD99F635E5E2A1117604B7C /* Build configuration list for PBXNativeTarget "MHUserDefaultsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -4774,6 +5059,15 @@
 			buildConfigurations = (
 				3A5BC329A07612401219B931 /* Debug */,
 				E6496EEC4FB6B6EDA2E7971C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAB98ED6F485858E785CA64E /* Build configuration list for PBXNativeTarget "MHImageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35BDF3B293279AFAB68E4DD8 /* Debug */,
+				2859915888A78C23FD018A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4833,38 +5127,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D9B9D33E2B2055100022F27D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.6.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D9B9D33F2B20557A0022F27D /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D9B9D33E2B2055100022F27D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		D9FA8D122B4BC2B1007DBCE9 /* MHDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D9FA8D132B4BC2B1007DBCE9 /* MHDataModel.xcdatamodel */,
-			);
-			currentVersion = D9FA8D132B4BC2B1007DBCE9 /* MHDataModel.xcdatamodel */;
-			path = MHDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 511BC61AC4D4C412CF6B2726 /* Project object */;
 }
