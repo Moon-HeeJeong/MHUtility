@@ -86,8 +86,6 @@ public class MHAPI{
             
         }
         .decode(type: T.Response.self, decoder: JSONDecoder())
-        
-        .receive(on: DispatchQueue.main)
         .tryMap({ res -> T.Response.Model in
             print("🦊 response ::: \(res)")
             
@@ -98,18 +96,19 @@ public class MHAPI{
                     throw APICallError_E.noDataErr(message: "No data received")
                 }
             }else{
-//                print("Invalid JSON")
                 throw APICallError_E.inServerError(code: res.responseType.code, message: res.responseType.message)
-//                throw APICallError_E.decodingErr(message: res.responseType.message)
             }
         })
         .mapError { err in
-            if let apiCallError = err as? APICallError_E {
+            if let decodingError = err as? DecodingError {
+                return APICallError_E.decodingErr(message: decodingError.localizedDescription)
+            }else if let apiCallError = err as? APICallError_E {
                     return apiCallError
             } else {
                 return APICallError_E.inServerError(code: (err as NSError).code, message: err.localizedDescription)
             }
         }
+        .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
         
     }
