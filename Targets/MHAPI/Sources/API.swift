@@ -66,7 +66,9 @@ public class MHAPI{
 //    public init(session: URLSession = URLSession(configuration: .default)) {
 //        self.session = session
 //    }
-
+    public init(){
+        
+    }
     public func call<T: MH_APIInfo_P>(apiInfo: T) -> AnyPublisher<T.Response.Model, APICallError_E>{
         
 //        let sessionConfig = URLSessionConfiguration.default
