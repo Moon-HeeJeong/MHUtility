@@ -126,6 +126,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9622423B640AA349564A662C"
+               BuildableName = "MHImage.framework"
+               BlueprintName = "MHImage"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "DE95313432F3385CCBDE1311"
                BuildableName = "MHImageCache.framework"
                BlueprintName = "MHImageCache"
@@ -143,6 +157,20 @@
                BlueprintIdentifier = "F67594D9A9D20CD4EA09BDAF"
                BuildableName = "MHImageCacheTests.xctest"
                BlueprintName = "MHImageCacheTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96589E8766D620AD5A274D09"
+               BuildableName = "MHImageTests.xctest"
+               BlueprintName = "MHImageTests"
                ReferencedContainer = "container:MHUtility.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -453,6 +481,16 @@
                BlueprintIdentifier = "F67594D9A9D20CD4EA09BDAF"
                BuildableName = "MHImageCacheTests.xctest"
                BlueprintName = "MHImageCacheTests"
+               ReferencedContainer = "container:MHUtility.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96589E8766D620AD5A274D09"
+               BuildableName = "MHImageTests.xctest"
+               BlueprintName = "MHImageTests"
                ReferencedContainer = "container:MHUtility.xcodeproj">
             </BuildableReference>
          </TestableReference>

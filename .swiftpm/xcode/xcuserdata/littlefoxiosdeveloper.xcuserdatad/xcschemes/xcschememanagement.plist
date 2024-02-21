@@ -24,45 +24,50 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>MHImageCache.xcscheme_^#shared#^_</key>
+		<key>MHImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>MHLog.xcscheme_^#shared#^_</key>
+		<key>MHImageCache.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>MHNavigation.xcscheme_^#shared#^_</key>
+		<key>MHLog.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>MHOrientation.xcscheme_^#shared#^_</key>
+		<key>MHNavigation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>MHSoundPlayer.xcscheme_^#shared#^_</key>
+		<key>MHOrientation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>MHTextFieldListView.xcscheme_^#shared#^_</key>
+		<key>MHSoundPlayer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>MHUIUtility.xcscheme_^#shared#^_</key>
+		<key>MHTextFieldListView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>MHUserDefaults.xcscheme_^#shared#^_</key>
+		<key>MHUIUtility.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>12</integer>
+		</dict>
+		<key>MHUserDefaults.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>MHUtility-Package.xcscheme_^#shared#^_</key>
 		<dict>
@@ -77,21 +82,21 @@
 		<key>MHVideoPlayerWithDelegateView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Rx (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>16</integer>
 		</dict>
 		<key>Rx (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>17</integer>
 		</dict>
 		<key>Rx (Playground) 3.xcscheme</key>
 		<dict>
@@ -119,7 +124,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>15</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -185,6 +190,11 @@
 			<true/>
 		</dict>
 		<key>MHNavigation</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>MHNavigationTests</key>
 		<dict>
 			<key>primary</key>
 			<true/>
