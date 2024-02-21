@@ -27,6 +27,9 @@ let package = Package(
             name: "MHDownloader",
             targets: ["MHDownloader"]),
         .library(
+            name: "MHImage",
+            targets: ["MHImage"]),
+        .library(
             name: "MHImageCache",
             targets: ["MHImageCache"]),
         .library(
@@ -108,6 +111,14 @@ let package = Package(
             name: "MHImageCacheTests",
             dependencies: ["MHImageCache"],
             path: "Targets/MHImageCache/Tests"),
+        .target(
+            name: "MHImage",
+            dependencies: [],
+            path: "Targets/MHImage/Sources"),
+        .testTarget(
+            name: "MHImageTests",
+            dependencies: ["MHImage"],
+            path: "Targets/MHImage/Tests"),
         .target(
             name: "MHLog",
             dependencies: [],

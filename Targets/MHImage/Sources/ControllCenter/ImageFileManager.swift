@@ -49,7 +49,8 @@ class ImageFileManager: NSObject{
     
     func isExistCacheFile(urlStr: String) -> Bool{
         if let filePath = imageFilePath(urlStr: urlStr){
-            return FileManager.default.fileExists(atPath: filePath.path())
+//            return FileManager.default.fileExists(atPath: filePath.path())
+            return FileManager.default.fileExists(atPath: filePath.path)
         }
         return false
     }
