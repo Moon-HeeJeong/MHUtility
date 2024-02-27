@@ -132,22 +132,24 @@ struct YJAlertView: View {
                                     HStack{
                                         Spacer()
                                         Button {
-                                            action()
-                                            self.isShow = false
-                                        } label: {
-                                            Text(actionTitle ?? "확인")
-                                                .font(.system(size: fontSize, weight: .bold))
-                                                .foregroundColor(.black)
-                                        }
-                                        Spacer()
-                                            .frame(width: w*(60/817))
-                                        Button {
                                             cancelAction?()
                                             self.isShow = false
                                         } label: {
                                             Text(cancelTitle ?? "닫기")
                                                 .font(.system(size: fontSize, weight: .bold))
                                                 .foregroundColor(color)
+                                        }
+
+                                        Spacer()
+                                            .frame(width: w*(60/817))
+                                        
+                                        Button {
+                                            action()
+                                            self.isShow = false
+                                        } label: {
+                                            Text(actionTitle ?? "확인")
+                                                .font(.system(size: fontSize, weight: .bold))
+                                                .foregroundColor(.black)
                                         }
                                     }
                                 case .none:
