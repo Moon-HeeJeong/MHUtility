@@ -137,7 +137,7 @@ struct YJAlertView: View {
                                         } label: {
                                             Text(cancelTitle ?? "닫기")
                                                 .font(.system(size: fontSize, weight: .bold))
-                                                .foregroundColor(color)
+                                                .foregroundColor(.black)
                                         }
 
                                         Spacer()
@@ -149,7 +149,7 @@ struct YJAlertView: View {
                                         } label: {
                                             Text(actionTitle ?? "확인")
                                                 .font(.system(size: fontSize, weight: .bold))
-                                                .foregroundColor(.black)
+                                                .foregroundColor(color)
                                         }
                                     }
                                 case .none:
