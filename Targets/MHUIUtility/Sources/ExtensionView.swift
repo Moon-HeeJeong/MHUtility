@@ -31,7 +31,7 @@ extension View{
                 YJAlertView(info: kind.wrappedValue.yjAlertInfoBinding)
                     .opacity(kind.wrappedValue.isYJAlert ? 1:0)
                 
-                MHCircleProgressView(isEnabled: kind.wrappedValue.isLoadingEnabled, color: kind.wrappedValue.loadingColor)
+                MHCircleProgressView(isEnabled: kind.wrappedValue.isLoadingEnabled, bgColor: kind.wrappedValue.bgColor, progressColor: kind.wrappedValue.loadingColor)
                     .opacity(kind.wrappedValue.isLoading ? 1:0)
             })
         )

@@ -13,12 +13,12 @@ public enum UIUtility_E: Identifiable{
     
     case alert(info: AlertInfo?)
     case yjAlert(info: AlertInfo?)
-    case loading(isEnabled: Bool, color: Color = .blue)
+    case loading(isEnabled: Bool, color: Color = .blue, bgColor: Color = .black.opacity(0.3))
     case stop
     
     var isLoading: Bool{
         switch self {
-        case .loading(_,_):
+        case .loading(_,_,_):
             return true
         default:
             return false
@@ -44,16 +44,25 @@ public enum UIUtility_E: Identifiable{
     
     var loadingColor: Color{
         switch self {
-        case .loading(_, let color):
+        case .loading(_, let color, _):
             return color
         default:
             return .blue
         }
     }
     
+    var bgColor: Color{
+        switch self {
+        case .loading(_, _, let bgColor):
+            return bgColor
+        default:
+            return .black.opacity(0.3)
+        }
+    }
+    
     var isLoadingEnabled: Bool{
         switch self {
-        case .loading(let isEnabled, _):
+        case .loading(let isEnabled, _, _):
             return isEnabled
         default:
             return false
