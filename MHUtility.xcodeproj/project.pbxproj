@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,6 +100,7 @@
 		B41553BF0C4014403E4CDEBF /* CoreDataTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0683EF17FA1B017CAC0B432B /* CoreDataTestView.swift */; };
 		B4AF597EBD7FA45B8C99F746 /* MHOrientation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBCB8E040E4CC64662A0994B /* MHOrientation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55416370BBCCE65133D871E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D175D3F620BD4D087521E /* UIImage.swift */; };
+		B6D9EFD32B9007D300469401 /* MHTextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81E21FE3356DA57DCC9DF7 /* MHTextFieldListView.swift */; };
 		B768B8F99BB455B880999A69 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7981223D5CBC9FBC9177B440 /* ImageFileManager.swift */; };
 		B78E1E35A14224F28867EC61 /* TuistBundle+MHUtilityTestAppSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F35F1E8DD56984AAB32D1 /* TuistBundle+MHUtilityTestAppSwiftUI.swift */; };
 		B88565E4F7E4B8820A1A5050 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E17E2243F1C9AA837BF155 /* ContentView.swift */; };
@@ -111,7 +112,6 @@
 		C1D169A9C1FEBEA38B8D9F22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC29F764CB5E5C880288EB46 /* Preview Assets.xcassets */; };
 		CB484F2C8B81ABBD051E54BC /* MHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B2824694FE49BCA57CD24 /* MHImage.swift */; };
 		CD5287889F9381A20CC210BC /* MHVideoPlayerWithDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809326C170B7FE7D50C60C7 /* MHVideoPlayerWithDelegateView.swift */; };
-		CF6924A7E1AAEDA2C2276325 /* MHTextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81E21FE3356DA57DCC9DF7 /* MHTextFieldListView.swift */; };
 		CF890D632A01327F4CD74006 /* MHDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754F6772B84EE7F815F7A8E /* MHDownloader.swift */; };
 		D1CE6CBD909B25D4BD1DED07 /* MHImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1057AFD94243478B9DEFA8 /* MHImageTests.swift */; };
 		D3D5BF2B12884640FC023726 /* MHImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762536BBC3E7EDF1DA5664D1 /* MHImageCache.framework */; };
@@ -2595,7 +2595,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6924A7E1AAEDA2C2276325 /* MHTextFieldListView.swift in Sources */,
+				B6D9EFD32B9007D300469401 /* MHTextFieldListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3223,6 +3223,7 @@
 		2DAD08809C79B04888CD1F51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
@@ -3592,6 +3593,7 @@
 		4B53A206782564A21A09F362 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHTextFieldListViewTests-Info.plist";
@@ -3617,6 +3619,7 @@
 		552174B24B7A9299D29AA690 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
@@ -3701,6 +3704,7 @@
 		5BAF3796F56819E778995573 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHTextFieldListViewTests-Info.plist";
@@ -3752,6 +3756,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = SL6Z6PSCF7;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHVideoPlayerWithDelegateViewTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4259,6 +4264,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = SL6Z6PSCF7;
 				INFOPLIST_FILE = "Derived/InfoPlists/MHVideoPlayerWithDelegateViewTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
