@@ -61,15 +61,17 @@ public enum APICallError_E: Error{
 
 public class MHAPI{
 
-    private var session: URLSession
-    
-    public init(session: URLSession = URLSession(configuration: .default)) {
-        self.session = session
+//    private var session: URLSession
+//    
+//    public init(session: URLSession = URLSession(configuration: .default)) {
+//        self.session = session
+//    }
+    public init(){
+        
     }
-
     public func call<T: MH_APIInfo_P>(apiInfo: T) -> AnyPublisher<T.Response.Model, APICallError_E>{
         
-        let sessionConfig = URLSessionConfiguration.default
+//        let sessionConfig = URLSessionConfiguration.default
         
         guard let url = URL(string: apiInfo.address) else{
             return AnyPublisher(Fail<T.Response.Model, APICallError_E>(error: .urlErr(message: "Invalid URL")))

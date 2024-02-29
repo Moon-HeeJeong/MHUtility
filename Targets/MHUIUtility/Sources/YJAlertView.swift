@@ -76,12 +76,11 @@ struct YJAlertView: View {
                                 Text(info?.message ?? "")
                                     .font(.system(size: bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 45 : 49)/bhRate), weight:.regular))
                                     .foregroundColor(.black)
-//                                    .frame(maxHeight: 200)
-//                                Spacer()
                             }
                             
                             if let errorDesc = info?.errorDesc{
                                 Spacer()
+                                    .frame(height: topH*0.4)
                                 HStack{
                                     Text(errorDesc)
                                         .font(.system(size: bottomH*(40/bhRate), weight:.light))
@@ -90,6 +89,7 @@ struct YJAlertView: View {
                                 }
                             }
                             Spacer()
+                                .frame(height: topH*0.4)
                             HStack{
                                 let fontSize = bottomH*((UIDevice.current.userInterfaceIdiom == .pad ? 40 : 45)/bhRate)
                                 switch info?.type{
@@ -159,10 +159,10 @@ struct YJAlertView: View {
                             
                         }
                         .padding(w*0.05)
-                        .frame(width: w, height: h-topH)
+                        .frame(width: w)//, height: h-topH)
                         .background(Color.white)
                     }
-                    .frame(width: w, height: h)
+                    .frame(width: w)//, height: h)
                     .cornerRadius(15)
                     .scaleEffect(CGSize(width: self.isShow ? 1 : 1.1, height: self.isShow ? 1 : 1.1))
                     .opacity(self.isShow ? 1 : 0)
@@ -195,6 +195,6 @@ struct YJAlertView: View {
         print("취소")
     }, cancelAction: {
         print("로그아웃")
-    }), title: "APIError", message: "작성 중인 내용이~~")))
+    }), title: "APIError", message: "작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~작성 중인 내용이~~", errorDesc: "dkdkdkdkdkdkkdjskfjkasjfdkjaksfjdsjfksdjf")))
     //작성 중인 내용이 1개 이상인 상태에서 터치 시 작성 중인 내용이 모두 삭제됩니다.\n이전 페이지로 이동하시겠습니까?
 }
