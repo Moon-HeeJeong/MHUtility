@@ -51,12 +51,16 @@ public class MHLog: NSObject{
     
     static public func write(_ str: MHLogKind, fileName: String = #file, lineNumber: Int = #line, functionName: String = #function){
         
+        //디버그일때 로그찍고, 릴리즈일 땐 아무것도 안찍는다
+        #if DEBUG
         let log: String = {
             let fileNameStr = (fileName.components(separatedBy: "/").last)?.components(separatedBy: ".").first
             return "\(work.now) \(String(describing: fileNameStr))(\(functionName)) \(lineNumber): \(str.desc)\n"
         }()
         
         print(log)
+        #endif
+        //
     }
     
     private var now: String{
