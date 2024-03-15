@@ -475,7 +475,7 @@ extension MHVideoPlayerWithDelegateView{
     
     public func pause(){
         self.isCalcurateCurrentTime = false
-        self.rate = 0
+        self.rate = 0.0
     }
     
     public func stop(){
