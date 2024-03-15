@@ -36,7 +36,7 @@ public extension MH_APIInfo_P{
         extraHeaders?.forEach({ (key,value) in
             urlRequest.setValue(value, forHTTPHeaderField: key)
         })
-        print("headers = \(urlRequest.allHTTPHeaderFields)")
+//        print("headers = \(urlRequest.allHTTPHeaderFields)")
         urlRequest.httpBody = body
         return urlRequest
     }

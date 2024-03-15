@@ -11,16 +11,17 @@ import SwiftUI
 struct MHCircleProgressView: View {
     
     var isEnabled: Bool
-    var color: Color
+    var bgColor: Color
+    var progressColor: Color
     
     var body: some View {
             GeometryReader { geo in
                 ZStack {
-                    Color.black.opacity(isEnabled ? 0 : 0.3)
+                    bgColor.opacity(isEnabled ? 0 : 1)
                     
                     ProgressView()
                         .scaleEffect(2, anchor: .center)
-                        .progressViewStyle(CircularProgressViewStyle(tint: color))
+                        .progressViewStyle(CircularProgressViewStyle(tint: progressColor))
                         .frame(width: geo.size.width, height: geo.size.height)
                 }.ignoresSafeArea()
             }
