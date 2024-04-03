@@ -56,7 +56,7 @@ public class MHVideoPlayerWithDelegateView: UIView{
     deinit{
         print("deinit \(self)")
         self.removePlayer()
-        self.removeNotification()
+//        self.removeNotification()
     }
 
     private var statusContext = true
@@ -370,9 +370,12 @@ public class MHVideoPlayerWithDelegateView: UIView{
     }
     
     private func removeNotification(){
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        //등록된 노티 옵저버 전체 제거
+        NotificationCenter.default.removeObserver(self)
     }
 
     private func removeCurrentTimeObserver(){
