@@ -56,8 +56,9 @@ public class MHVideoPlayerWithDelegateView: UIView{
     deinit{
         print("deinit \(self)")
         self.removePlayer()
+        self.removeNotification()
     }
-    
+
     private var statusContext = true
     private var statusItemContext = true
     private var statusKeepUpContext = true
@@ -243,7 +244,7 @@ public class MHVideoPlayerWithDelegateView: UIView{
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
-        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
     }
     
     /** 플레이어 준비 **/
@@ -368,6 +369,12 @@ public class MHVideoPlayerWithDelegateView: UIView{
         playerItem.removeObserver(self, forKeyPath: tPlayerKeepUpKey, context: &statusKeepUpContext)
     }
     
+    private func removeNotification(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
     private func removeCurrentTimeObserver(){
         if let timeObserverToken = self.timeObserverToken {
             lastPlayerTimeObserve?.removeTimeObserver(timeObserverToken)
