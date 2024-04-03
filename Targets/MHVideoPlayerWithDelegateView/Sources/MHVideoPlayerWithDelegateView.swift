@@ -56,7 +56,7 @@ public class MHVideoPlayerWithDelegateView: UIView{
     deinit{
         print("deinit \(self)")
         self.removePlayer()
-//        self.removeNotification()
+        self.removeNotification()
     }
 
     private var statusContext = true
