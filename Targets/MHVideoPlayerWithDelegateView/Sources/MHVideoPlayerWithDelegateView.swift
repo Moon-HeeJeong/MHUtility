@@ -59,6 +59,7 @@ public class MHVideoPlayerWithDelegateView: UIView{
         self.removeNotification()
     }
 
+    let notificationCenter = NotificationCenter.default
     private var statusContext = true
     private var statusItemContext = true
     private var statusKeepUpContext = true
@@ -223,17 +224,17 @@ public class MHVideoPlayerWithDelegateView: UIView{
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
         self.soundEnableAtBibrationOff()
         
         
         /** 백그라운드로 들어갔을 때 **/
-        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
+        notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
             print("go background")
             self?.player = nil
         }
         /** 앱으로 들어갔을 때 **/
-        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
+        notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
             print("comback app")
             self?.player = self?.keepingPlayer
         }
@@ -372,9 +373,9 @@ public class MHVideoPlayerWithDelegateView: UIView{
     }
     
     private func removeNotification(){
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        notificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         
         //등록된 노티 옵저버 전체 제거
 //        NotificationCenter.default.removeObserver(self)
