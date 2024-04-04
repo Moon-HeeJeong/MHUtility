@@ -286,15 +286,15 @@ public class MHVideoPlayerWithDelegateView: UIView{
         UIApplication.shared.beginReceivingRemoteControlEvents()
         let commandCenter = MPRemoteCommandCenter.shared()
 
-//        commandCenter.playCommand.addTarget { [unowned self] event in
-        commandCenter.playCommand.addTarget { [weak self] event in
-            self?.keepingPlayer.play()
+        commandCenter.playCommand.addTarget { [unowned self] event in
+//        commandCenter.playCommand.addTarget { [weak self] event in
+            self.keepingPlayer.play()
             return .success
         }
 
-//        commandCenter.pauseCommand.addTarget { [unowned self] event in
-        commandCenter.pauseCommand.addTarget { [weak self] event in
-            self?.keepingPlayer.pause()
+        commandCenter.pauseCommand.addTarget { [unowned self] event in
+//        commandCenter.pauseCommand.addTarget { [weak self] event in
+            self.keepingPlayer.pause()
             return .success
         }
     }
