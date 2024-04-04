@@ -223,48 +223,23 @@ public class MHVideoPlayerWithDelegateView: UIView{
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-//        
-//        let playEndObserver = notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-//        var playEndObserver: NSObjectProtocol?
-//        var willResignObserver: NSObjectProtocol?
-//        var didBecomeActiveObserver: NSObjectProtocol?
-//        playEndObserver = notificationCenter.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) {[weak self] _ in
-//            self?.notificationCenter.removeObserver(playEndObserver)
-//        }
-    
         
-       
+        self.notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        
+        self.soundEnableAtBibrationOff()
         
         /** 백그라운드로 들어갔을 때 **/
-//        willResignObserver = notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
-//            print("go background")
-//            self?.player = nil
-//            
-//            self?.notificationCenter.removeObserver(willResignObserver)
-//        }
+        self.notificationCenter.addObserver(self, selector: #selector(goBackground(notification:)), name: UIApplication.willResignActiveNotification, object: nil)
         
-        /** 앱으로 들어갔을 때 **/
-//        didBecomeActiveObserver = notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
-//            print("comback app")
-//            self?.player = self?.keepingPlayer
-//            
-//            self?.notificationCenter.removeObserver(didBecomeActiveObserver)
-//        }
-        
-        
-        notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        self.soundEnableAtBibrationOff()
-        notificationCenter.addObserver(self, selector: #selector(goBackground(notification:)), name: UIApplication.willResignActiveNotification, object: nil)
-        
-        notificationCenter.addObserver(self, selector: #selector(comeBackApp(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        /** 앱으로 돌아왔을 때 **/
+        self.notificationCenter.addObserver(self, selector: #selector(comeBackApp(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         self.setupRemoteTransportControls()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
-//        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+//        fatalError("init(coder:) has not been implemented")
     }
     
     /** 플레이어 준비 **/
@@ -392,12 +367,12 @@ public class MHVideoPlayerWithDelegateView: UIView{
     }
     
     private func removeNotification(){
-        notificationCenter.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        notificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
-        notificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+//        self.notificationCenter.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+//        self.notificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+//        self.notificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         
         //등록된 노티 옵저버 전체 제거
-//        NotificationCenter.default.removeObserver(self)
+        self.notificationCenter.removeObserver(self)
     }
 
     private func removeCurrentTimeObserver(){
