@@ -286,15 +286,15 @@ public class MHVideoPlayerWithDelegateView: UIView{
         UIApplication.shared.beginReceivingRemoteControlEvents()
         let commandCenter = MPRemoteCommandCenter.shared()
 
-        commandCenter.playCommand.addTarget { [unowned self] event in
-//        commandCenter.playCommand.addTarget { [weak self] event in
-            self.keepingPlayer.play()
+//        commandCenter.playCommand.addTarget { [unowned self] event in
+        commandCenter.playCommand.addTarget { [weak self] event in
+            self?.keepingPlayer.play()
             return .success
         }
 
-        commandCenter.pauseCommand.addTarget { [unowned self] event in
-//        commandCenter.pauseCommand.addTarget { [weak self] event in
-            self.keepingPlayer.pause()
+//        commandCenter.pauseCommand.addTarget { [unowned self] event in
+        commandCenter.pauseCommand.addTarget { [weak self] event in
+            self?.keepingPlayer.pause()
             return .success
         }
     }
@@ -367,11 +367,7 @@ public class MHVideoPlayerWithDelegateView: UIView{
     }
     
     private func removeNotification(){
-//        self.notificationCenter.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-//        self.notificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
-//        self.notificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
-        
-        //등록된 노티 옵저버 전체 제거
+        //등록된 노티피케이션 옵저버 전체 제거
         self.notificationCenter.removeObserver(self)
     }
 
