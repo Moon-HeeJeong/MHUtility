@@ -225,38 +225,38 @@ public class MHVideoPlayerWithDelegateView: UIView{
         super.init(frame: frame)
 //        
 //        let playEndObserver = notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        var playEndObserver: NSObjectProtocol?
-        var willResignObserver: NSObjectProtocol?
-        var didBecomeActiveObserver: NSObjectProtocol?
-        playEndObserver = notificationCenter.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) {[weak self] _ in
-            self?.notificationCenter.removeObserver(playEndObserver)
-        }
+//        var playEndObserver: NSObjectProtocol?
+//        var willResignObserver: NSObjectProtocol?
+//        var didBecomeActiveObserver: NSObjectProtocol?
+//        playEndObserver = notificationCenter.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) {[weak self] _ in
+//            self?.notificationCenter.removeObserver(playEndObserver)
+//        }
+    
         
-        
-        
-        self.soundEnableAtBibrationOff()
-        
+       
         
         /** 백그라운드로 들어갔을 때 **/
-        willResignObserver = notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
-            print("go background")
-            self?.player = nil
-            
-            
-            
-            self?.notificationCenter.removeObserver(willResignObserver)
-        }
-        
+//        willResignObserver = notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
+//            print("go background")
+//            self?.player = nil
+//            
+//            self?.notificationCenter.removeObserver(willResignObserver)
+//        }
         
         /** 앱으로 들어갔을 때 **/
-        didBecomeActiveObserver = notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
-            print("comback app")
-            self?.player = self?.keepingPlayer
-            
-            
-            
-            self?.notificationCenter.removeObserver(didBecomeActiveObserver)
-        }
+//        didBecomeActiveObserver = notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
+//            print("comback app")
+//            self?.player = self?.keepingPlayer
+//            
+//            self?.notificationCenter.removeObserver(didBecomeActiveObserver)
+//        }
+        
+        
+        notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        self.soundEnableAtBibrationOff()
+        notificationCenter.addObserver(self, selector: #selector(goBackground(notification:)), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        notificationCenter.addObserver(self, selector: #selector(comeBackApp(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         self.setupRemoteTransportControls()
     }
@@ -496,6 +496,14 @@ public class MHVideoPlayerWithDelegateView: UIView{
 extension MHVideoPlayerWithDelegateView{
     @objc private func playerItemDidPlayToEndTime(notification: NSNotification){
         self.delegate?.mhVideoPlayerCallback(playerFinished: self)
+    }
+    @objc private func goBackground(notification: NSNotification){
+        print("go background")
+        self.player = nil
+    }
+    @objc private func comeBackApp(notification: NSNotification){
+        print("comeback app")
+        self.player = self.keepingPlayer
     }
 }
 
