@@ -223,20 +223,39 @@ public class MHVideoPlayerWithDelegateView: UIView{
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+//        
+//        let playEndObserver = notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        var playEndObserver: NSObjectProtocol?
+        var willResignObserver: NSObjectProtocol?
+        var didBecomeActiveObserver: NSObjectProtocol?
+        playEndObserver = notificationCenter.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) {[weak self] _ in
+            self?.notificationCenter.removeObserver(playEndObserver)
+        }
         
-        notificationCenter.addObserver(self, selector: #selector(playerItemDidPlayToEndTime(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        
+        
         self.soundEnableAtBibrationOff()
         
         
         /** 백그라운드로 들어갔을 때 **/
-        notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
+        willResignObserver = notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
             print("go background")
             self?.player = nil
+            
+            
+            
+            self?.notificationCenter.removeObserver(willResignObserver)
         }
+        
+        
         /** 앱으로 들어갔을 때 **/
-        notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
+        didBecomeActiveObserver = notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
             print("comback app")
             self?.player = self?.keepingPlayer
+            
+            
+            
+            self?.notificationCenter.removeObserver(didBecomeActiveObserver)
         }
         
         self.setupRemoteTransportControls()
